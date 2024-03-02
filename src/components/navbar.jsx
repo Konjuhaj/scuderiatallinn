@@ -21,7 +21,7 @@ export default function Navbar() {
           <img
             src="..\src\assets\Scuderia_Tallinn_Logo_White.jpg"
             className="h-8"
-            alt="Flowbite Logo"
+            alt="Scuderia Logo"
           />
           <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-black">
             Scuderria Tallinn
