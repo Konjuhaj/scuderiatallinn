@@ -1,12 +1,13 @@
-import { useState } from "react";
 import "./App.css";
 import Events from "./components/events";
 import Image from "./components/image";
 import Service from "./components/service";
+import Navbar from "./components/navbar";
 
 function App() {
   return (
     <>
+      <Navbar />
       <Image
         src="src/assets/Hero_1.jpg"
         alt="placeholder"
