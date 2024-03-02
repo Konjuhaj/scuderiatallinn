@@ -64,7 +64,7 @@ export default function Navbar() {
             <li>
               <a
                 href="#"
-                className="block py-2 px-3 text-black bg-blue-700 rounded md:bg-transparent md:text-red-700 md:p-0 dark:text-black md:dark:text-red-500"
+                className="block py-2 px-3 text-black bg-red-500 rounded md:bg-transparent md:text-red-500 md:p-0 dark:text-black md:dark:text-red-500"
                 aria-current="page"
               >
                 Home
@@ -73,7 +73,7 @@ export default function Navbar() {
             <li>
               <a
                 href="#"
-                className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-red-700 md:p-0 dark:text-black "
+                className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-red-500 md:p-0 dark:text-black "
               >
                 Cars
               </a>
@@ -81,7 +81,7 @@ export default function Navbar() {
             <li>
               <a
                 href="#"
-                className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-red-700 md:p-0 dark:text-black "
+                className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-red-500 md:p-0 dark:text-black "
               >
                 Events
               </a>
@@ -89,7 +89,7 @@ export default function Navbar() {
             <li>
               <a
                 href="#"
-                className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-red-700 md:p-0 dark:text-black "
+                className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-red-500 md:p-0 dark:text-black "
               >
                 Contact
               </a>
