@@ -1,8 +1,10 @@
 import "./App.css";
+import About from "./components/about";
 import Events from "./components/events";
 import Image from "./components/image";
-import Service from "./components/service";
 import Navbar from "./components/navbar";
+import Service from "./components/service";
+import Store from "./components/store";
 
 function App() {
   return (
@@ -11,15 +13,17 @@ function App() {
       <Image
         src="src/assets/Hero_1.jpg"
         alt="placeholder"
-        customClass="w-full"
+        customClass="w-full lg:max-h-[calc(100vh-20vh)] object-cover"
       ></Image>
       <Service></Service>
       <Image
         src="src/assets/Hero_2.jpg"
         alt="placeholder"
-        customClass="w-full h-96 object-cover"
+        customClass="w-full max-h-96 object-cover"
       ></Image>
       <Events></Events>
+      <About></About>
+      <Store></Store>
     </>
   );
 }
