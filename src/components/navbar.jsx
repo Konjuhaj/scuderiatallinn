@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, NavLink, useLocation } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 
 export default function Navbar() {
@@ -64,29 +64,27 @@ export default function Navbar() {
           id="navbar-default"
         >
           <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:bg-white">
-            <li>
-              <NavLink
-                to="/"
-                className={() =>
-                  "block py-2 px-3 text-black bg-red-500 rounded md:bg-transparent md:p-0" +
-                    pathname ===
-                  "/"
-                    ? "md:text-red-500"
-                    : ""
-                }
-              >
-                HOME
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/cars"
-                activeClassName="text-red-500"
-                // className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-red-500 md:p-0"
-              >
-                CARS
-              </NavLink>
-            </li>
+		  <li>
+			<NavLink
+			to="/"
+			className={
+      		"block py-2 px-3 text-black bg-red-500 rounded md:bg-transparent md:p-0" +
+      		(pathname === "/" ? " md:text-red-500" : "")
+		}>
+			HOME
+  </NavLink>
+  </li>
+  <li>
+	<NavLink
+      to="/cars"
+      className={
+        "block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-red-500 md:p-0" +
+        (pathname === "/cars" ? " text-red-500" : "")
+      }
+    >
+      CARS
+    </NavLink>
+	</li>
             <li>
               <HashLink
                 to="/#events"
