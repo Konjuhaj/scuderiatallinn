@@ -15,7 +15,7 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav className="bg-white">
+    <nav className="bg-white sticky top-0">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <a
           href="http://localhost:5173/"
@@ -64,33 +64,34 @@ export default function Navbar() {
           id="navbar-default"
         >
           <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:bg-white">
-		  <li>
-			<NavLink
-			to="/"
-			className={
-      		"block py-2 px-3 text-black bg-red-500 rounded md:bg-transparent md:p-0" +
-      		(pathname === "/" ? " md:text-red-500" : "")
-		}>
-			HOME
-  </NavLink>
-  </li>
-  <li>
-	<NavLink
-      to="/cars"
-      className={
-        "block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-red-500 md:p-0" +
-        (pathname === "/cars" ? " text-red-500" : "")
-      }
-    >
-      CARS
-    </NavLink>
-	</li>
+            <li>
+              <NavLink
+                to="/"
+                className={
+                  "block py-2 px-3 text-black bg-red-500 rounded md:bg-transparent md:p-0 md:hover:text-red-500" +
+                  (pathname === "/" ? " md:text-red-500" : "")
+                }
+              >
+                Home
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/cars"
+                className={
+                  "block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-red-500 md:p-0" +
+                  (pathname === "/cars" ? " text-red-500" : "")
+                }
+              >
+                Cars
+              </NavLink>
+            </li>
             <li>
               <HashLink
                 to="/#events"
                 className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-red-500 md:p-0 dark:text-black "
               >
-                EVENTS
+                Events
               </HashLink>
             </li>
             <li>
@@ -98,7 +99,7 @@ export default function Navbar() {
                 to="/#showroom"
                 className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-red-500 md:p-0 dark:text-black "
               >
-                CONTACT
+                Contact
               </HashLink>
             </li>
           </ul>

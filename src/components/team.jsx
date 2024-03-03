@@ -4,7 +4,7 @@ function Team() {
   return (
     <div className="flex flex-col justify-center items-center my-10">
       <h1 className="text-2xl font-bold uppercase mt-2">Team</h1>
-      <div className="flex flex-col lg:flex-row gap-10 text-center mt-6 p-2">
+      <div className="flex flex-col md:flex-row gap-10 text-center mt-6 p-2">
         <div className="flex flex-col items-center gap-4">
           <Image
             src="./src/assets/Kihlman_profile.jpeg"
