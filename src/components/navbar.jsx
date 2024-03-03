@@ -1,5 +1,4 @@
 import React from "react";
-import ReactDOM from "react-dom/client";
 
 export default function Navbar() {
   const [openNav, setOpenNav] = React.useState(false);
@@ -24,7 +23,7 @@ export default function Navbar() {
             alt="Flowbite Logo"
           />
           <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-black">
-            Scuderria Tallinn
+            Scuderia Tallinn
           </span>
         </a>
         <button
@@ -64,7 +63,7 @@ export default function Navbar() {
             <li>
               <a
                 href="#"
-                className="block py-2 px-3 text-black bg-red-500 rounded md:bg-transparent md:text-red-500 md:p-0 dark:text-black md:dark:text-red-500"
+                className="block py-2 px-3 text-black bg-red-500 rounded md:bg-transparent md:text-red-500 md:p-0 dark:text-black md:dark:text-red-500 uppercase"
                 aria-current="page"
               >
                 Home
@@ -73,7 +72,7 @@ export default function Navbar() {
             <li>
               <a
                 href="#"
-                className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-red-500 md:p-0 dark:text-black "
+                className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-red-600 md:p-0 dark:text-black uppercase "
               >
                 Cars
               </a>
@@ -81,7 +80,7 @@ export default function Navbar() {
             <li>
               <a
                 href="#"
-                className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-red-500 md:p-0 dark:text-black "
+                className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-red-600 md:p-0 dark:text-black uppercase"
               >
                 Events
               </a>
@@ -89,7 +88,7 @@ export default function Navbar() {
             <li>
               <a
                 href="#"
-                className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-red-500 md:p-0 dark:text-black "
+                className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-red-600 md:p-0 dark:text-black uppercase"
               >
                 Contact
               </a>

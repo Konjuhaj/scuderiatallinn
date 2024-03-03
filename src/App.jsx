@@ -1,6 +1,7 @@
 import "./App.css";
 import About from "./components/about";
 import Events from "./components/events";
+import Footer from "./components/footer";
 import Image from "./components/image";
 import Navbar from "./components/navbar";
 import Service from "./components/service";
@@ -24,6 +25,7 @@ function App() {
       <Events></Events>
       <About></About>
       <Store></Store>
+      <Footer></Footer>
     </>
   );
 }
