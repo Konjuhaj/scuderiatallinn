@@ -1,33 +1,32 @@
 import "./App.css";
-import About from "./components/about";
-import Events from "./components/events";
-import Footer from "./components/footer";
-import Image from "./components/image";
 import Navbar from "./components/navbar";
-import Service from "./components/service";
-import Store from "./components/store";
-import Team from "./components/team";
+import Root from "./routes/root";
+import Template from "./routes/auto24";
+import Cars from "./routes/cars";
+import Footer from "./components/footer";
+
+import { Routes, Route, Outlet } from "react-router-dom";
 
 function App() {
   return (
     <>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Root />} />
+          <Route path="cars" element={<Cars />} />
+          <Route path="auto24" element={<Template />} />
+        </Route>
+      </Routes>
+    </>
+  );
+}
+
+function Layout() {
+  return (
+    <>
       <Navbar />
-      <Image
-        src="src/assets/Hero_1.jpg"
-        alt="placeholder"
-        customClass="w-full lg:max-h-[calc(100vh-20vh)] object-cover"
-      ></Image>
-      <Service></Service>
-      <Image
-        src="src/assets/Hero_2.jpg"
-        alt="placeholder"
-        customClass="w-full max-h-96 object-cover"
-      ></Image>
-      <Events></Events>
-      <About></About>
-      <Store></Store>
-      <Team></Team>
-      <Footer></Footer>
+      <Outlet />
+      <Footer />
     </>
   );
 }

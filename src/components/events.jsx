@@ -1,7 +1,10 @@
 function Events() {
   return (
     <>
-      <div className="flex flex-col items-center lg:my-24 my-16 gap-12">
+      <div
+        id="events"
+        className="flex flex-col items-center lg:my-24 my-16 gap-12"
+      >
         <h1 className="text-2xl font-bold uppercase">Upcoming Events</h1>
 
         <Event

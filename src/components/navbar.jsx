@@ -1,8 +1,12 @@
 import React from "react";
+import { Link, NavLink, useLocation } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 
 export default function Navbar() {
   const [openNav, setOpenNav] = React.useState(false);
+  const { pathname } = useLocation();
 
+  console.log(pathname);
   React.useEffect(() => {
     window.addEventListener(
       "resize",
@@ -61,37 +65,43 @@ export default function Navbar() {
         >
           <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:bg-white">
             <li>
-              <a
-                href="#"
-                className="block py-2 px-3 text-black bg-red-500 rounded md:bg-transparent md:text-red-500 md:p-0 dark:text-black md:dark:text-red-500 uppercase"
-                aria-current="page"
+              <NavLink
+                to="/"
+                className={() =>
+                  "block py-2 px-3 text-black bg-red-500 rounded md:bg-transparent md:p-0" +
+                    pathname ===
+                  "/"
+                    ? "md:text-red-500"
+                    : ""
+                }
               >
-                Home
-              </a>
+                HOME
+              </NavLink>
             </li>
             <li>
-              <a
-                href="#"
-                className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-red-600 md:p-0 dark:text-black uppercase "
+              <NavLink
+                to="/cars"
+                activeClassName="text-red-500"
+                // className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-red-500 md:p-0"
               >
-                Cars
-              </a>
+                CARS
+              </NavLink>
             </li>
             <li>
-              <a
-                href="#"
-                className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-red-600 md:p-0 dark:text-black uppercase"
+              <HashLink
+                to="/#events"
+                className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-red-500 md:p-0 dark:text-black "
               >
-                Events
-              </a>
+                EVENTS
+              </HashLink>
             </li>
             <li>
-              <a
-                href="#"
-                className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-red-600 md:p-0 dark:text-black uppercase"
+              <HashLink
+                to="/#showroom"
+                className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-red-500 md:p-0 dark:text-black "
               >
-                Contact
-              </a>
+                CONTACT
+              </HashLink>
             </li>
           </ul>
         </div>
