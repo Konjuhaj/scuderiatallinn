@@ -6,6 +6,7 @@ import Image from "./components/image";
 import Navbar from "./components/navbar";
 import Service from "./components/service";
 import Store from "./components/store";
+import Team from "./components/team";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
       <Events></Events>
       <About></About>
       <Store></Store>
+      <Team></Team>
       <Footer></Footer>
     </>
   );

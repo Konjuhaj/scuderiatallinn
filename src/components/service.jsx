@@ -1,9 +1,9 @@
 function service() {
   return (
 	<>
-	<div className="flex flex-col justify-center text-center my-16 lg:my-24">
+	<div className="flex flex-col justify-center text-center my-12 lg:my-24">
 	  <h1 className="font-bold text-2xl uppercase ">WHAT SCUDERIA TALLINN OFFERS</h1>
-	  <div className="flex lg:flex-row flex-col w-full justify-center items-center lg:items-start lg:gap-24 gap-10 mt-10 p-10">
+	  <div className="flex lg:flex-row flex-col w-full justify-center items-center lg:items-start lg:gap-24 gap-10 lg:mt-10 p-10">
 		<div className="lg:w-1/5 w-2/3">
 		  <h2 className="font-bold">PRE-OWNED FERRARI'S</h2>
 		  <p className="mt-2">With the longest experience with Ferrari's in Estonia we are able
