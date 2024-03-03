@@ -8,7 +8,7 @@ export default function Root() {
   return (
     <>
       <Image
-        src="src/assets/Hero_1.jpg"
+        src="src/assets/Hero_1-1.jpg"
         alt="placeholder"
         customClass="w-full lg:max-h-[calc(100vh-20vh)] object-cover"
       ></Image>
