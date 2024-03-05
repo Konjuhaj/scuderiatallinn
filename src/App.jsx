@@ -1,11 +1,12 @@
 import "./App.css";
+import Footer from "./components/footer";
 import Navbar from "./components/navbar";
-import Root from "./routes/root";
 import Template from "./routes/auto24";
 import Cars from "./routes/cars";
-import Footer from "./components/footer";
+import Pagenotfound from "./routes/pagenotfound";
+import Root from "./routes/root";
 
-import { Routes, Route, Outlet } from "react-router-dom";
+import { Outlet, Route, Routes } from "react-router-dom";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route index element={<Root />} />
           <Route path="cars" element={<Cars />} />
           <Route path="auto24" element={<Template />} />
+          <Route path="*" element={<Pagenotfound />} />
         </Route>
       </Routes>
     </>

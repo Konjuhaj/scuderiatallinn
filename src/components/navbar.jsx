@@ -15,7 +15,7 @@ export default function Navbar() {
 	}, []);
 
 	return (
-		<nav id="top" className="bg-white sticky top-0">
+		<nav id="navbar" className="bg-white sticky top-0">
 			<div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
 				<a
 					href="http://localhost:5173/"
@@ -33,7 +33,7 @@ export default function Navbar() {
 				<button
 					data-collapse-toggle="navbar-default"
 					type="button"
-					className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+					className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:none "
 					aria-controls="navbar-default"
 					aria-expanded="false"
 					onClick={() => setOpenNav(!openNav)}
@@ -63,50 +63,51 @@ export default function Navbar() {
 					}
 					id="navbar-default"
 				>
-					<ul className="font-medium flex flex-col p-4 md:p-0 mt-4 bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:bg-white">
-						<li>
-							<HashLink
-								to="/#"
-								scroll={(el) => el.scrollIntoView({ behavior: 'smooth', block: 'top' })}
-								className={"block py-2 px-3 text-black bg-red-500 rounded md:bg-transparent md:p-0 md:hover:text-red-500" +
-									(pathname === "/" ? " md:text-red-500" : "")
-								}
-								onClick={() => {
-									if (pathname === "/" || pathname === "/#events" || pathname === "/contact") {
-										window.scrollTo({ top: 0, behavior: 'smooth' });
-									}
-								}}>
-								Home</HashLink>
-						</li>
-						<li>
-							<NavLink
-								to="/cars"
-								className={
-									"block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-red-500 md:p-0" +
-									(pathname === "/cars" ? " text-red-500" : "")
-								}
-							>
-								Cars
-							</NavLink>
-						</li>
-						<li>
-							<HashLink
-								to="/#events"
-								className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-red-500 md:p-0 dark:text-black "
-							>
-								Events
-							</HashLink>
-						</li>
-						<li>
-							<HashLink
-								to="/#showroom"
-								className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-red-500 md:p-0 dark:text-black "
-							>
-								Contact
-							</HashLink>
-						</li>
-					</ul>
 				</div>
+				<ul className="font-medium absolute h-screen right-0 top-0 w-full items-center justify-center md:items-start
+				md:right-auto md:top-auto  md:w-auto  md:relative md:h-auto flex flex-col mt-4 bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:bg-white">
+					<li>
+						<HashLink
+							to="/#"
+							scroll={(el) => el.scrollIntoView({ behavior: 'smooth', block: 'top' })}
+							className={"block py-2 px-3 text-black bg-red-500 rounded md:bg-transparent md:p-0 md:hover:text-red-500" +
+								(pathname === "/" ? " md:text-red-500" : "")
+							}
+							onClick={() => {
+								if (pathname === "/" || pathname === "/#events" || pathname === "/contact") {
+									window.scrollTo({ top: 0, behavior: 'smooth' });
+								}
+							}}>
+							Home</HashLink>
+					</li>
+					<li>
+						<NavLink
+							to="/cars"
+							className={
+								"block py-2 px-3 text-gray-900 rounded md:hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-red-500 md:p-0" +
+								(pathname === "/cars" ? " text-red-500" : "")
+							}
+						>
+							Cars
+						</NavLink>
+					</li>
+					<li>
+						<HashLink
+							to="/#events"
+							className="block py-2 px-3 text-gray-900 rounded md:hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-red-500 md:p-0 dark:text-black "
+						>
+							Events
+						</HashLink>
+					</li>
+					<li>
+						<HashLink
+							to="/#showroom"
+							className="block py-2 px-3 text-gray-900 rounded md:hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-red-500 md:p-0 dark:text-black "
+						>
+							Contact
+						</HashLink>
+					</li>
+				</ul>
 			</div>
 		</nav>
 	);
