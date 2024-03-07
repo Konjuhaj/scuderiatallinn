@@ -32,7 +32,7 @@ export default function Navbar() {
 	
 	return (
     <nav id="navbar" className="bg-white sticky top-0">
-      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+      <div className="flex flex-wrap items-center justify-between mx-auto py-4 px-6">
         <a
           href="http://localhost:5173/"
           className="flex items-center space-x-3 rtl:space-x-reverse"
@@ -84,7 +84,7 @@ export default function Navbar() {
           id="navbar-default"
         >
           <ul
-		  className="font-medium w-full sm:w-auto h-svh justify-center items-center sm:h-auto pb-28 flex flex-col p-4 sm:relative sm:p-0 mt-4 sm:flex-row sm:space-x-8 rtl:space-x-reverse sm:mt-0">
+		  className="font-medium w-full sm:w-auto h-svh justify-center items-center sm:h-auto pb-28 flex flex-col p-4 sm:relative sm:p-0 mt-4 sm:flex-row sm:space-x-6 rtl:space-x-reverse sm:mt-0">
             <li>
               <HashLink
                 to="/#"
