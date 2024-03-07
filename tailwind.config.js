@@ -10,6 +10,9 @@ module.exports = {
       maxHeight: {
         '130': '32rem',
       },
+      fontFamily: {
+        sans: ['"Red Hat Display"', 'sans-serif']
+      },
     },
   },
   variants: {

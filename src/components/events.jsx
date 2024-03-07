@@ -8,7 +8,7 @@ function Events() {
 				<h1 className="text-2xl font-bold uppercase">Upcoming Events</h1>
 
 				<Event
-					image="..\src\assets\Events.jpg"
+					image="src\assets\Events.jpg"
 					title="Ferrari Event"
 					date="1.2.2023"
 					location="Lintulahdenkatu 6 As, 29"
