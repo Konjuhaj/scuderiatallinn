@@ -1,25 +1,31 @@
 import Image from "../components/image";
 import { useEffect } from "react";
 
-export default function Cars() {
+export default function Template() {
   useEffect(() => {
     const script = document.createElement("script");
-
+    const script2 = document.createElement("script");
     script.src = "//www.auto24.ee/api/auto24API.js?ver=6.0.3";
     script.type = "text/javascript";
-    // script.async = true;
 
-    console.log(import.meta.env.VITE_SOME_KEY);
     script.onload = () => {
-      console.log("sending request");
-      auto24API.load(import.meta.env.VITE_SOME_KEY);
-      console.log("received response");
+      document.body.appendChild(script2);
+      window.auto24Callback = (data) => {
+        console.log("Data received:", data);
+      };
+      script2.appendChild(
+        document.createTextNode(`
+                  auto24API.setCallback(auto24Callback)
+                    auto24API.load('80023381ff22186911bc932eff366eab');`)
+      );
     };
 
     document.body.appendChild(script);
+    document.body.appendChild(script2);
 
     return () => {
       document.body.removeChild(script);
+      delete window.auto24Callback;
     };
   }, []);
   return (

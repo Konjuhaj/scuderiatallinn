@@ -9,13 +9,6 @@ export default function Template() {
     script.type = "text/javascript";
     // script.async = true;
 
-    console.log(import.meta.env.VITE_SOME_KEY);
-    script.onload = () => {
-      console.log("sending request");
-      auto24API.load(import.meta.env.VITE_SOME_KEY);
-      console.log("received response");
-    };
-
     document.body.appendChild(script);
 
     return () => {
@@ -32,6 +25,7 @@ export default function Template() {
       ></Image>
       <div className="auto24">{divContent}</div>
       <div id="auto24Content"></div>
+      <script>{auto24API.load(import.meta.env.VITE_SOME_KEY)}</script>
     </>
   );
 }
