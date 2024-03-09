@@ -3,19 +3,20 @@ import { useEffect } from "react";
 
 export default function Cars() {
   useEffect(() => {
-    const scriptBase = document.createElement("script");
-    const scriptCall = document.createElement("script");
+    const script = document.createElement("script");
 
-    scriptBase.src = "//www.auto24.ee/api/auto24API.js";
-    scriptBase.type = "text/javascript";
-    // script.async = true;
-    scriptCall.innerText = `auto24API.load(${import.meta.env.AUTO24KEY});`;
+    script.src = "//www.auto24.ee/api/auto24API.js?ver=6.0.3";
+    script.type = "text/javascript";
+    script.async = true;
 
-    document.body.appendChild(scriptBase);
-    document.body.appendChild(scriptCall);
+    script.onload = () => {
+      auto24API.load(import.meta.env.AUTO24KEY);
+    };
+
+    document.body.appendChild(script);
 
     return () => {
-      document.body.removeChild(scriptBase);
+      document.body.removeChild(script);
     };
   }, []);
   return (
