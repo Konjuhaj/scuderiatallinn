@@ -12,13 +12,10 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path="/scuderiatallinn" element={<Layout />}>
+        <Route path="/" element={<Layout />}>
           <Route index element={<Root />} />
-          <Route path="scuderiatallinn/cars" element={<Cars />} />
-          <Route
-            path="scuderiatallinn/template/auto24"
-            element={<Template />}
-          />
+          <Route path="cars" element={<Cars />} />
+          <Route path="template/auto24" element={<Template />} />
           <Route path="*" element={<Pagenotfound />} />
         </Route>
       </Routes>

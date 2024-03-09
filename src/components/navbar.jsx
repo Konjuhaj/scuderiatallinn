@@ -16,7 +16,6 @@ export default function Navbar() {
 
     const body = document.querySelector("body");
     if (openNav) {
-
       body.style.overflow = "hidden"; // Prevent scrolling
     } else {
       body.style.overflow = "auto"; // Allow scrolling
@@ -26,7 +25,7 @@ export default function Navbar() {
 
     return () => {
       document.removeEventListener("click", closeNavOnOutsideClick);
-      body.style.overflow = "auto"
+      body.style.overflow = "auto";
     };
   }, [openNav]);
 
@@ -83,22 +82,30 @@ export default function Navbar() {
           }
           id="navbar-default"
         >
-          <ul
-            className="font-medium w-full sm:w-auto h-svh justify-center items-center sm:h-auto pb-28 flex flex-col p-4 sm:relative sm:p-0 mt-4 sm:flex-row sm:space-x-6 rtl:space-x-reverse sm:mt-0">
+          <ul className="font-medium w-full sm:w-auto h-svh justify-center items-center sm:h-auto pb-28 flex flex-col p-4 sm:relative sm:p-0 mt-4 sm:flex-row sm:space-x-6 rtl:space-x-reverse sm:mt-0">
             <li>
               <HashLink
                 to="/#"
-                scroll={(el) => el.scrollIntoView({ behavior: 'smooth', block: 'top' })}
-                className={"uppercase font-bold block py-2 px-3 text-black rounded sm:bg-transparent sm:p-0 sm:hover:text-red-500" +
+                scroll={(el) =>
+                  el.scrollIntoView({ behavior: "smooth", block: "top" })
+                }
+                className={
+                  "uppercase font-bold block py-2 px-3 text-black rounded sm:bg-transparent sm:p-0 sm:hover:text-red-500" +
                   (pathname === "/" ? " sm:text-red-500" : "")
                 }
                 onClick={() => {
-                  if (pathname === "/" || pathname === "/#events" || pathname === "/contact") {
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  if (
+                    pathname === "/" ||
+                    pathname === "/#events" ||
+                    pathname === "/contact"
+                  ) {
+                    window.scrollTo({ top: 0, behavior: "smooth" });
                   }
                   setOpenNav(false);
-                }}>
-                Home</HashLink>
+                }}
+              >
+                Home
+              </HashLink>
             </li>
             <li>
               <NavLink
@@ -110,7 +117,6 @@ export default function Navbar() {
                 onClick={() => setOpenNav(false)}
               >
                 Cars
-
               </NavLink>
             </li>
             <li>
