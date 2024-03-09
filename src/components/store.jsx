@@ -8,7 +8,7 @@ function store() {
 		>
 			<div className="lg:w-1/2">
 				<Image
-					src="src/assets/Store-2.jpg"
+					src="./assets/Store-2.jpg"
 					alt="placeholder"
 					customClass="w-full max-h-130 object-cover object-center"
 				></Image>

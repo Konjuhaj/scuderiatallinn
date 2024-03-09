@@ -9,7 +9,7 @@ function Team() {
 				<div className="flex md:flex-row flex-col gap-10">
 					<div className="w-52 flex flex-col items-center gap-4">
 						<Image
-							src="./src/assets/Kihlman_profile.jpeg"
+							src="./assets/Kihlman_profile.jpeg"
 							alt="Torsten Kihlman"
 							customClass="w-36 h-36 rounded-full object-cover"
 						></Image>
@@ -24,7 +24,7 @@ function Team() {
 					</div>
 					<div className="w-52 flex flex-col items-center gap-4">
 						<Image
-							src="./src/assets/Events_2.jpg"
+							src="./assets/Events_2.jpg"
 							alt="Jana Nikolajeva"
 							customClass="w-36 h-36 rounded-full object-cover"
 						></Image>
@@ -43,7 +43,7 @@ function Team() {
 				<div className="flex md:flex-row flex-col gap-10">
 					<div className="w-52 flex flex-col items-center gap-4">
 						<Image
-							src="./src/assets/Events_2.jpg"
+							src="./assets/Events_2.jpg"
 							alt="Toni Vilander"
 							customClass="w-36 h-36 rounded-full object-cover"
 						></Image>
@@ -58,7 +58,7 @@ function Team() {
 					</div>
 					<div className="w-52 flex flex-col items-center gap-4">
 						<Image
-							src="./src/assets/Events_2.jpg"
+							src="./assets/Events_2.jpg"
 							alt="Samuli Hepola"
 							customClass="w-36 h-36 rounded-full object-cover"
 						></Image>

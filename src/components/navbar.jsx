@@ -38,7 +38,7 @@ export default function Navbar() {
           className="flex items-center space-x-3 rtl:space-x-reverse"
         >
           <img
-            src="{Logo}"
+            src="./assets/Scuderia_Tallinn_Logo_white.jpg"
             className="h-8"
             alt="Scuderia Logo"
           />
