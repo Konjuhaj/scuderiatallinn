@@ -9,10 +9,11 @@ export default function Cars() {
     script.type = "text/javascript";
     script.async = true;
 
+    console.log(import.meta.env.VITE_SOME_KEY);
     script.onload = () => {
-      auto24API.load(process.env.REACT_APP_AUTO24KEY);
+      auto24API.load(import.meta.env.VITE_SOME_KEY);
 
-      console.log(process.env.REACT_APP_AUTO24KEY);
+      console.log(import.meta.env.VITE_SOME_KEY);
     };
 
     document.body.appendChild(script);

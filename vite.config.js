@@ -5,4 +5,5 @@ import { defineConfig } from "vite";
 export default defineConfig({
   base: "/scuderiatallinn/",
   plugins: [react()],
+  envDir: "./env",
 });
