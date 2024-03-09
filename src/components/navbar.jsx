@@ -3,34 +3,34 @@ import { NavLink, useLocation } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 
 export default function Navbar() {
-	const [openNav, setOpenNav] = React.useState(false);
-	const { pathname } = useLocation();
-	const navRef = React.useRef(null);
-  
-	React.useEffect(() => {
-	  const closeNavOnOutsideClick = (event) => {
-		if (navRef.current && !navRef.current.contains(event.target)) {
-		  setOpenNav(false);
-		}
-	  };
+  const [openNav, setOpenNav] = React.useState(false);
+  const { pathname } = useLocation();
+  const navRef = React.useRef(null);
 
-	  const body = document.querySelector("body");
-	  if (openNav) {
+  React.useEffect(() => {
+    const closeNavOnOutsideClick = (event) => {
+      if (navRef.current && !navRef.current.contains(event.target)) {
+        setOpenNav(false);
+      }
+    };
 
-		body.style.overflow = "hidden"; // Prevent scrolling
-	  } else {
-		body.style.overflow = "auto"; // Allow scrolling
-	  }
-  
-	  document.addEventListener("click", closeNavOnOutsideClick);
-  
-	  return () => {
-		document.removeEventListener("click", closeNavOnOutsideClick);
-		body.style.overflow = "auto"
-	  };
-	}, [openNav]);
-	
-	return (
+    const body = document.querySelector("body");
+    if (openNav) {
+
+      body.style.overflow = "hidden"; // Prevent scrolling
+    } else {
+      body.style.overflow = "auto"; // Allow scrolling
+    }
+
+    document.addEventListener("click", closeNavOnOutsideClick);
+
+    return () => {
+      document.removeEventListener("click", closeNavOnOutsideClick);
+      body.style.overflow = "auto"
+    };
+  }, [openNav]);
+
+  return (
     <nav id="navbar" className="bg-white sticky top-0">
       <div className="flex flex-wrap items-center justify-between mx-auto py-4 px-6">
         <a
@@ -38,7 +38,7 @@ export default function Navbar() {
           className="flex items-center space-x-3 rtl:space-x-reverse"
         >
           <img
-            src="src\assets\Scuderia_Tallinn_Logo_White.jpg"
+            src="\scuderiatallinn\src\assets\Scuderia_Tallinn_Logo_White.jpg"
             className="h-8"
             alt="Scuderia Logo"
           />
@@ -84,7 +84,7 @@ export default function Navbar() {
           id="navbar-default"
         >
           <ul
-		  className="font-medium w-full sm:w-auto h-svh justify-center items-center sm:h-auto pb-28 flex flex-col p-4 sm:relative sm:p-0 mt-4 sm:flex-row sm:space-x-6 rtl:space-x-reverse sm:mt-0">
+            className="font-medium w-full sm:w-auto h-svh justify-center items-center sm:h-auto pb-28 flex flex-col p-4 sm:relative sm:p-0 mt-4 sm:flex-row sm:space-x-6 rtl:space-x-reverse sm:mt-0">
             <li>
               <HashLink
                 to="/#"
@@ -96,7 +96,7 @@ export default function Navbar() {
                   if (pathname === "/" || pathname === "/#events" || pathname === "/contact") {
                     window.scrollTo({ top: 0, behavior: 'smooth' });
                   }
-				  setOpenNav(false);
+                  setOpenNav(false);
                 }}>
                 Home</HashLink>
             </li>
@@ -107,7 +107,7 @@ export default function Navbar() {
                   "block py-2 px-3 text-gray-900 rounded sm:hover:bg-gray-100 sm:hover:bg-transparent sm:border-0 sm:hover:text-red-500 sm:p-0" +
                   (pathname === "/cars" ? " text-red-500" : "")
                 }
-				onClick={() => setOpenNav(false)}
+                onClick={() => setOpenNav(false)}
               >
                 Cars
 
@@ -117,7 +117,7 @@ export default function Navbar() {
               <HashLink
                 to="/#events"
                 className="block py-2 px-3 text-gray-900 rounded sm:hover:bg-gray-100 sm:hover:bg-transparent sm:border-0 sm:hover:text-red-500 sm:p-0 dark:text-black "
-				onClick={() => setOpenNav(false)}
+                onClick={() => setOpenNav(false)}
               >
                 Events
               </HashLink>
@@ -126,7 +126,7 @@ export default function Navbar() {
               <HashLink
                 to="/#showroom"
                 className="block py-2 px-3 text-gray-900 rounded sm:hover:bg-gray-100 sm:hover:bg-transparent sm:border-0 sm:hover:text-red-500 sm:p-0 dark:text-black "
-				onClick={() => setOpenNav(false)}
+                onClick={() => setOpenNav(false)}
               >
                 Contact
               </HashLink>
