@@ -1,32 +1,31 @@
 import Image from "../components/image";
 import { useEffect } from "react";
 
+const auto24Callback = () => {
+  console.log("callback called");
+};
+
 export default function Template() {
   useEffect(() => {
     const script = document.createElement("script");
-    const script2 = document.createElement("script");
-    script.src = "//www.auto24.ee/api/auto24API.js?ver=6.0.3";
-    script.type = "text/javascript";
+    const root = document.querySelector("#auto24Content");
+
+    script.src =
+      "//www.auto24.ee/api/auto24API.js?ver=6.0.3&callback=auto24Callback";
+    script.type = "module";
+    // script.async = true;
 
     script.onload = () => {
-      document.body.appendChild(script2);
-      window.auto24Callback = (data) => {
-        console.log("Data received:", data);
-      };
-      script2.appendChild(
-        document.createTextNode(`
-                  auto24API.setCallback(auto24Callback)
-                    auto24API.load('80023381ff22186911bc932eff366eab');`)
-      );
+      console.log("sending request");
+      auto24API.load(import.meta.env.VITE_SOME_KEY);
+
+      auto24API.setCallback(auto24Callback);
+      console.log("received response");
     };
 
-    document.body.appendChild(script);
-    document.body.appendChild(script2);
+    root.prepend(script);
 
-    return () => {
-      document.body.removeChild(script);
-      delete window.auto24Callback;
-    };
+    return () => {};
   }, []);
   return (
     <>
