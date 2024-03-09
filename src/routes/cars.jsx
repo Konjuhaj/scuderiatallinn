@@ -10,7 +10,7 @@ export default function Cars() {
     script.async = true;
 
     script.onload = () => {
-      auto24API.load(import.meta.env.AUTO24KEY);
+      auto24API.load(process.env.AUTO24KEY);
     };
 
     document.body.appendChild(script);
