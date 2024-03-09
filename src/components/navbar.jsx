@@ -38,7 +38,7 @@ export default function Navbar() {
           className="flex items-center space-x-3 rtl:space-x-reverse"
         >
           <img
-            src={process.env.PUBLIC_URL + "/assets/Scuderia_Tallinn_Logo_White.jpg"}
+            src={process.env.PUBLIC_URL + "/src/assets/Scuderia_Tallinn_Logo_White.jpg"}
             className="h-8"
             alt="Scuderia Logo"
           />
