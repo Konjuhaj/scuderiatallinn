@@ -14,9 +14,9 @@ function App() {
       <Routes>
         <Route path="/scuderiatallinn" element={<Layout />}>
           <Route index element={<Root />} />
-          <Route path="/scuderiatallinn/cars" element={<Cars />} />
+          <Route path="scuderiatallinn/cars" element={<Cars />} />
           <Route
-            path="/scuderiatallinn/template/auto24"
+            path="scuderiatallinn/template/auto24"
             element={<Template />}
           />
           <Route path="*" element={<Pagenotfound />} />
