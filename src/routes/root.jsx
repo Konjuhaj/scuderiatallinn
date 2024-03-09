@@ -8,13 +8,13 @@ export default function Root() {
   return (
     <>
       <Image
-        src="src/assets/Hero_1-1.jpg"
+        src="./assets/Hero_1-1.jpg"
         alt="placeholder"
         customClass="w-full lg:max-h-[calc(100vh-20vh)] object-cover"
       ></Image>
       <Service></Service>
       <Image
-        src="src/assets/Hero_2.jpg"
+        src="./assets/Hero_2.jpg"
         alt="placeholder"
         customClass="w-full max-h-96 object-cover"
       ></Image>

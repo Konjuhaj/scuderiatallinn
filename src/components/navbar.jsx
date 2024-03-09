@@ -38,7 +38,7 @@ export default function Navbar() {
           className="flex items-center space-x-3 rtl:space-x-reverse"
         >
           <img
-            src="./assets/Scuderia_Tallinn_Logo_white.jpg"
+            src="./assets/Scuderia_Tallinn_Logo_White.jpg"
             className="h-8"
             alt="Scuderia Logo"
           />
@@ -89,7 +89,7 @@ export default function Navbar() {
               <HashLink
                 to="/#"
                 scroll={(el) => el.scrollIntoView({ behavior: 'smooth', block: 'top' })}
-                className={"block py-2 px-3 text-black rounded sm:bg-transparent sm:p-0 sm:hover:text-red-500" +
+                className={"uppercase font-bold block py-2 px-3 text-black rounded sm:bg-transparent sm:p-0 sm:hover:text-red-500" +
                   (pathname === "/" ? " sm:text-red-500" : "")
                 }
                 onClick={() => {
@@ -104,7 +104,7 @@ export default function Navbar() {
               <NavLink
                 to="/cars"
                 className={
-                  "block py-2 px-3 text-gray-900 rounded sm:hover:bg-gray-100 sm:hover:bg-transparent sm:border-0 sm:hover:text-red-500 sm:p-0" +
+                  "uppercase font-bold block py-2 px-3 text-gray-900 rounded sm:hover:bg-gray-100 sm:hover:bg-transparent sm:border-0 sm:hover:text-red-500 sm:p-0" +
                   (pathname === "/cars" ? " text-red-500" : "")
                 }
                 onClick={() => setOpenNav(false)}
@@ -116,7 +116,7 @@ export default function Navbar() {
             <li>
               <HashLink
                 to="/#events"
-                className="block py-2 px-3 text-gray-900 rounded sm:hover:bg-gray-100 sm:hover:bg-transparent sm:border-0 sm:hover:text-red-500 sm:p-0 dark:text-black "
+                className="uppercase font-bold block py-2 px-3 text-gray-900 rounded sm:hover:bg-gray-100 sm:hover:bg-transparent sm:border-0 sm:hover:text-red-500 sm:p-0 dark:text-black "
                 onClick={() => setOpenNav(false)}
               >
                 Events
@@ -125,7 +125,7 @@ export default function Navbar() {
             <li>
               <HashLink
                 to="/#showroom"
-                className="block py-2 px-3 text-gray-900 rounded sm:hover:bg-gray-100 sm:hover:bg-transparent sm:border-0 sm:hover:text-red-500 sm:p-0 dark:text-black "
+                className="uppercase font-bold block py-2 px-3 text-gray-900 rounded sm:hover:bg-gray-100 sm:hover:bg-transparent sm:border-0 sm:hover:text-red-500 sm:p-0 dark:text-black "
                 onClick={() => setOpenNav(false)}
               >
                 Contact
