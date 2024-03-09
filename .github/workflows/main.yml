@@ -39,6 +39,7 @@ jobs:
         run: npm install
       - name: Build
         run: npm run build
+            AUTO24KEY={{secrets.AUTO24KEY}}
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Upload artifact
