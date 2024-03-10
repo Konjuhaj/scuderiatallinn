@@ -1,4 +1,3 @@
-import Image from "../components/image";
 import { useEffect } from "react";
 // import auto24API from "//www.auto24.ee/api/auto24API.js";
 
@@ -22,11 +21,6 @@ export default function Template() {
 
   return (
     <>
-      <Image
-        src="src/assets/Hero_1.jpg"
-        alt="placeholder"
-        customClass="w-full lg:max-h-[calc(100vh-20vh)] object-cover"
-      ></Image>
       {/* <script>{auto24API.load("80023381ff22186911bc932eff366eab")}</script> */}
       <div id="auto24Content"></div>
     </>
