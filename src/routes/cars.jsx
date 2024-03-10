@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 // import auto24API from "//www.auto24.ee/api/auto24API.js";
-import './src/index.css';
 
 export default function Template() {
   useEffect(() => {
