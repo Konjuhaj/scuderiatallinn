@@ -22,12 +22,14 @@ export default function Template() {
   useEffect(() => {
     // Select elements by class name and apply styles
     const searchFields = document.querySelector('.searchFields');
+    console.log(searchFields);
     if (searchFields) {
       searchFields.style.visibility = 'hidden';
       searchFields.style.height = '0';
     }
 
     const vehiclesList = document.querySelector('.vehicles_list');
+    console.log(vehiclesList);
     if (vehiclesList) {
       vehiclesList.style.display = 'grid';
       vehiclesList.style.gridTemplateColumns = '1fr 1fr 1fr';
