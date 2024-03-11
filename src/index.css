@@ -5,20 +5,18 @@
 
 html {
   scroll-behavior: smooth;
-  background-color: red;
 }
 
-
-.seachFields {
-  
+.searchFields {
   visibility: hidden;
   height: 0;
 }
 
-.vecicles_list {
+.vehicles_list {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 1rem;
   justify-items: center; /* Center items horizontally */
-  padding-x: 10rem;
+  padding-left: 10rem;
+  padding-right: 10rem;
 }

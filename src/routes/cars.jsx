@@ -19,27 +19,6 @@ export default function Template() {
     root.insertBefore(script, auto24Content);
   }, []);
 
-  useEffect(() => {
-    // Select elements by class name and apply styles
-    const searchFields = document.querySelector('.searchFields');
-    console.log(searchFields);
-    if (searchFields) {
-      searchFields.style.visibility = 'hidden';
-      searchFields.style.height = '0';
-    }
-
-    const vehiclesList = document.querySelector('.vehicles_list');
-    console.log(vehiclesList);
-    if (vehiclesList) {
-      vehiclesList.style.display = 'grid';
-      vehiclesList.style.gridTemplateColumns = '1fr 1fr 1fr';
-      vehiclesList.style.gap = '1rem';
-      vehiclesList.style.justifyItems = 'center';
-      vehiclesList.style.paddingLeft = '10rem';
-      vehiclesList.style.paddingRight = '10rem';
-    }
-  }, []);
-
   return (
     <>
       {/* <script>{auto24API.load("80023381ff22186911bc932eff366eab")}</script> */}
