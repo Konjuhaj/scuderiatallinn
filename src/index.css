@@ -17,6 +17,25 @@ html {
   grid-template-columns: 1fr 1fr 1fr;
   gap: 1rem;
   justify-items: center; /* Center items horizontally */
+  padding-top: 5rem;
   padding-left: 10rem;
   padding-right: 10rem;
+}
+
+.vehicles_list img {
+  width: 100%; /* Make image fill the grid item */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: cover; /* Cover the grid item */
+}
+
+.vehicles_list h2 {
+  margin-top: 1rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1a202c;
+}
+
+.vehicles_list p {
+  font-size: 1.25rem;
+  color: #718096;
 }
