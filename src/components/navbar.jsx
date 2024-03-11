@@ -137,6 +137,15 @@ export default function Navbar() {
                 Contact
               </HashLink>
             </li>
+            <li>
+              <HashLink
+                to="/template/auto24"
+                className="uppercase font-bold block py-2 px-3 text-gray-900 rounded sm:hover:bg-gray-100 sm:hover:bg-transparent sm:border-0 sm:hover:text-red-500 sm:p-0 dark:text-black "
+                onClick={() => setOpenNav(false)}
+              >
+                Contact
+              </HashLink>
+            </li>
           </ul>
         </div>
       </div>
