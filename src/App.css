@@ -1,3 +1,16 @@
 html {
   scroll-behavior: smooth;
 }
+
+.seachFields {
+  visibility: hidden;
+  height: 0;
+}
+
+.vecicles_list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+  justify-items: center; /* Center items horizontally */
+  padding-x: 10rem;
+}

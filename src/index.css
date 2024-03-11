@@ -5,10 +5,12 @@
 
 html {
   scroll-behavior: smooth;
+  background-color: red;
 }
 
 
 .seachFields {
+  
   visibility: hidden;
   height: 0;
 }
