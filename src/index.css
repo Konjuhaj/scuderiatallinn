@@ -110,7 +110,7 @@ html {
   font-weight: 600;
 }
 
-span.-transmission, span.-fuel, span.-comma {
+span.-transmission, span.-fuel, span.-comma span.dataCell__equipment {
   display: none;
   visibility: hidden;
 }
