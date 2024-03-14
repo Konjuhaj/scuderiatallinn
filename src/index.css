@@ -53,34 +53,40 @@ html {
   padding-right: 10rem;
 }
 
-/* Medium screens (e.g., 768px and up) */
-@media (min-width: 768px) {
+/* Medium screens (e.g., 720px and up) */
+@media (min-width: 720px) {
   .vehicles_list {
     grid-template-columns: repeat(2, 1fr); /* 2 columns for medium screens */
   }
 }
 
-/* Large screens (e.g., 1024px and up) */
-@media (min-width: 1024px) {
+/* Large screens (e.g., 1080px and up) */
+@media (min-width: 1080px) {
   .vehicles_list {
     grid-template-columns: repeat(3, 1fr); /* 3 columns for large screens */
   }
 }
 
 .vehicles_list img {
-  width: 100%;
-  height: auto;
   object-fit: cover;
 }
 
-.vehicles_list h2 {
-  margin-top: 1rem;
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #1a202c;
+[class^="vehicles_list_row"] {
+  width: min-content;
 }
 
-.vehicles_list p {
-  font-size: 1.25rem;
-  color: #718096;
+.vehicles_list_title_cell {
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 0.4rem;
+}
+
+.vehicles_list_data_cell.dataCell {
+  font-size: 0.8rem;
+  padding: 0.5rem;
+}
+
+span.-transmission, span.-fuel, span.-comma {
+  display: none;
+  visibility: hidden;
 }
