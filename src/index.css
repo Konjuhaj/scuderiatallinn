@@ -90,9 +90,13 @@ html {
 }
 
 .vehicles_list_title_cell {
-  font-size: 0.9rem;
+  display: flex;
+  font-size: .9rem;
   font-weight: 600;
   padding: 0.5rem;
+  text-wrap: pretty;
+  height: 3.5rem;
+  align-items: end;
 }
 
 .vehicles_list_data_cell.dataCell {
