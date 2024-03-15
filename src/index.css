@@ -81,13 +81,16 @@ html {
 
 .vehicles_list_data_cell.dataCell {
   font-size: 0.8rem;
-  padding: 0.5rem;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+  padding-top: 0.5rem;
 }
 
 .vehicles_list_price_cell {
-  padding: 0.5rem;
-  font-size: 0.9rem;
-  font-weight: 600;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 800;
 }
 
 span.-transmission, span.-fuel, span.-comma, span.dataCell__equipment {
@@ -98,4 +101,8 @@ span.-transmission, span.-fuel, span.-comma, span.dataCell__equipment {
 
 span.-mileage {
   display: block;
+}
+
+br {
+  display: none;
 }
