@@ -93,4 +93,9 @@ html {
 span.-transmission, span.-fuel, span.-comma, span.dataCell__equipment {
   display: none;
   visibility: hidden;
+  margin-right: 3px
+}
+
+span.-mileage {
+  display: block;
 }
