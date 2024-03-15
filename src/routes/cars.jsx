@@ -22,7 +22,7 @@ export default function Template() {
   return (
     <>
       {/* <script>{auto24API.load("80023381ff22186911bc932eff366eab")}</script> */}
-      <div className="py-2 sm:py-5" id="auto24Content"></div>
+      <div id="auto24Content"></div>
     </>
   );
 }
