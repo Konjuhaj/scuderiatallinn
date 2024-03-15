@@ -12,16 +12,6 @@ html {
   height: 0;
 }
 
-.vehicles_list {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 1rem;
-  justify-items: center;
-  padding-top: 5rem;
-  padding-left: 10rem;
-  padding-right: 10rem;
-}
-
 .vehicles_list img {
   width: 100%;
   height: auto;
@@ -51,8 +41,6 @@ html {
   gap: 1rem;
   flex-wrap: wrap;
   justify-content: center;
-  padding-top: 5rem;
-  padding-bottom: 5rem;
   padding-left: 2rem;
   padding-right: 2rem;
   margin-left: auto;
