@@ -74,12 +74,19 @@ html {
   font-size: 0.8rem;
   padding-top: 0.5rem;
   order: 2;
+  position: relative;
+
 }
 
 .vehicles_list_price_cell {
   font-size: 0.8rem;
   font-weight: 800;
   order: 3;
+}
+
+.dataCell__finance {
+  position: absolute;
+  bottom: -36px;
 }
 
 span.-transmission, span.-fuel, span.-comma, span.dataCell__equipment {
