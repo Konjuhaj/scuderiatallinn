@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import PreLoader from "../components/preLoader";
 // import auto24API from "//www.auto24.ee/api/auto24API.js";
 
 export default function Template() {
@@ -22,6 +23,7 @@ export default function Template() {
   return (
     <>
       {/* <script>{auto24API.load("80023381ff22186911bc932eff366eab")}</script> */}
+      <PreLoader></PreLoader>
       <div id="auto24Content"></div>
     </>
   );
