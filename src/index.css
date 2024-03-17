@@ -37,8 +37,8 @@ html {
 
 .vehicles_list {
   display: flex;
-  max-width: 1280px;
-  gap: 1rem;
+  max-width: 1360px;
+  gap: 1.5rem;
   flex-wrap: wrap;
   justify-content: center;
   padding: 2rem;
@@ -47,37 +47,38 @@ html {
 }
 
 .vehicles_list_img_cell {
-  width: 320px;
+  width: 360px;
   height: 240px;
   object-fit: cover;
+  order: 0;
 }
 
 [class^="vehicles_list_row"] {
   width: min-content;
+  display: flex;
+  flex-direction: column;
 }
 
 .vehicles_list_title_cell {
   display: flex;
   font-size: 0.9rem;
   font-weight: 600;
-  padding: 0.5rem;
+  padding-top: 0.6rem;
   text-wrap: pretty;
-  height: 3.5rem;
   align-items: flex-end;
+  order: 1;
 }
 
 .vehicles_list_data_cell.dataCell {
   font-size: 0.8rem;
-  padding-right: 0.5rem;
-  padding-left: 0.5rem;
   padding-top: 0.5rem;
+  order: 2;
 }
 
 .vehicles_list_price_cell {
-  padding-right: 0.5rem;
-  padding-left: 0.5rem;
   font-size: 0.8rem;
   font-weight: 800;
+  order: 3;
 }
 
 span.-transmission, span.-fuel, span.-comma, span.dataCell__equipment {
@@ -92,4 +93,8 @@ span.-mileage {
 
 br {
   display: none;
+}
+
+strong {
+  font-weight: 400;
 }
