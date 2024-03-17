@@ -121,7 +121,7 @@ export default function Navbar() {
             </li>
             <li>
               <HashLink
-                to="/#events"
+                to="//#events"
                 className="uppercase font-bold block py-2 px-3 text-gray-900 rounded sm:hover:bg-gray-100 sm:hover:bg-transparent sm:border-0 sm:hover:text-red-500 sm:p-0 dark:text-black "
                 onClick={() => setOpenNav(false)}
               >
@@ -130,16 +130,7 @@ export default function Navbar() {
             </li>
             <li>
               <HashLink
-                to="/#showroom"
-                className="uppercase font-bold block py-2 px-3 text-gray-900 rounded sm:hover:bg-gray-100 sm:hover:bg-transparent sm:border-0 sm:hover:text-red-500 sm:p-0 dark:text-black "
-                onClick={() => setOpenNav(false)}
-              >
-                Contact
-              </HashLink>
-            </li>
-            <li>
-              <HashLink
-                to="/template/auto24"
+                to="//#showroom"
                 className="uppercase font-bold block py-2 px-3 text-gray-900 rounded sm:hover:bg-gray-100 sm:hover:bg-transparent sm:border-0 sm:hover:text-red-500 sm:p-0 dark:text-black "
                 onClick={() => setOpenNav(false)}
               >
