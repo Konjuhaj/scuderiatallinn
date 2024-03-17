@@ -10,7 +10,7 @@ export default function Root() {
       <Image
         src="./assets/Hero_1-1.jpg"
         alt="placeholder"
-        customClass="w-full lg:max-h-[calc(100vh-20vh)] object-cover"
+        customClass=" w-full lg:max-h-[calc(100vh-20vh)] object-cover  h-[70vh] sm:h-auto"
       ></Image>
       <Service></Service>
       <Image
