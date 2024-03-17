@@ -12,7 +12,7 @@ function App() {
   return (
     <>
       <Routes>
-        <Route exact path="/" element={<Layout />}>
+        <Route exact path="" element={<Layout />}>
           <Route exact index element={<Root />} />
           <Route exact path="cars" element={<Cars />} />
           <Route exact path="template">
