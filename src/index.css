@@ -125,3 +125,51 @@ div#vehicleImagesContentDiv {
   flex: 1 0 30%;
   scroll-snap-align: center;
 }
+
+th.make_and_model_title {
+  visibility: hidden;
+  appearance: none;
+}
+
+table {
+  width: 100%;
+  border-collapse: separate; /* Separate the borders of cells */
+  border-spacing: 0 10px; /* Adds space between rows */
+  margin: 20px 0;
+  font-size: 0.9em;
+  font-family: sans-serif;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+th, td {
+  padding: 12px 15px;
+  text-align: center; /* Center align text */
+  border-bottom: 1px solid #dddddd;
+}
+
+th {
+  background-color: transparent; /* No background color */
+  color: #333; /* Dark text color for contrast */
+  text-transform: uppercase;
+  position: relative; /* Needed for positioning */
+  top: -10px; /* Shift upwards to appear outside */
+}
+
+.make_and_model {
+  font-size: 1.2em;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+tr:nth-of-type(even) {
+  background-color: #ffffff;
+}
+
+tr:last-of-type {
+  border-bottom: 2px solid #009879;
+}
+
+
+.hidden {
+  display: none;
+}
