@@ -14,25 +14,15 @@ export const preLoaderAnim = () => {
 			duration: 0.03,
 			css: { overflowY: "hidden", height: "90vh" },
 		})
-		.to(".texts-container", {
+		.to(".loader", {
 			duration: 0,
 			opacity: 1,
 			ease: "Power3.easeOut",
 		})
-		.from(".texts-container span", {
-			duration: 0.75,
-			delay: 0.5,
-			y: 70,
-			skewY: 10,
-			stagger: 0.2,
-			ease: "Power3.easeOut",
-		})
-		.to(".texts-container span", {
-			duration: 0.5,
-			y: 70,
-			skewY: -20,
-			stagger: 0.1,
-			ease: "Power3.easeOut",
+		.to(".loader l-orbit", {
+			duration: 2,
+			opacity: 0,
+			ease: "power3.easeOut",
 		})
 		.to(".landing", {
 			duration: 0.03,
@@ -73,19 +63,6 @@ export const preLoaderAnim = () => {
 			},
 			ease: "expo.easeOut",
 			onComplete: animateMainShape(),
-		})
-		.from(".main-circle", {
-			duration: 0.5,
-			opacity: 0,
-			ease: "power3.easeInOut",
-			onComplete: animateShapes(),
-		})
-		.from(".shapes .shape", {
-			duration: 0.5,
-			opacity: 0,
-			delay: -0.5,
-			ease: "power3.easeInOut",
-			stagger: 0.5,
 		})
 		.to(".preloader", {
 			duration: 0,

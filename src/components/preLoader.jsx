@@ -15,12 +15,14 @@ const PreLoader = () => {
 	return (
 		<>
 			<div className="preloader w-full h-screen bg-white flex justify-center items-center">
-				<div className=''>
-					<l-orbit
-						size="35"
-						speed="1.5"
-						color="black"
-					></l-orbit>
+				<div className='loader'>
+					<span>
+						<l-orbit
+							size="35"
+							speed="1.5"
+							color="black"
+						></l-orbit>
+					</span>
 				</div>
 			</div>
 		</>

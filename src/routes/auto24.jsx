@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import PreLoader from "../components/preLoader";
 
 export default function Template() {
   useEffect(() => {
@@ -42,6 +43,7 @@ export default function Template() {
 
   return (
     <>
+      <PreLoader></PreLoader>
       <div className="auto24" id="auto24Content">
         {divContent}{" "}
       </div>
