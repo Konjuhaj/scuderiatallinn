@@ -106,3 +106,22 @@ br {
 strong {
   font-weight: 400;
 }
+
+/* CARS DETAILS PAGE */
+
+.DetailWrapper {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+div#vehicleImagesContentDiv {
+  padding: 2rem;
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+}
+
+[class^="vehicleImageDiv"] {
+  flex: 1 0 30%;
+  scroll-snap-align: center;
+}
