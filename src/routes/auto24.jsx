@@ -26,6 +26,20 @@ export default function Template() {
     }
   });
 
+  document.addEventListener('DOMContentLoaded', () => {
+    const headerToRemove = document.querySelector('.make_and_model_title');
+    if (headerToRemove) {
+      headerToRemove.remove();
+    }
+  });
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const makeAndModelCell = document.querySelector('.make_and_model');
+    if (makeAndModelCell) {
+      makeAndModelCell.setAttribute('colspan', '2'); // Or the number of columns in your table
+    }
+  });
+
   return (
     <>
       <div className="auto24" id="auto24Content">

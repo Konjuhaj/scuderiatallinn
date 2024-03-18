@@ -109,6 +109,10 @@ strong {
 
 /* CARS DETAILS PAGE */
 
+.DetailsMain {
+  padding: 2rem;
+}
+
 .DetailWrapper {
   display: flex;
   flex-direction: column-reverse;
@@ -126,11 +130,6 @@ div#vehicleImagesContentDiv {
   scroll-snap-align: center;
 }
 
-th.make_and_model_title {
-  visibility: hidden;
-  appearance: none;
-}
-
 table {
   width: 100%;
   border-collapse: separate; /* Separate the borders of cells */
@@ -138,7 +137,6 @@ table {
   margin: 20px 0;
   font-size: 0.9em;
   font-family: sans-serif;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 
 th, td {
@@ -169,7 +167,11 @@ tr:last-of-type {
   border-bottom: 2px solid #009879;
 }
 
-
-.hidden {
-  display: none;
+.make_and_model {
+  font-size: 1.2em;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: center; /* Center text horizontally */
+  vertical-align: middle; /* Center text vertically */
 }
+
