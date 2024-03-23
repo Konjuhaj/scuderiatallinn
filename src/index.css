@@ -118,16 +118,23 @@ strong {
   flex-direction: column-reverse;
 }
 
-div#vehicleImagesContentDiv {
-  padding: 2rem;
-  display: flex;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
+.slider-container {
+  overflow: hidden;
 }
 
-[class^="vehicleImageDiv"] {
-  flex: 1 0 30%;
-  scroll-snap-align: center;
+.slider-content {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.vehicleImageDiv0,
+.vehicleImageDiv1 {
+  flex: 0 0 auto;
+}
+
+.vehicleImageDiv0,
+.vehicleImageDiv1 {
+  margin-right: 10px; /* Adjust spacing between images */
 }
 
 table {
@@ -135,7 +142,7 @@ table {
   border-collapse: separate; /* Separate the borders of cells */
   border-spacing: 0 10px; /* Adds space between rows */
   margin: 20px 0;
-  font-size: 0.9em;
+  font-size: 0.8em;
   font-family: sans-serif;
 }
 

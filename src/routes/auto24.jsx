@@ -41,17 +41,28 @@ export default function Template() {
     }
   });
 
+  // TypeScript logic for image slider
+  let currentIndex = 0;
+  const slides = document.querySelectorAll('.slider-content > div');
+
+  function showSlide(index) {
+    const container = document.querySelector('.slider-content');
+    const slideWidth = slides[0].getBoundingClientRect().width;
+    container.style.transform = `translateX(${-index * slideWidth}px)`;
+  }
+
+  slides.forEach((slide, index) => {
+    slide.addEventListener('click', () => {
+      currentIndex = index;
+      showSlide(currentIndex);
+    });
+  });
+
   return (
     <>
       <PreLoader></PreLoader>
       <div className="auto24" id="auto24Content">
         {divContent}{" "}
-      </div>
-      <div className="flex flex-col justify-center">
-        <h1>Contact</h1>
-        <h2>Scuderia Tallinn</h2>
-        <h3>+372 566 30 469</h3>
-        <h3>Peterburi tee 50d/1, Tallinn 11415</h3>
       </div>
     </>
   );
