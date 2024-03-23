@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import PreLoader from "../components/preLoader";
-import { a } from "vitest/dist/suite-UrZdHRff";
 
 const DummyComponen = () => {
   const htmlContent = `
