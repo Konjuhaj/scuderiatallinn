@@ -162,19 +162,17 @@ export default function Template() {
     const script = document.createElement("script");
     script.type = "text/javascript";
 
-    script.onload(() => {
-      const javascriptCode = `
+    const javascriptCode = `
       auto24API.setCallback(window.auto24Callback);
       auto24API.load("80023381ff22186911bc932eff366eab");
   `;
-      // Create a text node containing the JavaScript code
-      const scriptContent = document.createTextNode(javascriptCode);
+    // Create a text node containing the JavaScript code
+    const scriptContent = document.createTextNode(javascriptCode);
 
-      // Append the text node to the script element
-      script.appendChild(scriptContent);
-      const auto24Content = document.querySelector("#auto24");
-      root.insertBefore(script, auto24Content);
-    });
+    // Append the text node to the script element
+    script.appendChild(scriptContent);
+    const auto24Content = document.querySelector("#auto24");
+    root.insertBefore(script, auto24Content);
   }, []);
   const divContent = "{AUTO24CONTENT}";
 
