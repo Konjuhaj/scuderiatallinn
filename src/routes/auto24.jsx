@@ -181,8 +181,10 @@ export default function Template() {
   useEffect(() => {
     const root = document.querySelector("#root");
     const script = document.createElement("script");
+    script.onload = () => {
+      auto24API.setCallback(replaceATags);
+    };
     const javascriptCode = `
-    auto24API.setCallback(replaceATags);
     auto24API.load("80023381ff22186911bc932eff366eab");
 
 `;
