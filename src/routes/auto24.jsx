@@ -199,14 +199,14 @@ export default function Template() {
     );
     vehicalContent.className = "auto24";
   }, []);
-  // const divContent = "{AUTO24CONTENT}";
+  const divContent = "{AUTO24CONTENT}";
 
   return (
     <>
       <PreLoader></PreLoader>
       <div className="auto24" id="auto24Content">
-        <DummyComponen />
-        {/* {dummyContent}{" "} */}
+        {/* <DummyComponen /> */}
+        {divContent}{" "}
       </div>
     </>
   );
