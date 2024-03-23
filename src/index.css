@@ -118,11 +118,11 @@ strong {
   flex-direction: column-reverse;
 }
 
-.slider-container {
+#vehicleImagesContainerDiv {
   overflow: hidden;
 }
 
-.slider-content {
+#vehicleImagesContentDiv {
   display: flex;
   transition: transform 0.5s ease;
 }
@@ -136,6 +136,8 @@ strong {
 .vehicleImageDiv1 {
   margin-right: 10px; /* Adjust spacing between images */
 }
+
+// TABLE STYLES
 
 table {
   width: 100%;

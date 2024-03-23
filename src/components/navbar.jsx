@@ -38,7 +38,7 @@ export default function Navbar() {
             className="h-8"
             alt="Scuderia Logo"
           />
-          <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-black font-['Arial'] uppercase">
+          <span className="self-center text-2xl font-medium whitespace-nowrap dark:text-black font-['Arial'] uppercase">
             Scuderia Tallinn
           </span>
         </a>
