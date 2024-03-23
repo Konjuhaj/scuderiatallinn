@@ -44,6 +44,7 @@ export default function Template() {
 
   let currentIndex = 0;
   const slides = document.querySelectorAll('#vehicleImagesContentDiv > div');
+  console.log(slides);
 
   function showSlide(index) {
     const container = document.querySelector('#vehicleImagesContentDiv');
@@ -52,6 +53,7 @@ export default function Template() {
   }
 
   slides.forEach((slide, index) => {
+    slide.removeEventListener('click', () => { });
     slide.addEventListener('click', () => {
       currentIndex = index;
       showSlide(currentIndex);
