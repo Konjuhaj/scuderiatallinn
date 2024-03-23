@@ -151,14 +151,18 @@ const DummyComponen = () => {
   );
 };
 
+const auto24Callback = () => {
+  console.log("auto24Callback");
+};
+
 export default function Template() {
   useEffect(() => {
     const root = document.querySelector("#root");
     const script = document.createElement("script");
 
     const javascriptCode = `
+    auto24API.setCallback(auto24Callback)
     auto24API.load("80023381ff22186911bc932eff366eab");
-
 `;
     // Create a text node containing the JavaScript code
     const scriptContent = document.createTextNode(javascriptCode);
