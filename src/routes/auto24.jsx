@@ -171,11 +171,6 @@ export default function Template() {
     script.appendChild(scriptContent);
     const auto24Content = document.querySelector("#auto24");
     root.insertBefore(script, auto24Content);
-
-    const vehicalContent = document.querySelectorAll(
-      ".vehicleImagesContentDiv"
-    );
-    vehicalContent.className = "auto24";
   }, []);
   const divContent = "{AUTO24CONTENT}";
 
