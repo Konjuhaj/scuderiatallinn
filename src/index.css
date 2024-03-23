@@ -123,6 +123,8 @@ strong {
 
 #vehicleImagesContainerDiv {
   overflow: hidden;
+  visibility: hidden;
+    display: none;
 }
 
 #vehicleImagesContentDiv {
