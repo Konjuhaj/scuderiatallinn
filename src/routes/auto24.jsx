@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import PreLoader from "../components/preLoader";
+import { a } from "vitest/dist/suite-UrZdHRff";
 
 const DummyComponen = () => {
   const htmlContent = `
@@ -155,7 +156,9 @@ const auto24Callback = () => {
   console.log("auto24Callback");
 
   const aTags = document.querySelectorAll("vehicleImagesContentDiv a");
+  console.log(aTags);
   const aTagLinks = Array.from(aTags).map((aTag) => aTag.href);
+  console.log("links from a tags");
   console.log(aTagLinks);
 };
 
