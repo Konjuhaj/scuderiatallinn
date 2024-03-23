@@ -154,6 +154,7 @@ const DummyComponen = () => {
 const auto24Callback = () => {
   console.log("auto24Callback");
 };
+window.auto24Callback = auto24Callback;
 
 export default function Template() {
   useEffect(() => {
