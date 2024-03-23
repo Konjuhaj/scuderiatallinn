@@ -41,22 +41,23 @@ export default function Template() {
     }
   });
 
+  document.addEventListener("DOMContentLoaded", function (event) {
+    let currentIndex = 0;
+    const slides = document.querySelectorAll('#vehicleImagesContentDiv > div');
+    console.log(slides);
 
-  let currentIndex = 0;
-  const slides = document.querySelectorAll('#vehicleImagesContentDiv > div');
-  console.log(slides);
+    function showSlide(index) {
+      const container = document.querySelector('#vehicleImagesContentDiv');
+      const slideWidth = slides[0].getBoundingClientRect().width;
+      container.style.transform = `translateX(${-index * slideWidth}px)`;
+    }
 
-  function showSlide(index) {
-    const container = document.querySelector('#vehicleImagesContentDiv');
-    const slideWidth = slides[0].getBoundingClientRect().width;
-    container.style.transform = `translateX(${-index * slideWidth}px)`;
-  }
-
-  slides.forEach((slide, index) => {
-    slide.removeEventListener('click', () => { });
-    slide.addEventListener('click', () => {
-      currentIndex = index;
-      showSlide(currentIndex);
+    slides.forEach((slide, index) => {
+      slide.removeEventListener('click', () => { });
+      slide.addEventListener('click', () => {
+        currentIndex = index;
+        showSlide(currentIndex);
+      });
     });
   });
 
