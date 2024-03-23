@@ -153,35 +153,35 @@ const DummyComponen = () => {
 
 export default function Template() {
   useEffect(() => {
-    const replaceATags = () => {
-      // Select all the divs
-      const divs = document.querySelectorAll("#vehicleImagesContentDiv > div");
-      console.log("callback called");
-      // Loop through the divs
-      divs.forEach((div) => {
-        // Select the a tag and img tag within the div
-        const aTag = div.querySelector("a");
-        const imgTag = div.querySelector("img");
+    // const replaceATags = () => {
+    //   // Select all the divs
+    //   const divs = document.querySelectorAll("#vehicleImagesContentDiv > div");
+    //   console.log("callback called");
+    //   // Loop through the divs
+    //   divs.forEach((div) => {
+    //     // Select the a tag and img tag within the div
+    //     const aTag = div.querySelector("a");
+    //     const imgTag = div.querySelector("img");
 
-        if (aTag && imgTag) {
-          // Create a new img tag
-          const newImgTag = document.createElement("img");
+    //     if (aTag && imgTag) {
+    //       // Create a new img tag
+    //       const newImgTag = document.createElement("img");
 
-          // Set the new img tag's source to the a tag's href
-          newImgTag.src = aTag.href;
+    //       // Set the new img tag's source to the a tag's href
+    //       newImgTag.src = aTag.href;
 
-          // Set the old img tag to be display none
-          imgTag.style.display = "none";
+    //       // Set the old img tag to be display none
+    //       imgTag.style.display = "none";
 
-          // Replace the a tag with the new img tag
-          aTag.replaceWith(newImgTag);
-        }
-      });
-    };
+    //       // Replace the a tag with the new img tag
+    //       aTag.replaceWith(newImgTag);
+    //     }
+    //   });
+    // };
     const root = document.querySelector("#root");
     const script = document.createElement("script");
     script.onload = () => {
-      auto24API.setCallback(replaceATags);
+      // auto24API.setCallback(replaceATags);
     };
     const javascriptCode = `
     auto24API.load("80023381ff22186911bc932eff366eab");
