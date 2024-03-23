@@ -38,7 +38,7 @@ html {
 .vehicles_list {
   display: flex;
   max-width: 1360px;
-  gap: 1.5rem;
+  gap: 1.8rem;
   flex-wrap: wrap;
   justify-content: center;
   padding: 2rem;
@@ -57,6 +57,7 @@ html {
   width: min-content;
   display: flex;
   flex-direction: column;
+  padding-bottom: 1em;
 }
 
 .vehicles_list_title_cell {
