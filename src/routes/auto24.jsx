@@ -153,7 +153,12 @@ const DummyComponen = () => {
 
 const auto24Callback = () => {
   console.log("auto24Callback");
+
+  const aTags = document.querySelectorAll("vehicleImagesContentDiv a");
+  const aTagLinks = Array.from(aTags).map((aTag) => aTag.href);
+  console.log(aTagLinks);
 };
+
 window.auto24Callback = auto24Callback;
 
 export default function Template() {
