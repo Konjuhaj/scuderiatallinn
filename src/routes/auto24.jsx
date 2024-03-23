@@ -160,6 +160,7 @@ const auto24Callback = () => {
   console.log("links from a tags");
   console.log(aTagLinks);
   console.log(document.querySelector(".auto24"));
+  console.log(document.documentElement.outerHTML);
 };
 
 window.auto24Callback = auto24Callback;
