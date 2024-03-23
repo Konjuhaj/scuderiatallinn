@@ -153,7 +153,7 @@ const DummyComponen = () => {
 
 const replaceATags = () => {
   // Select all the divs
-  const divs = document.querySelectorAll("div");
+  const divs = document.querySelectorAll("#vehicleImagesContentDiv > div");
   console.log("callback called");
   // Loop through the divs
   divs.forEach((div) => {
