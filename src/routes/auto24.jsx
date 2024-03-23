@@ -72,7 +72,9 @@ export default function Template() {
 
   document.addEventListener("DOMContentLoaded", function (event) {
     let currentIndex = 0;
-    const slides = document.querySelectorAll("#vehicleImagesContentDiv > div");
+    const slides = document.querySelectorAll(
+      ".vehicleImageDiv0, .vehicleImageDiv1"
+    );
     console.log(slides);
 
     function showSlide(index) {
