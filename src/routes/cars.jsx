@@ -8,7 +8,6 @@ export default function Template() {
     const script = document.createElement("script");
     const javascriptCode = `
     auto24API.load("80023381ff22186911bc932eff366eab");
-    // Your JavaScript code here
 `;
 
     // Create a text node containing the JavaScript code
