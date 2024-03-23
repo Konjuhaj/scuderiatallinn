@@ -41,12 +41,12 @@ export default function Template() {
     }
   });
 
-  // TypeScript logic for image slider
+
   let currentIndex = 0;
-  const slides = document.querySelectorAll('.slider-content > div');
+  const slides = document.querySelectorAll('#vehicleImagesContentDiv > div');
 
   function showSlide(index) {
-    const container = document.querySelector('.slider-content');
+    const container = document.querySelector('#vehicleImagesContentDiv');
     const slideWidth = slides[0].getBoundingClientRect().width;
     container.style.transform = `translateX(${-index * slideWidth}px)`;
   }
