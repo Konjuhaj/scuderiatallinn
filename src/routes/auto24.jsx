@@ -159,18 +159,21 @@ export default function Template() {
   useEffect(() => {
     const root = document.querySelector("#root");
     const script = document.createElement("script");
+    script.type = "text/javascript";
 
-    const javascriptCode = `
-    auto24API.setCallback(auto24Callback)
-    auto24API.load("80023381ff22186911bc932eff366eab");
-`;
-    // Create a text node containing the JavaScript code
-    const scriptContent = document.createTextNode(javascriptCode);
+    script.onload(() => {
+      const javascriptCode = `
+      auto24API.setCallback(auto24Callback);
+      auto24API.load("80023381ff22186911bc932eff366eab");
+  `;
+      // Create a text node containing the JavaScript code
+      const scriptContent = document.createTextNode(javascriptCode);
 
-    // Append the text node to the script element
-    script.appendChild(scriptContent);
-    const auto24Content = document.querySelector("#auto24");
-    root.insertBefore(script, auto24Content);
+      // Append the text node to the script element
+      script.appendChild(scriptContent);
+      const auto24Content = document.querySelector("#auto24");
+      root.insertBefore(script, auto24Content);
+    });
   }, []);
   const divContent = "{AUTO24CONTENT}";
 
