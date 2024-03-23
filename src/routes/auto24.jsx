@@ -154,7 +154,7 @@ const DummyComponen = () => {
 const auto24Callback = () => {
   console.log("auto24Callback");
 
-  const aTags = document.querySelectorAll("vehicleImagesContentDiv a");
+  const aTags = document.querySelectorAll("#vehicleImagesContentDiv a");
   console.log(aTags);
   const aTagLinks = Array.from(aTags).map((aTag) => aTag.href);
   console.log("links from a tags");
