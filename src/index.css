@@ -1,7 +1,7 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
-@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap');
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap");
 
 html {
   scroll-behavior: smooth;
@@ -75,7 +75,6 @@ html {
   padding-top: 0.5rem;
   order: 2;
   position: relative;
-
 }
 
 .vehicles_list_price_cell {
@@ -89,10 +88,13 @@ html {
   bottom: -36px;
 }
 
-span.-transmission, span.-fuel, span.-comma, span.dataCell__equipment {
+span.-transmission,
+span.-fuel,
+span.-comma,
+span.dataCell__equipment {
   display: none;
   visibility: hidden;
-  margin-right: 3px
+  margin-right: 3px;
 }
 
 span.-mileage {
@@ -136,8 +138,8 @@ strong {
 .vehicleImageDiv1 {
   margin-right: 10px; /* Adjust spacing between images */
 }
-
-// TABLE STYLES
+/* 
+// TABLE STYLES */
 
 table {
   width: 100%;
@@ -148,7 +150,8 @@ table {
   font-family: sans-serif;
 }
 
-th, td {
+th,
+td {
   padding: 12px 15px;
   text-align: center; /* Center align text */
   border-bottom: 1px solid #dddddd;
@@ -183,4 +186,3 @@ tr:last-of-type {
   text-align: center; /* Center text horizontally */
   vertical-align: middle; /* Center text vertically */
 }
-
