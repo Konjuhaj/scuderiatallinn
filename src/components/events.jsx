@@ -22,7 +22,7 @@ function Events() {
 function Event({ image, title, date, location, description }) {
   return (
     <>
-      <div className="flex flex-col lg:flex-row gap-4 bg-slate-50 rsounded-2xl w-2/3 max-w-3xl lg:max-h-96 shadow-lg shadow-slate-200/60">
+      <div className="flex flex-col lg:flex-row gap-4 bg-slate-50 rounded-2xl w-2/3 max-w-3xl lg:max-h-96 shadow-lg shadow-slate-200/60">
         <div className="h-1/2 lg:w-1/2">
           <img
             className="w-full h-72 max-h-96 lg:w-96 object-cover rounded-t-2xl lg:rounded-r-none lg:rounded-l-2xl "
