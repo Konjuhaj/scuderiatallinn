@@ -152,14 +152,18 @@ const DummyComponen = () => {
   );
 };
 
+
+
+const [aTagLinks, setATagLinks] = useState([]);
+
 const auto24Callback = () => {
   console.log("auto24Callback");
 
   const aTags = document.querySelectorAll("#vehicleImagesContentDiv a");
-  console.log(aTags);
-  const aTagLinks = Array.from(aTags).map((aTag) => aTag.href);
+  const links = Array.from(aTags).map((aTag) => aTag.href);
   console.log("links from a tags");
-  console.log(aTagLinks);
+  console.log(links);
+  setATagLinks(links);
 };
 
 window.auto24Callback = auto24Callback;
