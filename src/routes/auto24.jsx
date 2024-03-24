@@ -182,7 +182,7 @@ export default function Template() {
     root.insertBefore(script, auto24Content);
   }, []);
   const divContent = "{AUTO24CONTENT}";
-
+  console.log("auto24 Component " + window.aTagLinks);
   return (
     <>
       <PreLoader></PreLoader>
