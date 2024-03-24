@@ -153,15 +153,11 @@ const DummyComponen = () => {
 };
 
 export default function Template() {
-  let links = [];
-  const auto24Callback = () => {
-    console.log("auto24Callback");
+  const [imageLinks, setImageLinks] = useState([]);
 
+  const auto24Callback = () => {
     const aTags = document.querySelectorAll("#vehicleImagesContentDiv a");
-    links = Array.from(aTags).map((aTag) => aTag.href);
-    console.log("links from a tags");
-    console.log(links);
-    window.aTagLinks = links;
+    setImageLinks(Array.from(aTags).map((aTag) => aTag.href));
   };
   window.auto24Callback = auto24Callback;
   useEffect(() => {
@@ -182,13 +178,13 @@ export default function Template() {
     root.insertBefore(script, auto24Content);
   }, []);
   const divContent = "{AUTO24CONTENT}";
-  console.log("auto24 Component " + window.aTagLinks);
+  console.log(imageLinks);
   return (
     <>
       <PreLoader></PreLoader>
+      <ImageSlider imageLinks={imageLinks} />
       <div className="auto24" id="auto24Content">
         {/* <DummyComponen /> */}
-        <ImageSlider imageLinks={links} />
         {divContent}{" "}
       </div>
     </>
