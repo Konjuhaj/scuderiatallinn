@@ -151,7 +151,7 @@ const DummyComponen = () => {
   );
 };
 
-const carDetailCallback = () => {
+const auto24Callback = () => {
   console.log("auto24Callback");
 
   const aTags = document.querySelectorAll("#vehicleImagesContentDiv a");
@@ -161,7 +161,7 @@ const carDetailCallback = () => {
   console.log(aTagLinks);
 };
 
-window.auto24Callback = carDetailCallback;
+window.auto24Callback = auto24Callback;
 
 export default function Template() {
   useEffect(() => {
@@ -170,7 +170,7 @@ export default function Template() {
     script.type = "text/javascript";
 
     const javascriptCode = `
-      auto24API.setCallback(window.carDetailCallback);
+      auto24API.setCallback(window.auto24Callback);
       auto24API.load("80023381ff22186911bc932eff366eab");
   `;
     // Create a text node containing the JavaScript code
