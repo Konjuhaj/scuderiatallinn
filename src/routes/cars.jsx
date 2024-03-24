@@ -4,7 +4,7 @@ import PreLoader from "../components/preLoader";
 window.auto24Callback = () => {
   console.log("auto24Callback");
 
-  const cars = document.querySelectorAll(".vehicles_list > div");
+  const cars = Array.from(document.querySelectorAll(".vehicles_list > div"));
   const { ferraries, otherCars } = cars.reduce(
     (acc, car) => {
       if (car.querySelector(".-make").innerText === "Ferrari") {
