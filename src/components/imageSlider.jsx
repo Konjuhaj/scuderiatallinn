@@ -14,49 +14,51 @@ const ImageSlider = ({ imageLinks }) => {
   //   };
   console.log(window.aTagLinks);
   return (
-    <div className="image-slider relative">
-      <div className="">
-        <img src={imageLinks[currentIndex]} alt={`Slide ${currentIndex}`} />
+    <>
+      <div className="image-slider relative">
+        <div className="w-full lg:w-3/5 h-auto flex justify-center">
+          <img className="w-full h-auto" src={imageLinks[currentIndex]} alt={`Slide ${currentIndex}`} />
+        </div>
+        <button
+          // onClick={goToPrevious}
+          className="absolute inset-y-0 left-0 flex items-center"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth="2"
+            stroke="currentColor"
+            className="w-6 h-6"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M15.75 19.5 8.25 12l7.5-7.5"
+            />
+          </svg>
+        </button>
+        <button
+          // onClick={goToNext}
+          className="absolute inset-y-0 right-0 flex items-center"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth="2"
+            stroke="currentColor"
+            className="w-6 h-6"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="m8.25 4.5 7.5 7.5-7.5 7.5"
+            />
+          </svg>
+        </button>
       </div>
-      <button
-        // onClick={goToPrevious}
-        className="absolute inset-y-0 left-0 flex items-center"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          strokeWidth="2"
-          stroke="currentColor"
-          className="w-6 h-6"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M15.75 19.5 8.25 12l7.5-7.5"
-          />
-        </svg>
-      </button>
-      <button
-        // onClick={goToNext}
-        className="absolute inset-y-0 left-2 flex items-center"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          strokeWidth="2"
-          stroke="currentColor"
-          className="w-6 h-6"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="m8.25 4.5 7.5 7.5-7.5 7.5"
-          />
-        </svg>
-      </button>
-    </div>
+    </>
   );
 };
 

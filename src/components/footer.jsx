@@ -13,7 +13,7 @@ function Footer() {
 					<p>VAT number: EE102326763</p>
 				</div>
 				<div>
-					<p>©2023 by Scuderia Tallinn.</p>
+					<p>©2024 by Scuderia Tallinn.</p>
 				</div>
 			</div>
 		</footer>

@@ -7,9 +7,24 @@ html {
   scroll-behavior: smooth;
 }
 
-.searchFields {
-  visibility: hidden;
-  height: 0;
+/* --- CARS LIST --- */
+
+.vehicles_list {
+  display: flex;
+  max-width: 1360px;
+  gap: 1.8rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.vehicles_list_img_cell {
+  width: 360px;
+  height: 240px;
+  object-fit: cover;
+  order: 0;
 }
 
 .vehicles_list img {
@@ -30,27 +45,11 @@ html {
   color: #718096;
 }
 
+/*  Cars search field */
+
 .searchFields {
   visibility: hidden;
   height: 0;
-}
-
-.vehicles_list {
-  display: flex;
-  max-width: 1360px;
-  gap: 1.8rem;
-  flex-wrap: wrap;
-  justify-content: center;
-  padding: 2rem;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.vehicles_list_img_cell {
-  width: 360px;
-  height: 240px;
-  object-fit: cover;
-  order: 0;
 }
 
 [class^="vehicles_list_row"] {
@@ -88,6 +87,8 @@ html {
   position: absolute;
   bottom: -36px;
 }
+
+/* Hidden information */
 
 span.-transmission,
 span.-fuel,
@@ -141,8 +142,8 @@ strong {
 .vehicleImageDiv1 {
   margin-right: 10px; /* Adjust spacing between images */
 }
-/* 
-// TABLE STYLES */
+
+ /* -- TABLE STYLES -- */
 
 table {
   width: 100%;

@@ -10,66 +10,67 @@ export const preLoaderAnim = () => {
 		css: { overflowY: "hidden" },
 		ease: "power3.inOut",
 	})
-		.to(".landing", {
-			duration: 0.03,
-			css: { overflowY: "hidden", height: "90vh" },
-		})
+		// .to(".landing", {
+		// 	duration: 0.03,
+		// 	css: { overflowY: "hidden", height: "90vh" },
+		// })
 		.to(".loader", {
 			duration: 0,
 			opacity: 1,
 			ease: "Power3.easeOut",
 		})
 		.to(".loader l-orbit", {
-			duration: 2,
+			duration: 1.7,
 			opacity: 0,
 			ease: "power3.easeOut",
 		})
-		.to(".landing", {
-			duration: 0.03,
-			css: { overflowY: "hidden", height: "unset" },
-		})
+		// .to(".landing", {
+		// 	duration: 0.03,
+		// 	css: { overflowY: "hidden", height: "unset" },
+		// })
 		.to("body", {
-			duration: 0.05,
+			duration: 0.15,
 			css: { overflowY: "scroll" },
 			ease: "power3.inOut",
 		})
-		.from(".landing__top .sub", {
-			duration: 0.5,
-			opacity: 0,
-			y: 80,
-			ease: "expo.easeOut",
-		})
+		// .from(".landing__top .sub", {
+		// 	duration: 0.5,
+		// 	opacity: 0,
+		// 	y: 80,
+		// 	ease: "expo.easeOut",
+		// })
 		.to(".preloader", {
 			duration: 0.5,
 			height: "0vh",
 			ease: "Power3.easeOut",
 			onComplete: mobileLanding(),
 		}, "-=1")
-		.from(".landing__main .text", {
-			duration: 1,
-			y: 10,
-			opacity: 0,
-			stagger: {
-				amount: 1,
-			},
-			ease: "power3.easeInOut",
-		})
-		.from(".links .item", {
-			duration: 0.25,
-			opacity: 0,
-			delay: window.innerWidth < 763 ? -1.5 : -0.3,
-			stagger: {
-				amount: 0.25,
-			},
-			ease: "expo.easeOut",
-			onComplete: animateMainShape(),
-		})
+		// .from(".landing__main .text", {
+		// 	duration: 1,
+		// 	y: 10,
+		// 	opacity: 0,
+		// 	stagger: {
+		// 		amount: 1,
+		// 	},
+		// 	ease: "power3.easeInOut",
+		// })
+		// .from(".links .item", {
+		// 	duration: 0.25,
+		// 	opacity: 0,
+		// 	delay: window.innerWidth < 763 ? -1.5 : -0.3,
+		// 	stagger: {
+		// 		amount: 0.25,
+		// 	},
+		// 	ease: "expo.easeOut",
+		// 	onComplete: animateMainShape(),
+		// })
 		.to(".preloader", {
 			duration: 0,
 			css: { display: "none" },
 		});
 };
 
+/*
 export const openMenu = () => {
 	const tl = gsap.timeline();
 	tl.to("body", {
@@ -139,7 +140,7 @@ export const closeMenu = () => {
 			duration: 0.025,
 			css: { display: "none" },
 		});
-};
+}; */
 
 // recurrent animations
 export const fadeUp = (el, delay = 0) => {
@@ -163,6 +164,7 @@ export const mobileLanding = () => {
 		});
 };
 
+/*
 const animateShapes = () => {
 	const infiniteTl = gsap.timeline({ repeat: -1 });
 	infiniteTl
@@ -221,7 +223,7 @@ const animateMainShape = () => {
 			y: 0,
 			ease: "expo.easeOut",
 		});
-};
+}; */
 
 export const boxHover = (e) => {
 	const tl = gsap.timeline();
@@ -240,28 +242,28 @@ export const boxHover = (e) => {
 			});
 };
 
-export const boxExit = (e) => {
-	window.innerWidth >= 986 &&
-		gsap.to(e.target.querySelector(".link"), {
-			duration: 0,
-			opacity: 0,
-		});
-};
+// export const boxExit = (e) => {
+// 	window.innerWidth >= 986 &&
+// 		gsap.to(e.target.querySelector(".link"), {
+// 			duration: 0,
+// 			opacity: 0,
+// 		});
+// };
 
-export const fadeIn = (el) => {
-	gsap.to(el, {
-		duration: 1,
-		opacity: 1,
-		y: -60,
-		ease: "power4.out",
-	});
-};
+// export const fadeIn = (el) => {
+// 	gsap.to(el, {
+// 		duration: 1,
+// 		opacity: 1,
+// 		y: -60,
+// 		ease: "power4.out",
+// 	});
+// };
 
-export const fadeOut = (el) => {
-	gsap.to(el, {
-		duration: 0.5,
-		opacity: 0,
-		y: -20,
-		ease: "power4.out",
-	});
-};
+// export const fadeOut = (el) => {
+// 	gsap.to(el, {
+// 		duration: 0.5,
+// 		opacity: 0,
+// 		y: -20,
+// 		ease: "power4.out",
+// 	});
+// };
