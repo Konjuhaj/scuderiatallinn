@@ -152,44 +152,43 @@ const DummyComponen = () => {
   );
 };
 
+// Use a functional component
 export default function Template() {
-  let links = [];
-  const auto24Callback = () => {
-    console.log("auto24Callback");
+  // Initialize state
+  const [imageLinks, setImageLinks] = useState([]);
 
-    const aTags = document.querySelectorAll("#vehicleImagesContentDiv a");
-    links = Array.from(aTags).map((aTag) => aTag.href);
-    console.log("links from a tags");
-    console.log(links);
-    window.aTagLinks = links;
-  };
-  window.auto24Callback = auto24Callback;
+  // Define the callback function inside useEffect to avoid polluting the global scope
   useEffect(() => {
+    const auto24Callback = () => {
+      const aTags = document.querySelectorAll("#vehicleImagesContentDiv a");
+      setImageLinks(Array.from(aTags).map((aTag) => aTag.href));
+    };
+
+    // Call the callback function
+    auto24Callback();
+
+    // Log the imageLinks state
+    console.log(imageLinks);
+
+    // Create and insert the script
     const root = document.querySelector("#root");
     const script = document.createElement("script");
     script.type = "text/javascript";
-
-    const javascriptCode = `
-      auto24API.setCallback(window.auto24Callback);
+    script.text = `
+      auto24API.setCallback(auto24Callback);
       auto24API.load("80023381ff22186911bc932eff366eab");
-  `;
-    // Create a text node containing the JavaScript code
-    const scriptContent = document.createTextNode(javascriptCode);
-
-    // Append the text node to the script element
-    script.appendChild(scriptContent);
+    `;
     const auto24Content = document.querySelector("#auto24");
     root.insertBefore(script, auto24Content);
-  }, []);
-  const divContent = "{AUTO24CONTENT}";
-  console.log("auto24 Component " + links);
+  }, []); // Empty dependency array means this effect runs once on mount
+
+  // Render the component
   return (
     <>
-      <PreLoader></PreLoader>
+      <PreLoader />
       <div className="auto24" id="auto24Content">
-        <DummyComponen />
-        <ImageSlider imageLinks={links} />
-        {/* {divContent}{" "} */}
+        <ImageSlider imageLinks={imageLinks} />
+        {"{AUTO24CONTENT}"}
       </div>
     </>
   );

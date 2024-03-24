@@ -2,24 +2,24 @@ import React, { useState } from "react";
 
 const ImageSlider = ({ imageLinks }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  //   const goToPrevious = () => {
-  //     setCurrentIndex((prevIndex) =>
-  //       prevIndex === 0 ? imageLinks.length - 1 : prevIndex - 1
-  //     );
-  //   };
-  //   const goToNext = () => {
-  //     setCurrentIndex((prevIndex) =>
-  //       prevIndex === imageLinks.length - 1 ? 0 : prevIndex + 1
-  //     );
-  //   };
-  console.log(window.aTagLinks);
+  const goToPrevious = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? imageLinks.length - 1 : prevIndex - 1
+    );
+  };
+  const goToNext = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === imageLinks.length - 1 ? 0 : prevIndex + 1
+    );
+  };
+  console.log("image_slider" + imageLinks);
   return (
     <div className="image-slider relative">
       <div className="">
         <img src={imageLinks[currentIndex]} alt={`Slide ${currentIndex}`} />
       </div>
       <button
-        // onClick={goToPrevious}
+        onClick={goToPrevious}
         className="absolute inset-y-0 left-0 flex items-center"
       >
         <svg
@@ -38,7 +38,7 @@ const ImageSlider = ({ imageLinks }) => {
         </svg>
       </button>
       <button
-        // onClick={goToNext}
+        onClick={goToNext}
         className="absolute inset-y-0 left-2 flex items-center"
       >
         <svg
