@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import ImageSlider from "../components/imageSlider";
 import PreLoader from "../components/preLoader";
 
