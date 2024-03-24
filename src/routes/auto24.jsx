@@ -163,10 +163,8 @@ export default function Template() {
       const aTags = document.querySelectorAll("#vehicleImagesContentDiv a");
       setImageLinks(Array.from(aTags).map((aTag) => aTag.href));
     };
-
+    window.auto24Callback = auto24Callback;
     // Call the callback function
-    auto24Callback();
-
     // Log the imageLinks state
     console.log(imageLinks);
 
@@ -175,7 +173,7 @@ export default function Template() {
     const script = document.createElement("script");
     script.type = "text/javascript";
     script.text = `
-      auto24API.setCallback(auto24Callback);
+      auto24API.setCallback(window.auto24Callback);
       auto24API.load("80023381ff22186911bc932eff366eab");
     `;
     const auto24Content = document.querySelector("#auto24");
