@@ -12,6 +12,7 @@ const ImageSlider = ({ imageLinks }) => {
   //       prevIndex === imageLinks.length - 1 ? 0 : prevIndex + 1
   //     );
   //   };
+  console.log(imageLinks);
   return (
     <div className="image-slider relative">
       <div className="">
