@@ -8,7 +8,7 @@ window.auto24Callback = () => {
   const { ferraries, otherCars } = cars.reduce(
     (acc, car) => {
       console.log(car.querySelector(".-make").innerText);
-      if (car.querySelector(".-make").innerText === "Ferrari") {
+      if (car.querySelector(".-make").innerText.toLowerCase() === "ferrari") {
         acc.ferraries.push(car);
       } else {
         acc.otherCars.push(car);
