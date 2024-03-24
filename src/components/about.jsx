@@ -1,8 +1,8 @@
 function about() {
   return (
-    <div className="flex flex-col justify-center items-center text-center my-16 lg:my-24 ">
+    <div className="flex flex-col justify-center items-center text-center my-16 lg:my-24 px-10">
       <h1 className="text-2xl font-bold uppercase">About Scuderia Tallinn</h1>
-      <div className="w-1/2 mt-6">
+      <div className="w-full sm:w-1/2 mt-6">
         <p>
           Working full time with Ferrari sales and service since 2019 we have
           gathered a deep level of knowledge and understanding about the brand
