@@ -152,24 +152,19 @@ const DummyComponen = () => {
   );
 };
 
+window.auto24Callback = auto24Callback;
 
+const auto24Callback = () => {
+  console.log("auto24Callback");
 
+  const aTags = document.querySelectorAll("#vehicleImagesContentDiv a");
+  const links = Array.from(aTags).map((aTag) => aTag.href);
+  console.log("links from a tags");
+  console.log(links);
+  window.aTagLinks = links;
+};
 
 export default function Template() {
-
-  window.auto24Callback = auto24Callback;
-  const [aTagLinks, setATagLinks] = useState([]);
-
-  const auto24Callback = () => {
-    console.log("auto24Callback");
-
-    const aTags = document.querySelectorAll("#vehicleImagesContentDiv a");
-    const links = Array.from(aTags).map((aTag) => aTag.href);
-    console.log("links from a tags");
-    console.log(links);
-    setATagLinks(links);
-  };
-
   useEffect(() => {
     const root = document.querySelector("#root");
     const script = document.createElement("script");
@@ -186,18 +181,15 @@ export default function Template() {
     script.appendChild(scriptContent);
     const auto24Content = document.querySelector("#auto24");
     root.insertBefore(script, auto24Content);
-
   }, []);
   const divContent = "{AUTO24CONTENT}";
-
-
 
   return (
     <>
       <PreLoader></PreLoader>
       <div className="auto24" id="auto24Content">
         {/* <DummyComponen /> */}
-        <ImageSlider imageLinks={aTagLinks} />
+        <ImageSlider imageLinks={window.aTagLinks} />
         {divContent}{" "}
       </div>
     </>
