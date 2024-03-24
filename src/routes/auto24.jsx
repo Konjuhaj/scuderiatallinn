@@ -153,11 +153,11 @@ const DummyComponen = () => {
 };
 
 
-window.auto24Callback = auto24Callback;
 
 
 export default function Template() {
 
+  window.auto24Callback = auto24Callback;
   const [aTagLinks, setATagLinks] = useState([]);
 
   const auto24Callback = () => {
@@ -186,6 +186,7 @@ export default function Template() {
     script.appendChild(scriptContent);
     const auto24Content = document.querySelector("#auto24");
     root.insertBefore(script, auto24Content);
+
   }, []);
   const divContent = "{AUTO24CONTENT}";
 
