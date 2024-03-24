@@ -152,8 +152,6 @@ const DummyComponen = () => {
   );
 };
 
-window.auto24Callback = auto24Callback;
-
 const auto24Callback = () => {
   console.log("auto24Callback");
 
@@ -163,6 +161,7 @@ const auto24Callback = () => {
   console.log(links);
   window.aTagLinks = links;
 };
+window.auto24Callback = auto24Callback;
 
 export default function Template() {
   useEffect(() => {
