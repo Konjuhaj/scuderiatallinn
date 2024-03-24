@@ -7,6 +7,7 @@ window.auto24Callback = () => {
   const cars = Array.from(document.querySelectorAll(".vehicles_list > div"));
   const { ferraries, otherCars } = cars.reduce(
     (acc, car) => {
+      console.log(car.querySelector(".-make").innerText);
       if (car.querySelector(".-make").innerText === "Ferrari") {
         acc.ferraries.push(car);
       } else {
