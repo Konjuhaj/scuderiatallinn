@@ -3,6 +3,21 @@ import PreLoader from "../components/preLoader";
 
 window.auto24Callback = () => {
   console.log("auto24Callback");
+
+  const cars = document.querySelectorAll(".vehicles_list > div");
+  const { ferraries, otherCars } = cars.reduce(
+    (acc, car) => {
+      if (car.querySelector(".-make").innerText === "Ferrari") {
+        acc.ferraries.push(car);
+      } else {
+        acc.otherCars.push(car);
+      }
+      return acc;
+    },
+    { ferraries: [], otherCars: [] }
+  );
+
+  console.log(ferraries, otherCars);
 };
 
 export default function Template() {
