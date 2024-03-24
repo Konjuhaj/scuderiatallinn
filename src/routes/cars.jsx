@@ -1,12 +1,16 @@
 import { useEffect } from "react";
 import PreLoader from "../components/preLoader";
-// import auto24API from "//www.auto24.ee/api/auto24API.js";
+
+window.auto24Callback = () => {
+  console.log("auto24Callback");
+};
 
 export default function Template() {
   useEffect(() => {
     const root = document.querySelector("#root");
     const script = document.createElement("script");
     const javascriptCode = `
+    auto24API.setCallback(window.auto24Callback);
     auto24API.load("80023381ff22186911bc932eff366eab");
 `;
 
