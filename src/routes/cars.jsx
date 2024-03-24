@@ -18,7 +18,14 @@ window.auto24Callback = () => {
     { ferraries: [], otherCars: [] }
   );
 
-  console.log(ferraries, otherCars);
+  const vehiclesList = document.querySelector(".vehicles_list");
+  const sortedVehicles = document.createElement("div");
+  sortedVehicles.classList.add("vehicles_list");
+  sortedVehicles.appendChild(ferraries);
+  sortedVehicles.appendChild(otherCars);
+
+  const auto24Content = document.querySelector("#auto24Content");
+  auto24Content.replaceChild(vehiclesList, sortedVehicles);
 };
 
 export default function Template() {
