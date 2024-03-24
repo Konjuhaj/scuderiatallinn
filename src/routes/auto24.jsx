@@ -159,7 +159,7 @@ export default function Template() {
     const aTags = document.querySelectorAll("#vehicleImagesContentDiv a");
     const imageLinks = Array.from(aTags)
       .map((aTag) => aTag.href)
-      .filter((link) => !link.startsWith("mailto:"));
+      .filter((link) => link.toLowerCase().endsWith('.jpg'));
     setImageLinks(imageLinks);
   };
   window.auto24Callback = auto24Callback;
