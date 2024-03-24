@@ -182,9 +182,9 @@ export default function Template() {
   return (
     <>
       <PreLoader></PreLoader>
+      <ImageSlider imageLinks={imageLinks} />
       <div className="auto24" id="auto24Content">
         {/* <DummyComponen /> */}
-        <ImageSlider imageLinks={imageLinks} />
         {divContent}{" "}
       </div>
     </>
