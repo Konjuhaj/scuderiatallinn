@@ -7,7 +7,6 @@ window.auto24Callback = () => {
   const cars = Array.from(document.querySelectorAll(".vehicles_list > div"));
   const { ferraries, otherCars } = cars.reduce(
     (acc, car) => {
-      console.log(car.querySelector(".-make").innerText);
       if (car.querySelector(".-make").innerText.toLowerCase() === "ferrari") {
         acc.ferraries.push(car);
       } else {
@@ -21,11 +20,11 @@ window.auto24Callback = () => {
   const vehiclesList = document.querySelector(".vehicles_list");
   const sortedVehicles = document.createElement("div");
   sortedVehicles.classList.add("vehicles_list");
-  sortedVehicles.appendChild(ferraries);
-  sortedVehicles.appendChild(otherCars);
+  sortedVehicles.append(...ferraries);
+  sortedVehicles.append(...otherCars);
 
   const auto24Content = document.querySelector("#auto24Content");
-  auto24Content.replaceChild(vehiclesList, sortedVehicles);
+  auto24Content.replaceChild(sortedVehicles, vehiclesList);
 };
 
 export default function Template() {
