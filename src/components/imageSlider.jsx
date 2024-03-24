@@ -16,12 +16,12 @@ const ImageSlider = ({ imageLinks }) => {
   console.log("Is imageLinks an array?", Array.isArray(imageLinks));
   return (
     <>
-      <div className="image-slider relative">
-        <div className="w-full lg:w-3/5 h-auto flex justify-center">
+      <div className="image-slider relative w-full lg:w-3/5 mx-auto ">
+        <div className="w-full h-auto">
           <img className="w-full h-auto" src={imageLinks[currentIndex]} alt={`Slide ${currentIndex}`} />
         </div>
         <button
-          // onClick={goToPrevious}
+          onClick={goToPrevious}
           className="absolute inset-y-0 left-0 flex items-center"
         >
           <svg
@@ -40,7 +40,7 @@ const ImageSlider = ({ imageLinks }) => {
           </svg>
         </button>
         <button
-          // onClick={goToNext}
+          onClick={goToNext}
           className="absolute inset-y-0 right-0 flex items-center"
         >
           <svg
