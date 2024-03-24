@@ -182,14 +182,14 @@ export default function Template() {
     root.insertBefore(script, auto24Content);
   }, []);
   const divContent = "{AUTO24CONTENT}";
-  console.log("auto24 Component " + window.aTagLinks);
+  console.log("auto24 Component " + links);
   return (
     <>
       <PreLoader></PreLoader>
       <div className="auto24" id="auto24Content">
-        {/* <DummyComponen /> */}
+        <DummyComponen />
         <ImageSlider imageLinks={links} />
-        {divContent}{" "}
+        {/* {divContent}{" "} */}
       </div>
     </>
   );
