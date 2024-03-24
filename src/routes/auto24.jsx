@@ -157,7 +157,10 @@ export default function Template() {
 
   const auto24Callback = () => {
     const aTags = document.querySelectorAll("#vehicleImagesContentDiv a");
-    setImageLinks(Array.from(aTags).map((aTag) => aTag.href));
+    const imageLinks = Array.from(aTags)
+      .map((aTag) => aTag.href)
+      .filter((link) => !link.startsWith("mailto:"));
+    setImageLinks(imageLinks);
   };
   window.auto24Callback = auto24Callback;
   useEffect(() => {
