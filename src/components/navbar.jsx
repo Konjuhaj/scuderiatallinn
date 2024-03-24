@@ -87,7 +87,7 @@ export default function Navbar() {
                   el.scrollIntoView({ behavior: "smooth", block: "top" })
                 }
                 className={
-                  "uppercase font-bold block py-2 px-3 text-black rounded sm:bg-transparent sm:p-0 sm:hover:text-red-500" +
+                  "uppercase font-bold text-xl sm:text-base block py-4 sm:py-2 px-3 text-black rounded sm:bg-transparent sm:p-0 sm:hover:text-red-500" +
                   (pathname === "/" ? " sm:text-red-500" : "")
                 }
                 onClick={() => {
@@ -108,7 +108,7 @@ export default function Navbar() {
               <NavLink
                 to="/cars"
                 className={
-                  "uppercase font-bold block py-2 px-3 text-gray-900 rounded sm:hover:bg-gray-100 sm:hover:bg-transparent sm:border-0 sm:hover:text-red-500 sm:p-0" +
+                  "uppercase font-bold text-xl sm:text-base block py-4 sm:py-2 px-3 text-gray-900 rounded sm:hover:bg-gray-100 sm:hover:bg-transparent sm:border-0 sm:hover:text-red-500 sm:p-0" +
                   (pathname === "/cars" ? " text-red-500" : "")
                 }
                 onClick={() => setOpenNav(false)}
@@ -119,7 +119,7 @@ export default function Navbar() {
             <li>
               <HashLink
                 to="/#events"
-                className="uppercase font-bold block py-2 px-3 text-gray-900 rounded sm:hover:bg-gray-100 sm:hover:bg-transparent sm:border-0 sm:hover:text-red-500 sm:p-0 dark:text-black "
+                className="uppercase font-bold text-xl sm:text-base block py-4 sm:py-2 px-3 text-gray-900 rounded sm:hover:bg-gray-100 sm:hover:bg-transparent sm:border-0 sm:hover:text-red-500 sm:p-0 dark:text-black "
                 onClick={() => setOpenNav(false)}
               >
                 Events
@@ -128,7 +128,7 @@ export default function Navbar() {
             <li>
               <HashLink
                 to="/#showroom"
-                className="uppercase font-bold block py-2 px-3 text-gray-900 rounded sm:hover:bg-gray-100 sm:hover:bg-transparent sm:border-0 sm:hover:text-red-500 sm:p-0 dark:text-black "
+                className="uppercase font-bold text-xl sm:text-base block py-4 sm:py-2 px-3 text-gray-900 rounded sm:hover:bg-gray-100 sm:hover:bg-transparent sm:border-0 sm:hover:text-red-500 sm:p-0 dark:text-black "
                 onClick={() => setOpenNav(false)}
               >
                 Contact
