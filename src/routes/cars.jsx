@@ -21,8 +21,8 @@ window.auto24Callback = () => {
   const vehiclesList = document.querySelector(".vehicles_list");
   const sortedVehicles = document.createElement("div");
   sortedVehicles.classList.add("vehicles_list");
-  sortedVehicles.appendChild(ferraries);
-  sortedVehicles.appendChild(otherCars);
+  sortedVehicles.append(...ferraries);
+  sortedVehicles.append(...otherCars);
 
   const auto24Content = document.querySelector("#auto24Content");
   auto24Content.replaceChild(vehiclesList, sortedVehicles);
