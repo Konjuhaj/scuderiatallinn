@@ -152,41 +152,40 @@ const DummyComponen = () => {
   );
 };
 
-// Use a functional component
 export default function Template() {
-  // Initialize state
   const [imageLinks, setImageLinks] = useState([]);
 
-  // Define the callback function inside useEffect to avoid polluting the global scope
+  const auto24Callback = () => {
+    const aTags = document.querySelectorAll("#vehicleImagesContentDiv a");
+    setImageLinks(Array.from(aTags).map((aTag) => aTag.href));
+  };
+  window.auto24Callback = auto24Callback;
   useEffect(() => {
-    const auto24Callback = () => {
-      const aTags = document.querySelectorAll("#vehicleImagesContentDiv a");
-      setImageLinks(Array.from(aTags).map((aTag) => aTag.href));
-    };
-    window.auto24Callback = auto24Callback;
-    // Call the callback function
-    // Log the imageLinks state
-    console.log(imageLinks);
-
-    // Create and insert the script
     const root = document.querySelector("#root");
     const script = document.createElement("script");
     script.type = "text/javascript";
-    script.text = `
+
+    const javascriptCode = `
       auto24API.setCallback(window.auto24Callback);
       auto24API.load("80023381ff22186911bc932eff366eab");
-    `;
+  `;
+    // Create a text node containing the JavaScript code
+    const scriptContent = document.createTextNode(javascriptCode);
+
+    // Append the text node to the script element
+    script.appendChild(scriptContent);
     const auto24Content = document.querySelector("#auto24");
     root.insertBefore(script, auto24Content);
-  }, []); // Empty dependency array means this effect runs once on mount
-
-  // Render the component
+  }, []);
+  const divContent = "{AUTO24CONTENT}";
+  console.log(imageLinks);
   return (
     <>
-      <PreLoader />
+      <PreLoader></PreLoader>
       <div className="auto24" id="auto24Content">
+        {/* <DummyComponen /> */}
         <ImageSlider imageLinks={imageLinks} />
-        {"{AUTO24CONTENT}"}
+        {divContent}{" "}
       </div>
     </>
   );
