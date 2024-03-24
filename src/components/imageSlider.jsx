@@ -12,7 +12,8 @@ const ImageSlider = ({ imageLinks }) => {
       prevIndex === imageLinks.length - 1 ? 0 : prevIndex + 1
     );
   };
-  console.log("image_slider" + imageLinks);
+  console.log("Type of imageLinks:", typeof imageLinks);
+  console.log("Is imageLinks an array?", Array.isArray(imageLinks));
   return (
     <div className="image-slider relative">
       <div className="">
