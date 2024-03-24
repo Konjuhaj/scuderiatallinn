@@ -152,18 +152,18 @@ const DummyComponen = () => {
   );
 };
 
-const auto24Callback = () => {
-  console.log("auto24Callback");
-
-  const aTags = document.querySelectorAll("#vehicleImagesContentDiv a");
-  const links = Array.from(aTags).map((aTag) => aTag.href);
-  console.log("links from a tags");
-  console.log(links);
-  window.aTagLinks = links;
-};
-window.auto24Callback = auto24Callback;
-
 export default function Template() {
+  let links = [];
+  const auto24Callback = () => {
+    console.log("auto24Callback");
+
+    const aTags = document.querySelectorAll("#vehicleImagesContentDiv a");
+    links = Array.from(aTags).map((aTag) => aTag.href);
+    console.log("links from a tags");
+    console.log(links);
+    window.aTagLinks = links;
+  };
+  window.auto24Callback = auto24Callback;
   useEffect(() => {
     const root = document.querySelector("#root");
     const script = document.createElement("script");
@@ -188,7 +188,7 @@ export default function Template() {
       <PreLoader></PreLoader>
       <div className="auto24" id="auto24Content">
         {/* <DummyComponen /> */}
-        <ImageSlider imageLinks={window.aTagLinks} />
+        <ImageSlider imageLinks={links} />
         {divContent}{" "}
       </div>
     </>
