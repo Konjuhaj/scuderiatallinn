@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import ImageSlider from "../components/imageSlider";
 import PreLoader from "../components/preLoader";
 
 const DummyComponen = () => {
@@ -183,11 +184,14 @@ export default function Template() {
   }, []);
   const divContent = "{AUTO24CONTENT}";
 
+
+
   return (
     <>
       <PreLoader></PreLoader>
       <div className="auto24" id="auto24Content">
         {/* <DummyComponen /> */}
+        <ImageSlider imageLinks={aTagLinks} />
         {divContent}{" "}
       </div>
     </>
