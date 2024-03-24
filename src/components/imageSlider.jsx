@@ -1,7 +1,7 @@
-import { useState } from "react";
+import React, { useState } from "react";
 
 const ImageSlider = ({ imageLinks }) => {
-  //   const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0);
   //   const goToPrevious = () => {
   //     setCurrentIndex((prevIndex) =>
   //       prevIndex === 0 ? imageLinks.length - 1 : prevIndex - 1
