@@ -169,8 +169,8 @@ export default function Template() {
     script.type = "text/javascript";
 
     const javascriptCode = `
-      eng.auto24API.setCallback(window.auto24Callback);
-      eng.auto24API.load("80023381ff22186911bc932eff366eab");
+      auto24API.setCallback(window.auto24Callback);
+      auto24API.load("80023381ff22186911bc932eff366eab");
   `;
     // Create a text node containing the JavaScript code
     const scriptContent = document.createTextNode(javascriptCode);
