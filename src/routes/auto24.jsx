@@ -162,14 +162,14 @@ export default function Template() {
       .filter((link) => link.toLowerCase().endsWith(".jpg"));
     setImageLinks(imageLinks);
   };
-  // window.auto24Callback = auto24Callback;
+  window.auto24Callback = auto24Callback;
   useEffect(() => {
     const root = document.querySelector("#root");
     const script = document.createElement("script");
     script.type = "text/javascript";
 
     const javascriptCode = `
-      auto24API.setCallback(auto24Callback);
+      auto24API.setCallback(window.auto24Callback);
       auto24API.load("80023381ff22186911bc932eff366eab");
   `;
     // Create a text node containing the JavaScript code
