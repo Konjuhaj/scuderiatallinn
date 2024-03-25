@@ -245,7 +245,7 @@ export default function Template() {
       {/* <DummyComponen /> */}
       <CarDetails carDetails={carDetails} />
       <div className="auto24" id="auto24Content">
-        {/* {divContent}{" "} */}
+        {divContent}{" "}
       </div>
     </>
   );
