@@ -59,17 +59,17 @@ export default function CarDetails(carDetails) {
           <p>
             Torsten Kihlman
           </p>
-          <p
+          <p>
             <a href="tel:+37256630469">+372 566 30 469</a>
-          <p />
-          <p
+          </p>
+          <p>
             E.{" "}
-          <a href="mailto:torsten.kihlman@scuderiatallinn.ee">
-            torsten.kihlman@scuderiatallinn.ee
-          </a>
-        </p>
-      </div>
-    </div>
+            <a href="mailto:torsten.kihlman@scuderiatallinn.ee">
+              torsten.kihlman@scuderiatallinn.ee
+            </a>
+          </p>
+        </div>
+      </div >
     </div >
   );
 }
