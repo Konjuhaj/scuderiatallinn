@@ -1,148 +1,162 @@
 import { useEffect, useState } from "react";
 import ImageSlider from "../components/imageSlider";
 import PreLoader from "../components/preLoader";
+import CarDetails from "../components/carDetails";
 
 const DummyComponen = () => {
   const htmlContent = `
-  <div class="auto24" id="auto24Content"><div class="DetailWrapper">
-  <div class="DetailsMain">
-          
   <table width="100%" cellpadding="0" cellspacing="0" class="vehicle_details">
-<tbody><tr>
-  <th class="make_and_model_title">Mark ja mudel:</th>
-  <th class="make_and_model">Audi A8 Quattro 55 TFSI</th>
-</tr><tr>
-    <td class="name">Liik:</td>
-    <td class="value">sõiduauto</td>
-  </tr>
+	<tbody><tr>
+		<th class="make_and_model_title">Make and model:</th>
+		<th class="make_and_model">Ferrari 612 Scaglietti</th>
+	</tr><tr>
+			<td class="name">Type:</td>
+			<td class="value">passenger car</td>
+		</tr>
 <tr>
-    <td class="name">Keretüüp:</td>
-    <td class="value">sedaan</td>
-  </tr>
+			<td class="name">Bodytype:</td>
+			<td class="value">coupe</td>
+		</tr>
 <tr>
-    <td class="name">Esmane reg.:</td>
-    <td class="value">05/2018</td>
-  </tr>
+			<td class="name">First registration:</td>
+			<td class="value">08/2006</td>
+		</tr>
 
 
-
-<tr>
-    <td class="name">Värvus:</td>
-    <td class="value">must met.</td>
-  </tr>
-<tr>
-    <td class="name">Odomeetri näit:</td>
-    <td class="value">62&nbsp;000 km</td>
-  </tr>
 
 <tr>
-    <td class="name">Hind:</td>
-    <td class="value price">
-      54&nbsp;900&nbsp;EUR<br><small class="km">Hind sisaldab KM 22%</small>
-    </td>
-  </tr>
+			<td class="name">Color:</td>
+			<td class="value">black (Nero DS)</td>
+		</tr>
+<tr>
+			<td class="name">Mileage:</td>
+			<td class="value">16,600 km<p style="padding: 0px; margin: 0px;">service book</p></td>
+		</tr>
+
+<tr>
+			<td class="name">Price:</td>
+			<td class="value price">
+				EUR&nbsp;114,900<br><small class="km">VAT 0%</small>
+			</td>
+		</tr>
 
 
 
 
-
+<tr class="field-tehasetahis">
+			<td class="name">VIN:</td>
+			<td class="value">ZFFAY54B000148255</td>
+		</tr>
 <tr class="field-reg_nr">
-    <td class="name">Reg. number:</td>
-    <td class="value">155MRX</td>
-  </tr>
+			<td class="name">Reg. number:</td>
+			<td class="value">684MKT</td>
+		</tr>
 <tr>
-    <td class="name">Uste arv:</td>
-    <td class="value">4</td>
-  </tr>
+			<td class="name">Number of doors:</td>
+			<td class="value">2</td>
+		</tr>
 <tr>
-    <td class="name">Istekohti:</td>
-    <td class="value">5</td>
-  </tr>
+			<td class="name">Seats:</td>
+			<td class="value">4</td>
+		</tr>
 <tr>
-    <td class="name">Mootor:</td>
-    <td class="value">3.0 V6 (250 kW)</td>
-  </tr>
+			<td class="name">Engine:</td>
+			<td class="value">5.7 V12 (397 kW)</td>
+		</tr>
 <tr>
-    <td class="name">Tühimass:</td>
-    <td class="value">2156 kg</td>
-  </tr>
+			<td class="name">Base curb weight:</td>
+			<td class="value">1940 kg</td>
+		</tr>
 <tr>
-    <td class="name">Täismass:</td>
-    <td class="value">2680 kg</td>
-  </tr>
+			<td class="name">Gross vehicle weight rating:</td>
+			<td class="value">2250 kg</td>
+		</tr>
 <tr>
-    <td class="name">Kandevõime:</td>
-    <td class="value">524 kg</td>
-  </tr>
+			<td class="name">Load carring capacity:</td>
+			<td class="value">310 kg</td>
+		</tr>
 <tr>
-    <td class="name">Teljevahe:</td>
-    <td class="value">2998 mm</td>
-  </tr>
+			<td class="name">Wheelbase:</td>
+			<td class="value">2950 mm</td>
+		</tr>
 <tr>
-      <td class="name">Rattavalem:</td>
-      <td class="value">4x4</td>
-    </tr>
+				<td class="name">Axle:</td>
+				<td class="value">4x2</td>
+			</tr>
 
 
 <tr>
-    <td class="name">Käigukast:</td>
-    <td class="value">automaat </td>
-  </tr>
+			<td class="name">Transmission:</td>
+			<td class="value">automatic </td>
+		</tr>
 
 <tr>
-    <td class="name">Tippkiirus:</td>
-    <td class="value">250 km/h</td>
-  </tr>
+			<td class="name">Max speed:</td>
+			<td class="value">315 km/h</td>
+		</tr>
 <tr>
-    <td class="name">Kütus:</td>
-    <td class="value">hübriid (bensiin / elekter)</td>
-  </tr>
+			<td class="name">Fuel:</td>
+			<td class="value">petrol</td>
+		</tr>
 
-<tr>
-    <td class="name">Kütusekulu maanteel:</td>
-    <td class="value">6.50 (l/100 km)</td>
-  </tr>
-<tr>
-    <td class="name">Keskmine kütusekulu:</td>
-    <td class="value">8 (l/100 km)</td>
-  </tr>
-<tr>
-    <td class="name">Kütusekulu linnas:</td>
-    <td class="value">10.50 (l/100 km)</td>
-  </tr>
+
+
+
 
 
 
 <tr>
-    <td class="name">Pikkus x Laius x Kõrgus:</td>
-    <td class="value">5172 x 1945 x 1473 (mm)</td>
-  </tr>
-
+			<td class="name">Length x Width x Height:</td>
+			<td class="value">4902 x 1951 x 1377 (mm)</td>
+		</tr>
 
 
 <tr>
-    <td class="name" valign="top">Muu:</td>
-    <td class="value">Eestis arvel, ülevaatus kuni <b>05.2024</b><br>Ostetud riigist: <b>Eesti</b><br>Sõiduki asukoht: <b>Tallinn</b>, Eesti</td>
-  </tr>
+			<td class="name" valign="top">Equipment:</td>
+			<td class="value">				<dl class="used_vehicle_equipment">
+										<dt>safety and security equipment</dt>
+						<dd>
+						power steering (speed-proportional), central locking (with remote control), ABS brakes, airbag, anti-theft alarm system, immobilizer, stability control, traction control, third brake light, rain sensor						</dd>
+												<dt>comfort equipment</dt>
+						<dd>
+						climate control, automatic anti-dazzle mirrors (inner), parking aid (front, rear), mirrors in sunshields						</dd>
+												<dt>interior</dt>
+						<dd>
+						leather interior, electrically adjustable seats (2x with memory), adjustable seat height (driver's seat, front passenger seat), 2x seat heating, leather steering wheel, multifunctional steering wheel, gear change from steering wheel, steering wheel adjustment (height and depth, electrical, with memory), black roof liner, rear armrest, cup holders, interior mats (textile)						</dd>
+												<dt>audio, video, communication</dt>
+						<dd>
+						BOSE car stereo, onboard computer						</dd>
+												<dt>tires and wheels</dt>
+						<dd>
+						summer tires, light alloy wheels						</dd>
+												<dt>lights</dt>
+						<dd>
+						Xenon headlight (low beam), headlight washers						</dd>
+												<dt>other equipment</dt>
+						<dd>
+						12v power outlet, rear window heating						</dd>
+										</dl>
+				</td>
+		</tr>
 <tr>
-    <td class="name" valign="top">E-mail:</td>
-    <td class="value"><a href="mailto:torsten.kihlman@scuderiatallinn.ee?subject=Audi&nbsp;A8 Quattro 55 TFSI&nbsp;3.0 V6&nbsp;sedaan&nbsp;2018">torsten.kihlman@scuderiatallinn.ee</a></td>
-  </tr>
+			<td class="name" valign="top">Other:</td>
+			<td class="value">Registered in Estonia, inspection valid until <b>08.2023</b><br>Brought from: <b>Germany</b><br>Location of a vehicle: <b>Tallinn</b>, Estonia<br>- Väga pika Eesti ajalooga sõiduk, kuid talvel pole sõitnud
+- Sama omanik Eestis aastast 2007
+- Äsja tehtud suur hooldus Soome Ferrari Esinduses
+- Uus sidur
+- Uus esiklaas
+- Uued rehvid
+- Seisukord nagu uus auto</td>
+		</tr>
 <tr>
-    <td class="name" valign="top">Kontaktandmed:</td>
-    <td class="value">Scuderia Tallinn <br>+372 566 30 469<br>Peterburi tee 50d/1, Tallinn 11415 <br><a href="www.scuderiatallinn.ee" target="_blank">www.scuderiatallinn.ee</a></td>
-  </tr>
-</tbody></table>    </div>
-      <div class="DetailImages"><!-- IMAGES CONTENT BEGIN -->
-<a name="vehicleImages"></a>
-<div id="vehicleImagesContainerDiv">
-<div id="vehicleImagesContentDiv">
-<div class="vehicleImageDiv0"><a href="https://img12.img-bcg.eu/auto24/560/980/175747980.jpg" onclick="imageview('https://img12.img-bcg.eu/auto24/560/980/175747980.jpg', 'auto_pilt', '1250', '834'); return false;"><img src="https://img12.img-bcg.eu/auto24/320/981/175747981.jpg" border="0" width="320" height="214" alt="image_1711199183"></a></div><div class="vehicleImageDiv1"><a href="https://img12.img-bcg.eu/auto24/560/976/175747976.jpg" onclick="imageview('https://img12.img-bcg.eu/auto24/560/976/175747976.jpg', 'auto_pilt', '1250', '834'); return false;"><img src="https://img12.img-bcg.eu/auto24/320/977/175747977.jpg" border="0" width="320" height="214" alt="image_1711199183"></a></div><div class="vehicleImageDiv0"><a href="https://img12.img-bcg.eu/auto24/560/984/175747984.jpg" onclick="imageview('https://img12.img-bcg.eu/auto24/560/984/175747984.jpg', 'auto_pilt', '1250', '834'); return false;"><img src="https://img12.img-bcg.eu/auto24/320/985/175747985.jpg" border="0" width="320" height="214" alt="image_1711199183"></a></div><div class="vehicleImageDiv1"><a href="https://img12.img-bcg.eu/auto24/560/999/175747999.jpg" onclick="imageview('https://img12.img-bcg.eu/auto24/560/999/175747999.jpg', 'auto_pilt', '1250', '834'); return false;"><img src="https://img12.img-bcg.eu/auto24/320/001/175748001.jpg" border="0" width="320" height="214" alt="image_1711199183"></a></div><div class="vehicleImageDiv0"><a href="https://img12.img-bcg.eu/auto24/560/988/175747988.jpg" onclick="imageview('https://img12.img-bcg.eu/auto24/560/988/175747988.jpg', 'auto_pilt', '1250', '834'); return false;"><img src="https://img12.img-bcg.eu/auto24/320/989/175747989.jpg" border="0" width="320" height="214" alt="image_1711199183"></a></div><div class="vehicleImageDiv1"><a href="https://img12.img-bcg.eu/auto24/560/016/175748016.jpg" onclick="imageview('https://img12.img-bcg.eu/auto24/560/016/175748016.jpg', 'auto_pilt', '1250', '834'); return false;"><img src="https://img12.img-bcg.eu/auto24/320/017/175748017.jpg" border="0" width="320" height="214" alt="image_1711199183"></a></div><div class="vehicleImageDiv0"><a href="https://img12.img-bcg.eu/auto24/560/004/175748004.jpg" onclick="imageview('https://img12.img-bcg.eu/auto24/560/004/175748004.jpg', 'auto_pilt', '1250', '834'); return false;"><img src="https://img12.img-bcg.eu/auto24/320/005/175748005.jpg" border="0" width="320" height="214" alt="image_1711199183"></a></div><div class="vehicleImageDiv1"><a href="https://img12.img-bcg.eu/auto24/560/992/175747992.jpg" onclick="imageview('https://img12.img-bcg.eu/auto24/560/992/175747992.jpg', 'auto_pilt', '1250', '834'); return false;"><img src="https://img12.img-bcg.eu/auto24/320/993/175747993.jpg" border="0" width="320" height="214" alt="image_1711199183"></a></div><div class="vehicleImageDiv0"><a href="https://img12.img-bcg.eu/auto24/560/994/175747994.jpg" onclick="imageview('https://img12.img-bcg.eu/auto24/560/994/175747994.jpg', 'auto_pilt', '1250', '834'); return false;"><img src="https://img12.img-bcg.eu/auto24/320/996/175747996.jpg" border="0" width="320" height="214" alt="image_1711199183"></a></div><div class="vehicleImageDiv1"><a href="https://img12.img-bcg.eu/auto24/560/008/175748008.jpg" onclick="imageview('https://img12.img-bcg.eu/auto24/560/008/175748008.jpg', 'auto_pilt', '1250', '834'); return false;"><img src="https://img12.img-bcg.eu/auto24/320/009/175748009.jpg" border="0" width="320" height="214" alt="image_1711199183"></a></div><div class="vehicleImageDiv0"><a href="https://img12.img-bcg.eu/auto24/560/012/175748012.jpg" onclick="imageview('https://img12.img-bcg.eu/auto24/560/012/175748012.jpg', 'auto_pilt', '1250', '834'); return false;"><img src="https://img12.img-bcg.eu/auto24/320/013/175748013.jpg" border="0" width="320" height="214" alt="image_1711199183"></a></div><div class="vehicleImageDiv1"><a href="https://img12.img-bcg.eu/auto24/560/020/175748020.jpg" onclick="imageview('https://img12.img-bcg.eu/auto24/560/020/175748020.jpg', 'auto_pilt', '1250', '834'); return false;"><img src="https://img12.img-bcg.eu/auto24/320/021/175748021.jpg" border="0" width="320" height="214" alt="image_1711199183"></a></div><div class="vehicleImageDiv0"><a href="https://img12.img-bcg.eu/auto24/560/028/175748028.jpg" onclick="imageview('https://img12.img-bcg.eu/auto24/560/028/175748028.jpg', 'auto_pilt', '1250', '834'); return false;"><img src="https://img12.img-bcg.eu/auto24/320/029/175748029.jpg" border="0" width="320" height="214" alt="image_1711199183"></a></div><div class="vehicleImageDiv1"><a href="https://img12.img-bcg.eu/auto24/560/024/175748024.jpg" onclick="imageview('https://img12.img-bcg.eu/auto24/560/024/175748024.jpg', 'auto_pilt', '1250', '834'); return false;"><img src="https://img12.img-bcg.eu/auto24/320/025/175748025.jpg" border="0" width="320" height="214" alt="image_1711199183"></a></div><div class="vehicleImageDiv0"><a href="https://img12.img-bcg.eu/auto24/560/032/175748032.jpg" onclick="imageview('https://img12.img-bcg.eu/auto24/560/032/175748032.jpg', 'auto_pilt', '1250', '834'); return false;"><img src="https://img12.img-bcg.eu/auto24/320/033/175748033.jpg" border="0" width="320" height="214" alt="image_1711199183"></a></div><div class="vehicleImageDiv">
-      <a style="text-decoration: none;" href="mailto:info@auto24.ee?subject=autoriõigus ja sui generis õigus">©&nbsp;2024</a>
-    </div>	</div>
-</div></div>
-</div>
-</div>`;
+			<td class="name" valign="top">E-mail:</td>
+			<td class="value"><a href="mailto:torsten.kihlman@scuderiatallinn.ee?subject=Ferrari&nbsp;612 Scaglietti&nbsp;5.7 V12&nbsp;coupe&nbsp;2006">torsten.kihlman@scuderiatallinn.ee</a></td>
+		</tr>
+<tr>
+			<td class="name" valign="top">Contact:</td>
+			<td class="value">Scuderia Tallinn <br>+372 566 30 469<br>Peterburi tee 50d/1, Tallinn 11415 <br><a href="www.scuderiatallinn.ee" target="_blank">www.scuderiatallinn.ee</a></td>
+		</tr>
+</tbody></table>`;
   return (
     <div
       dangerouslySetInnerHTML={{
@@ -152,16 +166,58 @@ const DummyComponen = () => {
   );
 };
 
+function parseVehicleDetails(htmlTable) {
+  const table = document.createElement("table");
+  table.innerHTML = htmlTable;
+
+  const data = {};
+  const rows = table.querySelectorAll("tr");
+
+  rows.forEach((row) => {
+    const cells = row.querySelectorAll("td, th");
+    if (cells.length === 2) {
+      const key = cells[0].textContent.trim().replace(":", "");
+      let value = cells[1].textContent.trim();
+
+      if (value.includes("EUR")) {
+        const priceAndVAT = value.split("EUR")[1].trim();
+        const price = priceAndVAT.split("VAT")[0].trim();
+        const vat = priceAndVAT.split("VAT")[1].trim();
+        if (!data.hasOwnProperty("Price")) {
+          data["Price"] = price;
+        }
+        if (!data.hasOwnProperty("VAT")) {
+          data["VAT"] = vat;
+        }
+      } else if (key === "Mileage") {
+        const mileage = value.split(" ")[0].replace(",", "");
+        if (!data.hasOwnProperty(key)) {
+          data[key] = mileage;
+        }
+      } else {
+        if (!data.hasOwnProperty(key)) {
+          data[key] = value;
+        }
+      }
+    }
+  });
+
+  return data;
+}
+
 export default function Template() {
   const [imageLinks, setImageLinks] = useState([]);
-
+  const [carDetails, setCarDetails] = useState({});
   const auto24Callback = () => {
-    console.log("auto24Callback");
     const aTags = document.querySelectorAll("#vehicleImagesContentDiv a");
     const imageLinks = Array.from(aTags)
       .map((aTag) => aTag.href)
       .filter((link) => link.toLowerCase().endsWith(".jpg"));
     setImageLinks(imageLinks);
+
+    setCarDetails(
+      parseVehicleDetails(document.querySelector(".vehicle_details").innerHTML)
+    );
   };
   window.auto24Callback = auto24Callback;
   useEffect(() => {
@@ -182,13 +238,13 @@ export default function Template() {
     root.insertBefore(script, auto24Content);
   }, []);
   const divContent = "{AUTO24CONTENT}";
-  console.log(imageLinks);
   return (
     <>
       <PreLoader></PreLoader>
       <ImageSlider imageLinks={imageLinks} />
+      {/* <DummyComponen /> */}
+      <CarDetails carDetails={carDetails} />
       <div className="auto24" id="auto24Content">
-        {/* <DummyComponen /> */}
         {divContent}{" "}
       </div>
     </>

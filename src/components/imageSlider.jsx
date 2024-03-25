@@ -12,13 +12,15 @@ const ImageSlider = ({ imageLinks }) => {
       prevIndex === imageLinks.length - 1 ? 0 : prevIndex + 1
     );
   };
-  console.log("Type of imageLinks:", typeof imageLinks);
-  console.log("Is imageLinks an array?", Array.isArray(imageLinks));
   return (
     <>
       <div className="image-slider relative w-full lg:w-3/5 mx-auto ">
         <div className="w-full h-auto">
-          <img className="w-full h-auto" src={imageLinks[currentIndex]} alt={`Slide ${currentIndex}`} />
+          <img
+            className="w-full h-auto"
+            src={imageLinks[currentIndex]}
+            alt={`Slide ${currentIndex}`}
+          />
         </div>
         <button
           onClick={goToPrevious}
