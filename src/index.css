@@ -29,6 +29,8 @@ html {
 }
 
 .vehicles_list img {
+  width: 360px;
+  height: 240px;
   transform: scale(1.2);
   transform-origin: 0% 20%;
 }
