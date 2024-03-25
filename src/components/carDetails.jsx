@@ -55,21 +55,21 @@ export default function CarDetails(carDetails) {
           <div>
             <hr />
           </div>
-          <h4 style={{ marginTop: "2em" }}>Contact</h4>
+          <h4 style={{ marginTop: "2em" }}>Contact us</h4>
           <p>
-            Torsten Kihlman
-          </p>
-          <p>
-            <a href="tel:+37256630469">+372 566 30 469</a>
-          </p>
-          <p>
+            Mr. Torsten Kihlman
+            <br />
+            Sales Executive
+            <br />
+            M. <a href="tel:+37256630469">+372 566 30 469</a>
+            <br />
             E.{" "}
             <a href="mailto:torsten.kihlman@scuderiatallinn.ee">
               torsten.kihlman@scuderiatallinn.ee
             </a>
           </p>
         </div>
-      </div >
-    </div >
+      </div>
+    </div>
   );
 }
