@@ -7,6 +7,7 @@ import { preLoaderAnim } from "../animations/animations";
 const PreLoader = () => {
 
 	useEffect(() => {
+		window.scrollTo(0, 0);
 		preLoaderAnim()
 	}, []);
 
