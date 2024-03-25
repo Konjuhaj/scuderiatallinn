@@ -32,7 +32,7 @@ html {
   width: 360px !important;
   height: 240px !important;
   transform: scale(1.2);
-  transform-origin: 0% 20%;
+  transform-origin: 15% 0%;
 }
 
 .vehicles_list h2 {
