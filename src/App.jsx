@@ -15,9 +15,7 @@ function App() {
         <Route exact path="" element={<Layout />}>
           <Route exact index element={<Root />} />
           <Route exact path="cars" element={<Cars />} />
-          <Route exact path="template">
-            <Route exact path="auto24" element={<Template />} />
-          </Route>
+          <Route exact path="car" element={<Template />} />
           <Route exact path="*" element={<Pagenotfound />} />
         </Route>
       </Routes>
