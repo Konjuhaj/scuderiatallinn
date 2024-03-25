@@ -1,6 +1,9 @@
 export default function CarDetails(carDetails) {
   const car = carDetails.carDetails;
   console.log(car);
+  if (!car || Object.keys(car).length === 0) {
+    return null; // or return some default JSX
+  }
 
   //   Splitting the equipment string and mapping over each item
   const equipmentItems = car.Equipment.split(/[\t,]+\n?/)

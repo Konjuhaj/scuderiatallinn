@@ -124,10 +124,11 @@ strong {
   flex-direction: column-reverse;
 }
 
-#vehicleImagesContainerDiv {
+#vehicleImagesContainerDiv,
+.vehicle_details {
   overflow: hidden;
   visibility: hidden;
-    display: none;
+  display: none;
 }
 
 #vehicleImagesContentDiv {
@@ -145,7 +146,7 @@ strong {
   margin-right: 10px; /* Adjust spacing between images */
 }
 
- /* -- TABLE STYLES -ze,  */
+/* -- TABLE STYLES -ze,  */
 
 table {
   width: 100%;

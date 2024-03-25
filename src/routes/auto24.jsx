@@ -3,6 +3,44 @@ import ImageSlider from "../components/imageSlider";
 import PreLoader from "../components/preLoader";
 import CarDetails from "../components/carDetails";
 
+function parseVehicleDetails(htmlTable) {
+  const table = document.createElement("table");
+  table.innerHTML = htmlTable;
+
+  const data = {};
+  const rows = table.querySelectorAll("tr");
+
+  rows.forEach((row) => {
+    const cells = row.querySelectorAll("td, th");
+    if (cells.length === 2) {
+      const key = cells[0].textContent.trim().replace(":", "");
+      let value = cells[1].textContent.trim();
+
+      if (value.includes("EUR")) {
+        const priceAndVAT = value.split("EUR")[1].trim();
+        const price = priceAndVAT.split("VAT")[0].trim();
+        const vat = priceAndVAT.split("VAT")[1].trim();
+        if (!data.hasOwnProperty("Price")) {
+          data["Price"] = price;
+        }
+        if (!data.hasOwnProperty("VAT")) {
+          data["VAT"] = vat;
+        }
+      } else if (key === "Mileage") {
+        const mileage = value.split(" ")[0].replace(",", "");
+        if (!data.hasOwnProperty(key)) {
+          data[key] = mileage;
+        }
+      } else {
+        if (!data.hasOwnProperty(key)) {
+          data[key] = value;
+        }
+      }
+    }
+  });
+
+  return data;
+}
 const DummyComponen = () => {
   const htmlContent = `
   <table width="100%" cellpadding="0" cellspacing="0" class="vehicle_details">
@@ -167,45 +205,6 @@ const DummyComponen = () => {
 };
 
 export default function Template() {
-  function parseVehicleDetails(htmlTable) {
-    const table = document.createElement("table");
-    table.innerHTML = htmlTable;
-
-    const data = {};
-    const rows = table.querySelectorAll("tr");
-
-    rows.forEach((row) => {
-      const cells = row.querySelectorAll("td, th");
-      if (cells.length === 2) {
-        const key = cells[0].textContent.trim().replace(":", "");
-        let value = cells[1].textContent.trim();
-
-        if (value.includes("EUR")) {
-          const priceAndVAT = value.split("EUR")[1].trim();
-          const price = priceAndVAT.split("VAT")[0].trim();
-          const vat = priceAndVAT.split("VAT")[1].trim();
-          if (!data.hasOwnProperty("Price")) {
-            data["Price"] = price;
-          }
-          if (!data.hasOwnProperty("VAT")) {
-            data["VAT"] = vat;
-          }
-        } else if (key === "Mileage") {
-          const mileage = value.split(" ")[0].replace(",", "");
-          if (!data.hasOwnProperty(key)) {
-            data[key] = mileage;
-          }
-        } else {
-          if (!data.hasOwnProperty(key)) {
-            data[key] = value;
-          }
-        }
-      }
-    });
-
-    return data;
-  }
-
   const [imageLinks, setImageLinks] = useState([]);
   const [carDetails, setCarDetails] = useState({});
   const auto24Callback = () => {
@@ -243,10 +242,10 @@ export default function Template() {
     <>
       <PreLoader></PreLoader>
       <ImageSlider imageLinks={imageLinks} />
-      {/* <DummyComponen /> */}
+      <DummyComponen />
       <CarDetails carDetails={carDetails} />
       <div className="auto24" id="auto24Content">
-        {divContent}{" "}
+        {/* {divContent}{" "} */}
       </div>
     </>
   );
