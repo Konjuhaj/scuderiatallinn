@@ -242,7 +242,7 @@ export default function Template() {
     <>
       <PreLoader></PreLoader>
       <ImageSlider imageLinks={imageLinks} />
-      <DummyComponen />
+      {/* <DummyComponen /> */}
       <CarDetails carDetails={carDetails} />
       <div className="auto24" id="auto24Content">
         {/* {divContent}{" "} */}
