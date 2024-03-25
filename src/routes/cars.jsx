@@ -33,7 +33,7 @@ export default function Template() {
     const script = document.createElement("script");
     const javascriptCode = `
     //auto24API.setCallback(window.auto24Callback);
-    auto24API.load("80023381ff22186911bc932eff366eab");
+    eng.auto24API.load("80023381ff22186911bc932eff366eab");
 `;
 
     // Create a text node containing the JavaScript code

@@ -159,10 +159,10 @@ export default function Template() {
     const aTags = document.querySelectorAll("#vehicleImagesContentDiv a");
     const imageLinks = Array.from(aTags)
       .map((aTag) => aTag.href)
-      .filter((link) => link.toLowerCase().endsWith('.jpg'));
+      .filter((link) => link.toLowerCase().endsWith(".jpg"));
     setImageLinks(imageLinks);
   };
-  window.auto24Callback = auto24Callback;
+  // window.auto24Callback = auto24Callback;
   useEffect(() => {
     const root = document.querySelector("#root");
     const script = document.createElement("script");
