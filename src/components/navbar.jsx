@@ -83,6 +83,9 @@ export default function Navbar() {
             <li>
               <HashLink
                 to="/#"
+                scroll={(el) =>
+                  window.scrollTo({ top: 0, behavior: "smooth" })
+                }
                 className={
                   "uppercase font-bold text-xl sm:text-base block py-4 sm:py-2 px-3 text-black rounded sm:bg-transparent sm:p-0 sm:hover:text-red-500" +
                   (pathname === "/" ? " sm:text-red-500" : "")
@@ -134,6 +137,6 @@ export default function Navbar() {
           </ul>
         </div>
       </div>
-    </nav>
+    </nav >
   );
 }
