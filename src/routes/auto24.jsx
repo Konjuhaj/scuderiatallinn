@@ -16,6 +16,10 @@ function parseVehicleDetails(htmlTable) {
       const key = cells[0].textContent.trim().replace(":", "");
       let value = cells[1].textContent.trim();
 
+      // Logging the value to understand its content
+      console.log("Key:", key, "Value:", value);
+
+
       if (value.includes("EUR")) {
         const priceAndVAT = value.split("EUR")[1].trim();
         const price = priceAndVAT.split("VAT")[0].trim();
