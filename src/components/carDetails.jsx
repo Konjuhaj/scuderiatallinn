@@ -52,15 +52,14 @@ export default function CarDetails(carDetails) {
           </h3>
           {equipmentItems}
 
-          <div className="uk-container">
+          <div>
             <hr />
           </div>
           <p>
-            <i className="ion-information-circled"></i> the correctness of the
-            information and the stock situation must always be ensured from the
-            seller. Location-specific delivery costs can be added to the prices.
-            We also serve you with professionalism in all matters related to
-            financing.
+            <i></i> the correctness of the information and the stock situation
+            must always be ensured from the seller. Location-specific delivery
+            costs can be added to the prices. We also serve you with
+            professionalism in all matters related to financing.
           </p>
           <h4 style={{ marginTop: "2em" }}>Contact us</h4>
           <p>
