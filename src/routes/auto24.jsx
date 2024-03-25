@@ -209,6 +209,7 @@ export default function Template() {
   const [imageLinks, setImageLinks] = useState([]);
   const [carDetails, setCarDetails] = useState({});
   const auto24Callback = () => {
+    console.log("auto24Callback");
     const aTags = document.querySelectorAll("#vehicleImagesContentDiv a");
     const imageLinks = Array.from(aTags)
       .map((aTag) => aTag.href)
