@@ -166,46 +166,46 @@ const DummyComponen = () => {
   );
 };
 
-function parseVehicleDetails(htmlTable) {
-  const table = document.createElement("table");
-  table.innerHTML = htmlTable;
+export default function Template() {
+  function parseVehicleDetails(htmlTable) {
+    const table = document.createElement("table");
+    table.innerHTML = htmlTable;
 
-  const data = {};
-  const rows = table.querySelectorAll("tr");
+    const data = {};
+    const rows = table.querySelectorAll("tr");
 
-  rows.forEach((row) => {
-    const cells = row.querySelectorAll("td, th");
-    if (cells.length === 2) {
-      const key = cells[0].textContent.trim().replace(":", "");
-      let value = cells[1].textContent.trim();
+    rows.forEach((row) => {
+      const cells = row.querySelectorAll("td, th");
+      if (cells.length === 2) {
+        const key = cells[0].textContent.trim().replace(":", "");
+        let value = cells[1].textContent.trim();
 
-      if (value.includes("EUR")) {
-        const priceAndVAT = value.split("EUR")[1].trim();
-        const price = priceAndVAT.split("VAT")[0].trim();
-        const vat = priceAndVAT.split("VAT")[1].trim();
-        if (!data.hasOwnProperty("Price")) {
-          data["Price"] = price;
-        }
-        if (!data.hasOwnProperty("VAT")) {
-          data["VAT"] = vat;
-        }
-      } else if (key === "Mileage") {
-        const mileage = value.split(" ")[0].replace(",", "");
-        if (!data.hasOwnProperty(key)) {
-          data[key] = mileage;
-        }
-      } else {
-        if (!data.hasOwnProperty(key)) {
-          data[key] = value;
+        if (value.includes("EUR")) {
+          const priceAndVAT = value.split("EUR")[1].trim();
+          const price = priceAndVAT.split("VAT")[0].trim();
+          const vat = priceAndVAT.split("VAT")[1].trim();
+          if (!data.hasOwnProperty("Price")) {
+            data["Price"] = price;
+          }
+          if (!data.hasOwnProperty("VAT")) {
+            data["VAT"] = vat;
+          }
+        } else if (key === "Mileage") {
+          const mileage = value.split(" ")[0].replace(",", "");
+          if (!data.hasOwnProperty(key)) {
+            data[key] = mileage;
+          }
+        } else {
+          if (!data.hasOwnProperty(key)) {
+            data[key] = value;
+          }
         }
       }
-    }
-  });
+    });
 
-  return data;
-}
+    return data;
+  }
 
-export default function Template() {
   const [imageLinks, setImageLinks] = useState([]);
   const [carDetails, setCarDetails] = useState({});
   const auto24Callback = () => {
