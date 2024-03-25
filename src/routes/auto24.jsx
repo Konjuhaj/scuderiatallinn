@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
+import CarDetails from "../components/carDetails";
 import ImageSlider from "../components/imageSlider";
 import PreLoader from "../components/preLoader";
-import CarDetails from "../components/carDetails";
 
 function parseVehicleDetails(htmlTable) {
   const table = document.createElement("table");
@@ -21,6 +21,10 @@ function parseVehicleDetails(htmlTable) {
         const price = priceAndVAT.split("VAT")[0].trim();
         const vat = priceAndVAT.split("VAT")[1].trim();
         if (!data.hasOwnProperty("Price")) {
+          // check if price has "Price includes" text and remove it
+          if (price.includes("Price includes")) {
+            price = price.split("Price includes")[0].trim();
+          }
           data["Price"] = price;
         }
         if (!data.hasOwnProperty("VAT")) {

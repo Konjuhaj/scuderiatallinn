@@ -55,27 +55,21 @@ export default function CarDetails(carDetails) {
           <div>
             <hr />
           </div>
+          <h4 style={{ marginTop: "2em" }}>Contact</h4>
           <p>
-            <i></i> the correctness of the information and the stock situation
-            must always be ensured from the seller. Location-specific delivery
-            costs can be added to the prices. We also serve you with
-            professionalism in all matters related to financing.
+            Torsten Kihlman
           </p>
-          <h4 style={{ marginTop: "2em" }}>Contact us</h4>
-          <p>
-            Mr. Torsten Kihlman
-            <br />
-            Sales Executive
-            <br />
-            M. <a href="tel:+37256630469">+372 566 30 469</a>
-            <br />
+          <p
+            <a href="tel:+37256630469">+372 566 30 469</a>
+          <p />
+          <p
             E.{" "}
-            <a href="mailto:torsten.kihlman@scuderiatallinn.ee">
-              torsten.kihlman@scuderiatallinn.ee
-            </a>
-          </p>
-        </div>
+          <a href="mailto:torsten.kihlman@scuderiatallinn.ee">
+            torsten.kihlman@scuderiatallinn.ee
+          </a>
+        </p>
       </div>
     </div>
+    </div >
   );
 }
