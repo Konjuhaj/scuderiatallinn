@@ -83,9 +83,6 @@ export default function Navbar() {
             <li>
               <HashLink
                 to="/#"
-                scroll={(el) =>
-                  el.scrollIntoView({ behavior: "smooth", block: "top" })
-                }
                 className={
                   "uppercase font-bold text-xl sm:text-base block py-4 sm:py-2 px-3 text-black rounded sm:bg-transparent sm:p-0 sm:hover:text-red-500" +
                   (pathname === "/" ? " sm:text-red-500" : "")
