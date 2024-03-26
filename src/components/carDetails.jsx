@@ -37,12 +37,24 @@ export default function CarDetails(carDetails) {
               <span className="self-end">{car["Mileage"]} km </span>
             </li>
             <li className="flex justify-between">
+              Color:
+              <span className="self-end">{car["Color"]} </span>
+            </li>
+            <li className="flex justify-between">
               First registration date:
               <span className="self-end">{car["First registration"]} </span>
             </li>
             <li className="flex justify-between">
-              Axle:
-              <span className="self-end">{car["Axle"]} </span>
+              Fuel:
+              <span className="self-end">{car["Fuel"]} </span>
+            </li>
+            <li className="flex justify-between">
+              Average fuel consumption:
+              <span className="self-end">{car["Average fuel consumption"]} </span>
+            </li>
+            <li className="flex justify-between">
+              Engine:
+              <span className="self-end">{car["Engine"]} </span>
             </li>
           </ul>
         </div>
@@ -59,15 +71,13 @@ export default function CarDetails(carDetails) {
           <div>
             <hr />
           </div>
-          <h4 style={{ marginTop: "2em" }}>Contact us</h4>
+          <h4 style={{ marginTop: "2em" }}>Contact</h4>
           <p>
-            Mr. Torsten Kihlman
+            Torsten Kihlman
             <br />
-            Sales Executive
+            {" "} <a href="tel:+37256630469">+372 566 30 469</a>
             <br />
-            M. <a href="tel:+37256630469">+372 566 30 469</a>
-            <br />
-            E.{" "}
+            {" "}
             <a href="mailto:torsten.kihlman@scuderiatallinn.ee">
               torsten.kihlman@scuderiatallinn.ee
             </a>
