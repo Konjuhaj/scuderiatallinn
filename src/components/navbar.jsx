@@ -30,7 +30,7 @@ export default function Navbar() {
   }, [openNav]);
 
   return (
-    <nav id="navbar" className="bg-white sticky top-0">
+    <nav id="navbar" className="bg-white sticky top-0 z-50">
       <div className="flex flex-wrap items-center justify-between mx-auto py-4 px-6">
         <a href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
           <img
