@@ -26,8 +26,9 @@ function parseVehicleDetails(htmlTable) {
 				if (!data.hasOwnProperty("Price")) {
 					if (price.includes("Price includes")) {
 						data["Price"] = price.split("Price includes")[0].trim();
+					} else {
+						data["Price"] = price;
 					}
-					data["Price"] = price;
 				}
 				if (!data.hasOwnProperty("VAT")) {
 					data["VAT"] = vat;
