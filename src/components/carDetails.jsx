@@ -9,10 +9,12 @@ export default function CarDetails(carDetails) {
   const equipmentItems = car.Equipment.split(/[\t,]+\n?/)
     .filter((item) => item.trim()) // Filter out empty items
     .map((item, index) => (
-      <span className="p-1" key={index}>
-        {item.trim()}
-        <br />
-      </span>
+      <p>
+        <span className="p-1" key={index}>
+          {item.trim()}
+          <br />
+        </span>
+      </p>
     ));
 
   return (
@@ -50,7 +52,9 @@ export default function CarDetails(carDetails) {
           <h3 className="font-bold text-lg">
             Additional information and equipment
           </h3>
-          {equipmentItems}
+          <div className="columns-2">
+            {equipmentItems}
+          </div>
 
           <div>
             <hr />
