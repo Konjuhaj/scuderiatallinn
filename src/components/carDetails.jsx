@@ -19,11 +19,11 @@ export default function CarDetails(carDetails) {
 
   return (
     <div className="lg:flex lg:w-4/5 mx-auto" data-uk-grid="">
-      <div className="lg:w-1/3 lg:order-1">
+      <div className="lg:full lg:order-1">
         <div className="p-4">
           <h3 className="font-bold text-xl">{car["Make and model"]}</h3>
           <div style={{ height: "15px", clear: "left" }}></div>
-          <ul className="flex flex-col gap-2">
+          <ul className="[&>li]:p-1">
             <li className="flex justify-between">
               Price:
               <span className="self-end">
@@ -41,7 +41,7 @@ export default function CarDetails(carDetails) {
               <span className="self-end">{car["Color"]} </span>
             </li>
             <li className="flex justify-between">
-              First registration date:
+              Registration:
               <span className="self-end">{car["First registration"]} </span>
             </li>
             <li className="flex justify-between">
@@ -49,7 +49,7 @@ export default function CarDetails(carDetails) {
               <span className="self-end">{car["Fuel"]} </span>
             </li>
             <li className="flex justify-between">
-              Average fuel consumption:
+              Avg fuel consumption:
               <span className="self-end">{car["Average fuel consumption"]} </span>
             </li>
             <li className="flex justify-between">
