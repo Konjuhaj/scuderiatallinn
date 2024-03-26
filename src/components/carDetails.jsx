@@ -18,12 +18,12 @@ export default function CarDetails(carDetails) {
     ));
 
   return (
-    <div className="lg:flex lg:w-4/5 mx-auto" data-uk-grid="">
-      <div className="lg:full lg:order-1">
+    <div className="lg:w-4/5 mx-auto" data-uk-grid="">
+      <div className="w-full">
         <div className="p-4">
           <h3 className="font-bold text-xl">{car["Make and model"]}</h3>
           <div style={{ height: "15px", clear: "left" }}></div>
-          <ul className="[&>li]:p-1">
+          <ul className="columns-2 gap-12 [&>li]:p-1">
             <li className="flex justify-between">
               Price:
               <span className="self-end">
@@ -59,7 +59,7 @@ export default function CarDetails(carDetails) {
           </ul>
         </div>
       </div>
-      <div className="lg:w-2/3 lg:order-2">
+      <div className="w-full">
         <div className="flex flex-col p-4">
           <h3 className="font-bold text-lg">
             Additional information and equipment
