@@ -4,48 +4,51 @@ import ImageSlider from "../components/imageSlider";
 import PreLoader from "../components/preLoader";
 
 function parseVehicleDetails(htmlTable) {
-  const table = document.createElement("table");
-  table.innerHTML = htmlTable;
+	const table = document.createElement("table");
+	table.innerHTML = htmlTable;
 
-  const data = {};
-  const rows = table.querySelectorAll("tr");
+	const data = {};
+	const rows = table.querySelectorAll("tr");
 
-  rows.forEach((row) => {
-    const cells = row.querySelectorAll("td, th");
+	rows.forEach((row) => {
+		const cells = row.querySelectorAll("td, th");
 
-    if (cells.length === 2) {
-      console.log("Key:", cells[0], "Value:", cells[1]);
-      const key = cells[0].textContent.trim().replace(":", "");
-      let value = cells[1].textContent.trim();
+		if (cells.length === 2) {
+			console.log("Key:", cells[0], "Value:", cells[1]);
+			const key = cells[0].textContent.trim().replace(":", "");
+			let value = cells[1].textContent.trim();
 
 
-      if (value.includes("EUR")) {
-        const priceAndVAT = value.split("EUR")[1].trim();
-        const price = priceAndVAT.split("VAT")[0].trim();
-        const vat = priceAndVAT.split("VAT")[1].trim();
-        if (!data.hasOwnProperty("Price")) {
-          data["Price"] = price;
-        }
-        if (!data.hasOwnProperty("VAT")) {
-          data["VAT"] = vat;
-        }
-      } else if (key === "Mileage") {
-        const mileage = value.split(" ")[0].replace(",", "");
-        if (!data.hasOwnProperty(key)) {
-          data[key] = mileage;
-        }
-      } else {
-        if (!data.hasOwnProperty(key)) {
-          data[key] = value;
-        }
-      }
-    }
-  });
+			if (value.includes("EUR")) {
+				const priceAndVAT = value.split("EUR")[1].trim();
+				const price = priceAndVAT.split("VAT")[0].trim();
+				const vat = priceAndVAT.split("VAT")[1].trim();
+				if (!data.hasOwnProperty("Price")) {
+					if (price.includes("Price includes")) {
+						data["Price"] = price.split("Price includes")[0].trim();
+					}
+					data["Price"] = price;
+				}
+				if (!data.hasOwnProperty("VAT")) {
+					data["VAT"] = vat;
+				}
+			} else if (key === "Mileage") {
+				const mileage = value.split(" ")[0].replace(",", "");
+				if (!data.hasOwnProperty(key)) {
+					data[key] = mileage;
+				}
+			} else {
+				if (!data.hasOwnProperty(key)) {
+					data[key] = value;
+				}
+			}
+		}
+	});
 
-  return data;
+	return data;
 }
 const DummyComponen = () => {
-  const htmlContent = `
+	const htmlContent = `
   <table width="100%" cellpadding="0" cellspacing="0" class="vehicle_details">
 	<tbody><tr>
 		<th class="make_and_model_title">Make and model:</th>
@@ -198,58 +201,58 @@ const DummyComponen = () => {
 			<td class="value">Scuderia Tallinn <br>+372 566 30 469<br>Peterburi tee 50d/1, Tallinn 11415 <br><a href="www.scuderiatallinn.ee" target="_blank">www.scuderiatallinn.ee</a></td>
 		</tr>
 </tbody></table>`;
-  return (
-    <div
-      dangerouslySetInnerHTML={{
-        __html: htmlContent,
-      }}
-    ></div>
-  );
+	return (
+		<div
+			dangerouslySetInnerHTML={{
+				__html: htmlContent,
+			}}
+		></div>
+	);
 };
 
 export default function Template() {
-  const [imageLinks, setImageLinks] = useState([]);
-  const [carDetails, setCarDetails] = useState({});
-  const auto24Callback = () => {
-    console.log("auto24Callback");
-    const aTags = document.querySelectorAll("#vehicleImagesContentDiv a");
-    const imageLinks = Array.from(aTags)
-      .map((aTag) => aTag.href)
-      .filter((link) => link.toLowerCase().endsWith(".jpg"));
-    setImageLinks(imageLinks);
+	const [imageLinks, setImageLinks] = useState([]);
+	const [carDetails, setCarDetails] = useState({});
+	const auto24Callback = () => {
+		console.log("auto24Callback");
+		const aTags = document.querySelectorAll("#vehicleImagesContentDiv a");
+		const imageLinks = Array.from(aTags)
+			.map((aTag) => aTag.href)
+			.filter((link) => link.toLowerCase().endsWith(".jpg"));
+		setImageLinks(imageLinks);
 
-    setCarDetails(
-      parseVehicleDetails(document.querySelector(".vehicle_details").innerHTML)
-    );
-  };
-  window.auto24Callback = auto24Callback;
-  useEffect(() => {
-    const root = document.querySelector("#root");
-    const script = document.createElement("script");
-    script.type = "text/javascript";
+		setCarDetails(
+			parseVehicleDetails(document.querySelector(".vehicle_details").innerHTML)
+		);
+	};
+	window.auto24Callback = auto24Callback;
+	useEffect(() => {
+		const root = document.querySelector("#root");
+		const script = document.createElement("script");
+		script.type = "text/javascript";
 
-    const javascriptCode = `
+		const javascriptCode = `
       auto24API.setCallback(window.auto24Callback);
       auto24API.load("80023381ff22186911bc932eff366eab");
   `;
-    // Create a text node containing the JavaScript code
-    const scriptContent = document.createTextNode(javascriptCode);
+		// Create a text node containing the JavaScript code
+		const scriptContent = document.createTextNode(javascriptCode);
 
-    // Append the text node to the script element
-    script.appendChild(scriptContent);
-    const auto24Content = document.querySelector("#auto24");
-    root.insertBefore(script, auto24Content);
-  }, []);
-  const divContent = "{AUTO24CONTENT}";
-  return (
-    <>
-      <PreLoader></PreLoader>
-      <ImageSlider imageLinks={imageLinks} />
-      {/* <DummyComponen /> */}
-      <CarDetails carDetails={carDetails} />
-      <div className="auto24" id="auto24Content">
-        {divContent}{" "}
-      </div>
-    </>
-  );
+		// Append the text node to the script element
+		script.appendChild(scriptContent);
+		const auto24Content = document.querySelector("#auto24");
+		root.insertBefore(script, auto24Content);
+	}, []);
+	const divContent = "{AUTO24CONTENT}";
+	return (
+		<>
+			<PreLoader></PreLoader>
+			<ImageSlider imageLinks={imageLinks} />
+			{/* <DummyComponen /> */}
+			<CarDetails carDetails={carDetails} />
+			<div className="auto24" id="auto24Content">
+				{divContent}{" "}
+			</div>
+		</>
+	);
 }

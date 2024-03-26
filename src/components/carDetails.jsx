@@ -18,7 +18,7 @@ export default function CarDetails(carDetails) {
     ));
 
   return (
-    <div className="lg:flex" data-uk-grid="">
+    <div className="lg:flex lg:w-4/5 mx-auto" data-uk-grid="">
       <div className="lg:w-1/3 lg:order-1">
         <div className="p-4">
           <h3 className="font-bold text-xl">{car["Make and model"]}</h3>
