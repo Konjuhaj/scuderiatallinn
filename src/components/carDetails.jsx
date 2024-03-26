@@ -23,8 +23,8 @@ export default function CarDetails(carDetails) {
         <div className="p-4">
           <h3 className="font-bold text-xl">{car["Make and model"]}</h3>
           <div style={{ height: "15px", clear: "left" }}></div>
-          <ul className="columns-2 gap-12 [&>li]:p-1">
-            <li className="flex justify-between">
+          <ul className="columns-1 lg:columns-2 gap-12 [&>li]:p-1">
+            <li className="flex justify-between border-b-2 border-gray-200 pb-2">
               Price:
               <span className="self-end">
                 <strong>{car["Price"]}€ </strong>
@@ -32,23 +32,23 @@ export default function CarDetails(carDetails) {
                 <small>({car["VAT"]} VAT)</small>
               </span>
             </li>
-            <li className="flex justify-between">
+            <li className="flex justify-between border-b-2 border-gray-200 pb-2">
               Mileage:
               <span className="self-end">{car["Mileage"]} km </span>
             </li>
-            <li className="flex justify-between">
+            <li className="flex justify-between border-b-2 border-gray-200 pb-2">
               Color:
               <span className="self-end">{car["Color"]} </span>
             </li>
-            <li className="flex justify-between">
+            <li className="flex justify-between border-b-2 border-gray-200 pb-2">
               Registration:
               <span className="self-end">{car["First registration"]} </span>
             </li>
-            <li className="flex justify-between">
+            <li className="flex justify-between lg:border-b-2 lg:border-gray-200 pb-2">
               Fuel:
               <span className="self-end">{car["Fuel"]} </span>
             </li>
-            <li className="flex justify-between">
+            <li className="flex justify-between border-b-2 border-gray-200 pb-2">
               Avg fuel consumption:
               <span className="self-end">{car["Average fuel consumption"]} </span>
             </li>
@@ -64,7 +64,7 @@ export default function CarDetails(carDetails) {
           <h3 className="font-bold text-lg">
             Additional information and equipment
           </h3>
-          <div className="columns-2">
+          <div className="lg:columns-2 text-sm lg:text-md">
             {equipmentItems}
           </div>
 
