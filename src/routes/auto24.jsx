@@ -24,6 +24,7 @@ function parseVehicleDetails(htmlTable) {
 				const price = priceAndVAT.split("VAT")[0].trim();
 				const vat = priceAndVAT.split("VAT")[1].trim();
 				if (!data.hasOwnProperty("Price")) {
+					console.log("Price:", price);
 					if (price.includes("Price includes")) {
 						data["Price"] = price.split("Price includes")[0].trim();
 					} else {
