@@ -20,6 +20,17 @@ export default function CarDetails(carDetails) {
       </p>
     ));
 
+  const carInfo = car.Info.split('<br>')
+    .filter(item => item.trim()) // Filter out empty items
+    .map((item, index) => (
+      <p key={index}>
+        <span className="p-1">
+          {item.trim()}
+          <br />
+        </span>
+      </p>
+    ));
+
 
   return (
     <div className="lg:w-3/5 mx-auto p-4 lg:p-0" data-uk-grid="">
@@ -90,7 +101,7 @@ export default function CarDetails(carDetails) {
           <div>
             <h4>Additional information</h4>
             <div className="text-left">
-              {car["Other"]}
+              {carInfo}
             </div>
           </div>
           <div className="lg:columns-2 text-sm lg:text-md mb-2">
