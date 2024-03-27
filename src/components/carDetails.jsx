@@ -94,7 +94,7 @@ export default function CarDetails(carDetails) {
             <hr />
           </div>
           <h4 className="mt-2">Contact</h4>
-          <p>
+          <p className="flex flex-col lg:flex-row lg:gap-1">
             Torsten Kihlman
             <br /> <a href="tel:+37256630469">+372 566 30 469</a>
             <br />{" "}
