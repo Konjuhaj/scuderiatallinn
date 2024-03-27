@@ -20,16 +20,17 @@ export default function CarDetails(carDetails) {
       </p>
     ));
 
-  const carInfo = car.Other.split('<br>')
-    .filter(item => item.trim()) // Filter out empty items
-    .map((item, index) => (
-      <p key={index}>
-        <span className="p-1">
-          {item.trim()}
-          <br />
-        </span>
-      </p>
-    ));
+  console.log(car.Other)
+  // const carInfo = car.Other.split('<br>')
+  //   .filter(item => item.trim()) // Filter out empty items
+  //   .map((item, index) => (
+  //     <p key={index}>
+  //       <span className="p-1">
+  //         {item.trim()}
+  //         <br />
+  //       </span>
+  //     </p>
+  //   ));
 
 
   return (
