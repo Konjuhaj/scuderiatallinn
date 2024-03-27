@@ -33,6 +33,13 @@ html {
   height: 240px !important;
   transform: scale(1.2);
   transform-origin: 15% 20%;
+  transition: transform .5s;
+}
+
+.vehicles_list img:hover {
+  transform: scale(1.3);
+  transition: transform .5s;
+  transform-origin: 15% 20%;
 }
 
 .vehicles_list h2 {
