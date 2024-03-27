@@ -21,7 +21,7 @@ export default function CarDetails(carDetails) {
     ));
 
   return (
-    <div className="lg:w-3/5 mx-auto" data-uk-grid="">
+    <div className="lg:w-3/5 mx-auto p-4 lg:p-0" data-uk-grid="">
       <div className="w-full">
         <div className="pt-6">
           <h3 className="font-bold text-xl">{car["Make and model"]}</h3>
