@@ -12,13 +12,27 @@ export default function CarDetails(carDetails) {
   const equipmentItems = car.Equipment.split(/,(?![^()]*\))/)
     .filter((item) => item.trim()) // Filter out empty items
     .map((item, index) => (
-      <p>
-        <span className="p-1" key={index}>
+      <p className="p-1">
+        <span key={index}>
           {item.trim()}
           <br />
         </span>
       </p>
     ));
+
+  console.log(carDetails.Other)
+
+  const styledOtherInfo = car.Other.props.children.map((child, index) => {
+    if (typeof child === 'string') {
+      return (
+        <p className="p-1" key={index}>
+          <span>{child.trim()}</span>
+        </p>
+      );
+    }
+    return child;
+  });
+
 
   return (
     <div className="lg:w-3/5 mx-auto p-4 lg:p-0" data-uk-grid="">
@@ -86,6 +100,10 @@ export default function CarDetails(carDetails) {
             Additional information and equipment
           </h3>
           <div className="mt-2"></div>
+          <div>
+            <h4>Additional information</h4>
+            {styledOtherInfo}
+          </div>
           <div className="lg:columns-2 text-sm lg:text-md mb-2">
             {equipmentItems}
           </div>
@@ -94,7 +112,7 @@ export default function CarDetails(carDetails) {
             <hr />
           </div>
           <h4 className="mt-2">Contact</h4>
-          <p className="flex flex-col lg:flex-row lg:gap-1">
+          <p className="flex flex-col">
             Torsten Kihlman
             <br /> <a href="tel:+37256630469">+372 566 30 469</a>
             <br />{" "}
