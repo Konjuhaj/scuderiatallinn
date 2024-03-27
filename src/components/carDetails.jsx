@@ -6,6 +6,9 @@ export default function CarDetails(carDetails) {
   }
 
   //   Splitting the equipment string and mapping over each item
+  if (!car.Equipment) {
+    car.Equipment = "No additional equipment";
+  }
   const equipmentItems = car.Equipment.split(/[\t,]+\n?/)
     .filter((item) => item.trim()) // Filter out empty items
     .map((item, index) => (
@@ -50,7 +53,9 @@ export default function CarDetails(carDetails) {
             </li>
             <li className="flex justify-between border-b-2 border-gray-200 pb-2">
               Avg fuel consumption:
-              <span className="self-end">{car["Average fuel consumption"]} </span>
+              <span className="self-end">
+                {car["Average fuel consumption"]}{" "}
+              </span>
             </li>
             <li className="flex justify-between">
               Engine:
@@ -74,10 +79,8 @@ export default function CarDetails(carDetails) {
           <h4 style={{ marginTop: "2em" }}>Contact</h4>
           <p>
             Torsten Kihlman
-            <br />
-            {" "} <a href="tel:+37256630469">+372 566 30 469</a>
-            <br />
-            {" "}
+            <br /> <a href="tel:+37256630469">+372 566 30 469</a>
+            <br />{" "}
             <a href="mailto:torsten.kihlman@scuderiatallinn.ee">
               torsten.kihlman@scuderiatallinn.ee
             </a>
