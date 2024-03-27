@@ -102,7 +102,7 @@ export default function CarDetails(carDetails) {
           <div>
             <h4>Additional information</h4>
             <div className="text-left">
-              {carInfo}
+              {/* {carInfo} */}
             </div>
           </div>
           <div className="lg:columns-2 text-sm lg:text-md mb-2">
