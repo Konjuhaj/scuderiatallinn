@@ -25,7 +25,7 @@ export default function CarDetails(carDetails) {
       <div className="w-full">
         <div className="p-4">
           <h3 className="font-bold text-xl">{car["Make and model"]}</h3>
-          <div style={{ height: "15px", clear: "left" }}></div>
+          <div className="mt-2"></div>
           <ul className="columns-1 lg:columns-2 gap-12 [&>li]:p-1">
             <li className="flex justify-between border-b-2 border-gray-200 pb-2">
               Price:
@@ -35,6 +35,14 @@ export default function CarDetails(carDetails) {
                 <small>({car["VAT"]} VAT)</small>
               </span>
             </li>
+            {car["Export price"] && (
+              <li className="flex justify-between border-b-2 border-gray-200 pb-2">
+                Export price:
+                <span className="self-end">
+                  <strong>{car["Export price"]}€ </strong>
+                </span>
+              </li>
+            )}
             <li className="flex justify-between border-b-2 border-gray-200 pb-2">
               Mileage:
               <span className="self-end">{car["Mileage"]} km </span>
@@ -47,7 +55,11 @@ export default function CarDetails(carDetails) {
               Registration:
               <span className="self-end">{car["First registration"]} </span>
             </li>
-            <li className="flex justify-between lg:border-b-2 lg:border-gray-200 pb-2">
+            <li className="flex justify-between border-b-2 border-gray-200 pb-2">
+              VIN:
+              <span className="self-end">{car["VIN"]} </span>
+            </li>
+            <li className="flex justify-between border-b-2 border-gray-200 pb-2">
               Fuel:
               <span className="self-end">{car["Fuel"]} </span>
             </li>
@@ -57,9 +69,13 @@ export default function CarDetails(carDetails) {
                 {car["Average fuel consumption"]}{" "}
               </span>
             </li>
-            <li className="flex justify-between">
+            <li className="flex justify-between border-b-2 border-gray-200 pb-2">
               Engine:
               <span className="self-end">{car["Engine"]} </span>
+            </li>
+            <li className="flex justify-between">
+              Transmission:
+              <span className="self-end">{car["Transmission"]} </span>
             </li>
           </ul>
         </div>
@@ -69,14 +85,15 @@ export default function CarDetails(carDetails) {
           <h3 className="font-bold text-lg">
             Additional information and equipment
           </h3>
-          <div className="lg:columns-2 text-sm lg:text-md">
+          <div className="mt-2"></div>
+          <div className="lg:columns-2 text-sm lg:text-md mb-2">
             {equipmentItems}
           </div>
 
           <div>
             <hr />
           </div>
-          <h4 style={{ marginTop: "2em" }}>Contact</h4>
+          <h4 className="mt-2">Contact</h4>
           <p>
             Torsten Kihlman
             <br /> <a href="tel:+37256630469">+372 566 30 469</a>
