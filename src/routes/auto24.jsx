@@ -49,6 +49,9 @@ function parseVehicleDetails(htmlTable) {
 
 	return data;
 }
+
+
+
 const DummyComponen = () => {
 	const htmlContent = `
   <table width="100%" cellpadding="0" cellspacing="0" class="vehicle_details">

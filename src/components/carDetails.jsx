@@ -20,19 +20,6 @@ export default function CarDetails(carDetails) {
       </p>
     ));
 
-  console.log(carDetails.Other)
-
-  const styledOtherInfo = car.Other.props.children.map((child, index) => {
-    if (typeof child === 'string') {
-      return (
-        <p className="p-1" key={index}>
-          <span>{child.trim()}</span>
-        </p>
-      );
-    }
-    return child;
-  });
-
 
   return (
     <div className="lg:w-3/5 mx-auto p-4 lg:p-0" data-uk-grid="">
@@ -102,7 +89,9 @@ export default function CarDetails(carDetails) {
           <div className="mt-2"></div>
           <div>
             <h4>Additional information</h4>
-            {styledOtherInfo}
+            <div className="text-left">
+              {car["Other"]}
+            </div>
           </div>
           <div className="lg:columns-2 text-sm lg:text-md mb-2">
             {equipmentItems}
