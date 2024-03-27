@@ -9,7 +9,7 @@ export default function CarDetails(carDetails) {
   if (!car.Equipment) {
     car.Equipment = "No additional equipment";
   }
-  const equipmentItems = car.Equipment.split(/[\t,]+\n?/)
+  const equipmentItems = car.Equipment.split(/,(?![^()]*\))/)
     .filter((item) => item.trim()) // Filter out empty items
     .map((item, index) => (
       <p>
