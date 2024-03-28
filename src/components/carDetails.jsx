@@ -26,6 +26,7 @@ export default function CarDetails(carDetails) {
     .map((item, index) => {
       const carInfo = item.replace(/<\/?b>/g, ''); // Remove <b> and </b> tags
       if (carInfo.trim() === "Demo vehicle") return null; // Skip creating JSX for "Demo vehicle"
+      carInfo = carInfo.charAt(0).toUpperCase() + carInfo.slice(1); // Convert first character to uppercase
       return (
         <p key={index} className="p-1">
           <span>
@@ -106,7 +107,7 @@ export default function CarDetails(carDetails) {
           <div className="mt-2"></div>
           <div>
             <h4>Additional information</h4>
-            <div className="text-left">
+            <div className="text-sm lg:text-md">
               {carInfo}
             </div>
           </div>
