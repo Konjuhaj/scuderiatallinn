@@ -38,7 +38,7 @@ export default function CarDetails(carDetails) {
   };
 
   const carEquipment = ({ car }) => {
-    console.log(car);
+    console.log(car.Equipment)
     const equipmentPairs = convertEquipmentHTML(car.Equipment);
     console.log(equipmentPairs);
     return (
