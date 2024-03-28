@@ -3,9 +3,18 @@ import Image from "./image";
 function Team() {
 	return (
 		<div className="flex flex-col justify-center items-center my-10 p-6">
-			<h1 className="text-2xl font-bold uppercase mt-2">Team</h1>
+			<div className="flex flex-col justify-center items-center text-center mb-4">
+				<h1 className="text-2xl font-bold uppercase">About our team</h1>
+				<h2 className="font-bold mt-4">Committed to Service</h2>
+				<div className="w-full sm:w-4/5 lg:w-1/2 mt-6">
+					<p>
+						Our team has a long experience working with Ferrari. Torsten Kihlman has years of experience selling Ferrari's for an Official Ferrari Partner,
+						Samuli Hepola has been running the Official Ferrari Service in Finland,
+						and Toni Vilander has been racing professionally with Ferrari for more than 15 years and has won 24 Hours of Le Mans twice in the GTE Pro class.
+					</p>
+				</div>
+			</div>
 			<div className="flex flex-col md:flex-col lg:flex-row gap-10 text-center mt-6 p-2 text-sm">
-
 				<div className="flex md:flex-row flex-col gap-10">
 					<div className="w-52 flex flex-col items-center gap-4">
 						<Image
