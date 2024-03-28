@@ -14,7 +14,6 @@ function parseVehicleDetails(htmlTable) {
 		const cells = row.querySelectorAll("td, th");
 
 		if (cells.length === 2) {
-			console.log("Key:", cells[0], "Value:", cells[1]);
 			const key = cells[0].textContent.trim().replace(":", "");
 			let value = cells[1].textContent.trim();
 
@@ -45,8 +44,6 @@ function parseVehicleDetails(htmlTable) {
 			} else if (key === "Equipment") {
 				if (!data.hasOwnProperty(key)) {
 					data[key] = cells[1].innerHTML;
-					console.log("Equipment:", data[key]);
-					console.log("Equipment:", cells[1].innerHTML);
 				}
 			}
 			else {
@@ -262,6 +259,10 @@ export default function Template() {
 	return (
 		<>
 			<PreLoader></PreLoader>
+			<a className="w-full lg:w-3/5 mx-auto p-2 flex flex-row" href="/cars">
+				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+					<path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+				</svg> All cars</a>
 			<ImageSlider imageLinks={imageLinks} />
 			{/* <DummyComponen /> */}
 			<CarDetails carDetails={carDetails} />
