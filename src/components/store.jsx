@@ -11,6 +11,7 @@ function store() {
 					src="./assets/Store-2.jpg"
 					alt="placeholder"
 					customClass="w-full max-h-130 object-cover object-center"
+					loading="lazy"
 				></Image>
 			</div>
 			<div className="flex flex-col justify-center items-center w-1/2">

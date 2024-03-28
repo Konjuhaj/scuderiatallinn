@@ -28,6 +28,7 @@ function Event({ image, title, date, location, description }) {
             className="w-full h-72 max-h-96 lg:w-96 object-cover rounded-t-2xl lg:rounded-r-none lg:rounded-l-2xl "
             src={image}
             alt=""
+            loading="lazy"
           />
         </div>
         <div className="flex flex-col gap-4 p-4 text-md h-1/2 lg:w-1/2">

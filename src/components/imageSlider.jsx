@@ -20,6 +20,7 @@ const ImageSlider = ({ imageLinks }) => {
             className="w-full h-auto"
             src={imageLinks[currentIndex]}
             alt={`Slide ${currentIndex}`}
+            loading="eager"
           />
         </div>
         <button

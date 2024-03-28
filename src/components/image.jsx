@@ -1,7 +1,7 @@
-function image({ src, alt, customClass }) {
+function image({ src, alt, customClass, loading }) {
 	return (
 		<>
-			<img src={src} alt={alt} className={customClass} />
+			<img src={src} alt={alt} className={customClass} loading={loading} />
 		</>
 	);
 }

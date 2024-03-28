@@ -21,6 +21,7 @@ function Team() {
 							src="./assets/Kihlman_profile.jpeg"
 							alt="Torsten Kihlman"
 							customClass="w-36 h-36 rounded-full object-cover"
+							loading="lazy"
 						></Image>
 						<div>
 							<h2 className="font-bold mb-1">TORSTEN KIHLMAN</h2>
@@ -36,6 +37,7 @@ function Team() {
 							src="./assets/Events_2.jpg"
 							alt="Jana Nikolajeva"
 							customClass="w-36 h-36 rounded-full object-cover"
+							loading="lazy"
 						></Image>
 						<div>
 							<h2 className="font-bold mb-1">JANA NIKOLAJEVA</h2>
@@ -55,6 +57,7 @@ function Team() {
 							src="./assets/Vilander_profile-2.jpg"
 							alt="Toni Vilander"
 							customClass="w-36 h-36 rounded-full object-cover"
+							loading="lazy"
 						></Image>
 						<div>
 							<h2 className="font-bold mb-1">TONI VILANDER</h2>
@@ -70,6 +73,7 @@ function Team() {
 							src="./assets/Events_2.jpg"
 							alt="Samuli Hepola"
 							customClass="w-36 h-36 rounded-full object-cover"
+							loading="lazy"
 						></Image>
 						<div>
 							<h2 className="font-bold mb-1">SAMULI HEPOLA</h2>
