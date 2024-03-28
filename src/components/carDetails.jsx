@@ -44,7 +44,7 @@ export default function CarDetails(carDetails) {
       <div>
         {Object.entries(equipmentPairs).map(([category, parts], index) => (
           <div key={index} className="break-inside-avoid">
-            <h4 className="text-bold">{category}</h4>
+            <h4 className="font-bold">{category}</h4>
             <div>
               {parts.map((part, idx) => (
                 <div key={idx}>{part}</div>
