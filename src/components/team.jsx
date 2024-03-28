@@ -2,7 +2,7 @@ import Image from "./image";
 
 function Team() {
 	return (
-		<div className="flex flex-col justify-center items-center my-10 p-6">
+		<div className="flex flex-col justify-center items-center my-16 px-0">
 			<div className="flex flex-col justify-center items-center text-center mb-4">
 				<h1 className="text-2xl font-bold uppercase">About our team</h1>
 				<h2 className="font-bold mt-4">Committed to Service</h2>
