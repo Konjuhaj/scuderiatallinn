@@ -20,6 +20,7 @@ export default function CarDetails(carDetails) {
     Array.from(doc.querySelectorAll('dt, dd')).forEach((item, index) => {
       const tagName = item.tagName.toLowerCase();
       const textContent = item.textContent.trim();
+      console.log(tagName, textContent);
 
       if (tagName === 'dt') {
         currentKey = textContent;
@@ -38,6 +39,7 @@ export default function CarDetails(carDetails) {
 
   const carEquipment = ({ car }) => {
     const equipmentPairs = convertEquipmentHTML(car.Equipment);
+    console.log(equipmentPairs);
     return (
       <div>
         {Object.entries(equipmentPairs).map(([category, parts], index) => (
@@ -155,7 +157,7 @@ export default function CarDetails(carDetails) {
           </div>
           <h4 className="font-bold border-b-1 border-gray-200 pb-2">Equipment</h4>
           <div className="lg:columns-2 text-sm lg:text-md border-b-1 border-gray-200 pb-2">
-            {carEquipment}
+            {carEquipment({ car })}
           </div>
           <h4 className="mt-2">Contact</h4>
           <p className="flex flex-col">
