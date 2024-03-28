@@ -5,10 +5,33 @@ export default function CarDetails(carDetails) {
     return null; // or return some default JSX
   }
 
-  //   Splitting the equipment string and mapping over each item
-  // if (!car.Equipment) {
-  //   car.Equipment = "No additional equipment";
-  // }
+  // Splitting the equipment string and mapping over each item
+  if (!car.Equipment) {
+    car.Equipment = "No additional equipment";
+  }
+
+  const convertEquipmentHTML = (html) => {
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(html, 'text/html');
+
+    const equipmentItems = Array.from(doc.querySelectorAll('dt, dd')).map((item, index) => {
+      const Tag = item.tagName.toLowerCase() === 'dt' ? 'h4' : 'p';
+      return (
+        <Tag key={index} className="py-1">
+          <span>
+            {item.textContent.trim()}
+            <br />
+          </span>
+        </Tag>
+      );
+    });
+
+    return equipmentItems;
+  };
+
+  const equipmentItems = convertEquipmentHTML(car.Equipment);
+
+
   // const equipmentItems = car.Equipment.split(/,(?![^()]*\))/)
   //   .filter((item) => item.trim()) // Filter out empty items
   //   .map((item, index) => (
@@ -109,7 +132,7 @@ export default function CarDetails(carDetails) {
           </div>
           <h4 className="font-bold">Equipment</h4>
           <div className="lg:columns-2 text-sm lg:text-md mb-2">
-            {/* {equipmentItems} */}
+            {equipmentItems}
           </div>
 
           <div>
