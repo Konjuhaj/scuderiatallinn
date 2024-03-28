@@ -22,15 +22,18 @@ export default function CarDetails(carDetails) {
 
   console.log(car.Other)
   const carInfo = car.Other.split('<br>')
-    .filter(item => item.trim()) // Filter out empty items
-    .map((item, index) => (
-      <p key={index}>
-        <span className="p-1">
-          {item.trim()}
-          <br />
-        </span>
-      </p>
-    ));
+    .filter(item => item.trim())
+    .map((item, index) => {
+      const trimmedItem = item.replace(/<\/?b>/g, ''); // Remove <b> and </b> tags
+      return (
+        <p key={index}>
+          <span className="p-1">
+            {trimmedItem.trim()}
+            <br />
+          </span>
+        </p>
+      );
+    });
   console.log(carInfo);
 
   return (
