@@ -18,9 +18,9 @@ export default function CarDetails(carDetails) {
       const Tag = item.tagName.toLowerCase() === 'dt' ? 'h4' : 'p';
       const tagClass = Tag === 'h4' ? 'text-bold' : ''; // Add text-bold class for <h4> tags
       return (
-        <div className="py-1" key={index}>
-          <Tag className={tagClass}>
-            <span>
+        <div className="py-1 break-inside-avoid" key={index}>
+          <Tag>
+            <span className={tagClass}>
               {item.textContent.trim()}
             </span>
           </Tag>
