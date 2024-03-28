@@ -32,7 +32,7 @@ export default function Navbar() {
   return (
     <nav id="navbar" className="bg-white sticky top-0 z-50">
       <div className="flex flex-wrap items-center justify-between mx-auto py-4 px-6">
-        <a href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
+        <a href="./" className="flex items-center space-x-3 rtl:space-x-reverse">
           <img
             src="/scuderiatallinn/assets/Scuderia_Tallinn_Logo_White.jpg"
             className="h-8"
