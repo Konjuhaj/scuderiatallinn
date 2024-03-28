@@ -96,7 +96,7 @@ export default function CarDetails(carDetails) {
               <li className="flex justify-between border-b border-gray-200">
                 Export price:
                 <span className="self-end">
-                  <strong>{car["Export price"]}€ </strong>
+                  <strong>{car["Export price"].toLocaleString()}€ </strong>
                 </span>
               </li>
             )}
