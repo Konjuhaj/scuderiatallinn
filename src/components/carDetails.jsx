@@ -6,19 +6,19 @@ export default function CarDetails(carDetails) {
   }
 
   //   Splitting the equipment string and mapping over each item
-  if (!car.Equipment) {
-    car.Equipment = "No additional equipment";
-  }
-  const equipmentItems = car.Equipment.split(/,(?![^()]*\))/)
-    .filter((item) => item.trim()) // Filter out empty items
-    .map((item, index) => (
-      <p className="py-1">
-        <span key={index}>
-          {item.trim()}
-          <br />
-        </span>
-      </p>
-    ));
+  // if (!car.Equipment) {
+  //   car.Equipment = "No additional equipment";
+  // }
+  // const equipmentItems = car.Equipment.split(/,(?![^()]*\))/)
+  //   .filter((item) => item.trim()) // Filter out empty items
+  //   .map((item, index) => (
+  //     <p className="py-1">
+  //       <span key={index}>
+  //         {item.trim()}
+  //         <br />
+  //       </span>
+  //     </p>
+  //   ));
 
   console.log(car.Other)
   const carInfo = car.Other.split('<br>')
@@ -109,7 +109,7 @@ export default function CarDetails(carDetails) {
           </div>
           <h4 className="font-bold">Equipment</h4>
           <div className="lg:columns-2 text-sm lg:text-md mb-2">
-            {equipmentItems}
+            {/* {equipmentItems} */}
           </div>
 
           <div>
