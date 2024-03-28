@@ -81,21 +81,20 @@ html {
 }
 
 .vehicles_list_data_cell.dataCell {
-  font-size: 0.8rem;
-  padding-top: 0.5rem;
+  font-size: 0.9rem;
   order: 2;
   position: relative;
 }
 
 .vehicles_list_price_cell {
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   font-weight: 800;
   order: 3;
 }
 
 .dataCell__finance {
   position: absolute;
-  bottom: -36px;
+  bottom: -46px;
 }
 
 /* Hidden information */
