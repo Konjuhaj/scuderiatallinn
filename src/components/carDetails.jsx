@@ -23,7 +23,7 @@ export default function CarDetails(carDetails) {
       console.log(tagName, textContent);
 
       if (tagName === 'dt') {
-        currentKey = textContent;
+        currentKey = textContent.charAt(0).toUpperCase() + part.trim().slice(1);
       } else if (tagName === 'dd') {
         if (currentKey) {
           const parts = textContent.split(/,(?![^()]*\))/);
@@ -43,8 +43,8 @@ export default function CarDetails(carDetails) {
     return (
       <div>
         {Object.entries(equipmentPairs).map(([category, parts], index) => (
-          <div key={index}>
-            <h4>{category}</h4>
+          <div key={index} className="break-inside-avoid">
+            <h4 className="font-bold">{category}</h4>
             <div>
               {parts.map((part, idx) => (
                 <div key={idx}>{part}</div>
