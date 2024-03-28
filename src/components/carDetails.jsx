@@ -38,6 +38,7 @@ export default function CarDetails(carDetails) {
   };
 
   const carEquipment = ({ car }) => {
+    console.log(car);
     const equipmentPairs = convertEquipmentHTML(car.Equipment);
     console.log(equipmentPairs);
     return (
