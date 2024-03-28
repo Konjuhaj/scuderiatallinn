@@ -24,11 +24,11 @@ export default function CarDetails(carDetails) {
   const carInfo = car.Other.split('<br>')
     .filter(item => item.trim())
     .map((item, index) => {
-      const trimmedItem = item.replace(/<\/?b>/g, ''); // Remove <b> and </b> tags
+      const carInfo = item.replace(/<\/?b>/g, ''); // Remove <b> and </b> tags
       return (
-        <p key={index}>
-          <span className="p-1">
-            {trimmedItem.trim()}
+        <p key={index} className="p-1">
+          <span>
+            {carInfo.trim()}
             <br />
           </span>
         </p>
