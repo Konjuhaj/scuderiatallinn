@@ -92,7 +92,7 @@ export default function CarDetails(carDetails) {
         <div className="pt-6">
           <h3 className="font-bold text-xl">{car["Make and model"]}</h3>
           <div className="mt-2"></div>
-          <ul className="columns-1 lg:columns-2 gap-12 [&>li]:p-1">
+          <ul className="columns-1 lg:columns-2 gap-12 [&>li]:py-1">
             <li className="flex justify-between border-b border-gray-200 pb-2">
               Price:
               <span className="self-end">
@@ -150,16 +150,16 @@ export default function CarDetails(carDetails) {
         <div className="flex flex-col pt-6">
           <div className="mt-2"></div>
           <div>
-            <h4 className="font-bold border-b border-gray-200 pb-2">Additional information</h4>
-            <div className="text-sm lg:text-md mb-2">
+            <h4 className="font-bold text-lg  border-b border-gray-200 pb-2">Additional information</h4>
+            <div className=" lg:text-md mb-2">
               {carInfo}
             </div>
           </div>
           <h4 className="font-bold border-b border-gray-200 pb-2">Equipment</h4>
-          <div className="lg:columns-2 text-sm lg:text-md border-b border-gray-200 pb-2">
+          <div className="lg:columns-2 gap-12 lg:text-md border-b border-gray-200 pb-2">
             {carEquipment({ car })}
           </div>
-          <h4 className="mt-2">Contact</h4>
+          <h4 className="mt-2 text-lg">Contact</h4>
           <p className="flex flex-col">
             Torsten Kihlman
             <br /> <a href="tel:+37256630469">+372 566 30 469</a>
