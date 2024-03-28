@@ -14,45 +14,45 @@ export default function CarDetails(carDetails) {
     const parser = new DOMParser();
     const doc = parser.parseFromString(html, 'text/html');
 
-    const equipmentItems = Array.from(doc.querySelectorAll('dt, dd')).map((item, index) => {
-      const Tag = item.tagName.toLowerCase() === 'dt' ? 'h4' : 'p';
-      const tagClass = Tag === 'h4' ? 'font-bold' : 'border-b-1 border-gray-200'; // Add font-bold class for <h4> tags
-      let textContent = item.textContent.trim();
+    const equipmentPairs = {};
+    let currentKey = null;
 
+    Array.from(doc.querySelectorAll('dt, dd')).forEach((item, index) => {
+      const tagName = item.tagName.toLowerCase();
+      const textContent = item.textContent.trim();
 
-      // Split <dd> items by commas while ignoring commas inside parentheses
-      if (Tag === 'p') {
-        const parts = textContent.split(/,(?![^()]*\))/);
-        const partElements = parts.map(part => (
-          <p>{part.trim().charAt(0).toUpperCase() + part.trim().slice(1)}</p>
-        ));
-        return (
-          <div className="py-1 break-inside-avoid" key={index}>
-            <span className={tagClass}>
-              {partElements}
-            </span>
-          </div>
-        );
+      if (tagName === 'dt') {
+        currentKey = textContent;
+      } else if (tagName === 'dd') {
+        if (currentKey) {
+          const parts = textContent.split(/,(?![^()]*\))/);
+          const trimmedParts = parts.map(part => part.trim().charAt(0).toUpperCase() + part.trim().slice(1));
+          equipmentPairs[currentKey] = trimmedParts.map(part => <p>{part}</p>);
+          currentKey = null; // Reset the current key
+        }
       }
-
-      // Capitalize the first character of each item
-      textContent = textContent.charAt(0).toUpperCase() + textContent.slice(1);
-
-      return (
-        <div className="py-1 break-inside-avoid" key={index}>
-          <Tag>
-            <span className={tagClass}>
-              {textContent}
-            </span>
-          </Tag>
-        </div>
-      );
     });
 
-    return equipmentItems;
+    return equipmentPairs;
   };
 
-  const equipmentItems = convertEquipmentHTML(car.Equipment);
+  const carEquipment = ({ car }) => {
+    const equipmentPairs = convertEquipmentHTML(car.Equipment);
+    return (
+      <div>
+        {Object.entries(equipmentPairs).map(([category, parts], index) => (
+          <div key={index}>
+            <h4>{category}</h4>
+            <div>
+              {parts.map((part, idx) => (
+                <div key={idx}>{part}</div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    );
+  };
 
 
   // const equipmentItems = car.Equipment.split(/,(?![^()]*\))/)
@@ -155,7 +155,7 @@ export default function CarDetails(carDetails) {
           </div>
           <h4 className="font-bold border-b-1 border-gray-200 pb-2">Equipment</h4>
           <div className="lg:columns-2 text-sm lg:text-md border-b-1 border-gray-200 pb-2">
-            {equipmentItems}
+            {carEquipment}
           </div>
           <h4 className="mt-2">Contact</h4>
           <p className="flex flex-col">
