@@ -24,15 +24,13 @@ export default function CarDetails(carDetails) {
       if (Tag === 'p') {
         const parts = textContent.split(/,(?![^()]*\))/);
         const partElements = parts.map(part => (
-          <>{part.trim().charAt(0).toUpperCase() + part.trim().slice(1)}</>
+          <p>{part.trim().charAt(0).toUpperCase() + part.trim().slice(1)}</p>
         ));
         return (
           <div className="py-1 break-inside-avoid" key={index}>
-            <Tag>
-              <span className={tagClass}>
-                {partElements}
-              </span>
-            </Tag>
+            <span className={tagClass}>
+              {partElements}
+            </span>
           </div>
         );
       }
