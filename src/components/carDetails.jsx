@@ -16,12 +16,32 @@ export default function CarDetails(carDetails) {
 
     const equipmentItems = Array.from(doc.querySelectorAll('dt, dd')).map((item, index) => {
       const Tag = item.tagName.toLowerCase() === 'dt' ? 'h4' : 'p';
-      const tagClass = Tag === 'h4' ? 'text-bold' : ''; // Add text-bold class for <h4> tags
+      const tagClass = Tag === 'h4' ? 'font-bold' : ''; // Add font-bold class for <h4> tags
+      let textContent = item.textContent.trim();
+
+
+      // Split <dd> items by commas while ignoring commas inside parentheses
+      if (Tag === 'p') {
+        const parts = textContent.split(/,(?![^()]*\))/);
+        return parts.map((part, idx) => (
+          <div className="py-1 break-inside-avoid" key={`${index}-${idx}`}>
+            <Tag>
+              <span className={tagClass}>
+                {part.trim()}
+              </span>
+            </Tag>
+          </div>
+        ));
+      }
+
+      // Capitalize the first character of each item
+      textContent = textContent.charAt(0).toUpperCase() + textContent.slice(1);
+
       return (
         <div className="py-1 break-inside-avoid" key={index}>
           <Tag>
             <span className={tagClass}>
-              {item.textContent.trim()}
+              {textContent}
             </span>
           </Tag>
         </div>
