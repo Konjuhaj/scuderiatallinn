@@ -120,12 +120,14 @@ export default function CarDetails(carDetails) {
               Fuel:
               <span className="self-end">{car["Fuel"]} </span>
             </li>
-            <li className="flex justify-between border-b border-gray-200">
-              Avg fuel consumption:
-              <span className="self-end">
-                {car["Average fuel consumption"]}{" "}
-              </span>
-            </li>
+            {car["Average fuel consumption"] && (
+              <li className="flex justify-between border-b border-gray-200">
+                Avg fuel consumption:
+                <span className="self-end">
+                  {car["Average fuel consumption"]}{" "}
+                </span>
+              </li>
+            )}
             <li className="flex justify-between border-b border-gray-200">
               Engine:
               <span className="self-end">{car["Engine"]} </span>
