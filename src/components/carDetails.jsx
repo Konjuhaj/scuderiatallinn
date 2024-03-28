@@ -22,20 +22,20 @@ export default function CarDetails(carDetails) {
 
   console.log(car.Other)
   const carInfo = car.Other.split('<br>')
-    .flatMap(item => item.split(' - ').filter(part => part.trim()))
-    .map((item, index) => {
-      const formattedItem = item.replace(/<\/?b>/g, '').trim(); // Remove <b> and </b> tags
-      if (formattedItem === "Demo vehicle") return null; // Skip creating JSX for "Demo vehicle"
+    .flatMap(item => item.split('-').map((part, index) => ({ part: part.trim(), isFirst: index === 0 })))
+    .filter(({ part }) => part.trim() && part !== "Demo vehicle")
+    .map(({ part, isFirst }, index) => {
+      const formattedPart = part.replace(/<\/?b>/g, '').trim(); // Remove <b> and </b> tags
+      const capitalizedPart = formattedPart.charAt(0).toUpperCase() + formattedPart.slice(1); // Capitalize the first character
       return (
         <p key={index} className="p-1">
           <span>
-            {formattedItem}
+            {isFirst ? '' : '- '}{capitalizedPart}
             <br />
           </span>
         </p>
       );
-    })
-    .filter(Boolean);
+    });
   console.log(carInfo);
 
   return (
