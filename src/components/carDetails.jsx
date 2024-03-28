@@ -20,6 +20,7 @@ export default function CarDetails(carDetails) {
     Array.from(doc.querySelectorAll('dt, dd')).forEach((item, index) => {
       const tagName = item.tagName.toLowerCase();
       const textContent = item.textContent.trim();
+
       console.log(tagName, textContent);
 
       if (tagName === 'dt') {
@@ -41,20 +42,20 @@ export default function CarDetails(carDetails) {
     console.log(car.Equipment)
     const equipmentPairs = convertEquipmentHTML(car.Equipment);
     console.log(equipmentPairs);
-    return (
-      <div>
-        {Object.entries(equipmentPairs).map(([category, parts], index) => (
-          <div key={index} className="break-inside-avoid">
-            <h4 className="font-bold">{category}</h4>
-            <div>
-              {parts.map((part, idx) => (
-                <div key={idx}>{part}</div>
-              ))}
-            </div>
-          </div>
-        ))}
-      </div>
-    );
+    // return (
+    //   <div>
+    //     {Object.entries(equipmentPairs).map(([category, parts], index) => (
+    //       <div key={index} className="break-inside-avoid">
+    //         <h4 className="font-bold">{category}</h4>
+    //         <div>
+    //           {parts.map((part, idx) => (
+    //             <div key={idx}>{part}</div>
+    //           ))}
+    //         </div>
+    //       </div>
+    //     ))}
+    //   </div>
+    // );
   };
 
 
@@ -69,7 +70,6 @@ export default function CarDetails(carDetails) {
   //     </p>
   //   ));
 
-  console.log(car.Other)
   const carInfo = car.Other.split('<br>')
     .flatMap(item => item.split('-').map((part, index) => ({ part: part.trim(), isFirst: index === 0 })))
     .filter(({ part }) => part.trim() && part !== "Demo vehicle")
@@ -85,7 +85,6 @@ export default function CarDetails(carDetails) {
         </p>
       );
     });
-  console.log(carInfo);
 
   return (
     <div className="lg:w-3/5 mx-auto p-4 lg:p-0" data-uk-grid="">
