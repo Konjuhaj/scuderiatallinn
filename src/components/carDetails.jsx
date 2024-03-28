@@ -45,7 +45,7 @@ export default function CarDetails(carDetails) {
     const equipmentPairs = convertEquipmentHTML(car.Equipment);
 
     return (
-      <div>
+      <div className="flex flex-col gap-4">
         {Object.entries(equipmentPairs).map(([category, parts], index) => (
           <div key={index} className="break-inside-avoid">
             <h4 className="font-bold">{category}</h4>
@@ -69,7 +69,7 @@ export default function CarDetails(carDetails) {
       const capitalizedPart = formattedPart.charAt(0).toUpperCase() + formattedPart.slice(1); // Capitalize the first character
 
       return (
-        <p key={index} className="py-1">
+        <p key={index} className="">
           <span>
             {isFirst ? '' : '- '}{capitalizedPart}
             <br />
@@ -130,7 +130,7 @@ export default function CarDetails(carDetails) {
               Engine:
               <span className="self-end">{car["Engine"]} </span>
             </li>
-            <li className="flex justify-between">
+            <li className="flex justify-between border-b border-gray-200">
               Transmission:
               <span className="self-end">{car["Transmission"]} </span>
             </li>
