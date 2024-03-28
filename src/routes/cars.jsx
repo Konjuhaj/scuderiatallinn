@@ -2,7 +2,6 @@ import { useEffect } from "react";
 import PreLoader from "../components/preLoader";
 
 window.auto24CarsCallback = () => {
-  console.log("auto24CarsCallback");
 
   const cars = Array.from(document.querySelectorAll(".vehicles_list > div"));
   const { ferraries, otherCars } = cars.reduce(

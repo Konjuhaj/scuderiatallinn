@@ -52,7 +52,7 @@ function Team() {
 				<div className="flex md:flex-row flex-col gap-10">
 					<div className="w-52 flex flex-col items-center gap-4">
 						<Image
-							src="./assets/Vilander_profile.jpg"
+							src="./assets/Vilander_profile-2.jpg"
 							alt="Toni Vilander"
 							customClass="w-36 h-36 rounded-full object-cover"
 						></Image>
