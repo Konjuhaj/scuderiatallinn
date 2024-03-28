@@ -25,6 +25,7 @@ export default function CarDetails(carDetails) {
     .filter(item => item.trim())
     .map((item, index) => {
       const carInfo = item.replace(/<\/?b>/g, ''); // Remove <b> and </b> tags
+      if (carInfo.trim() === "Demo vehicle") return null; // Skip creating JSX for "Demo vehicle"
       return (
         <p key={index} className="p-1">
           <span>
@@ -33,7 +34,8 @@ export default function CarDetails(carDetails) {
           </span>
         </p>
       );
-    });
+    })
+    .filter(Boolean);
   console.log(carInfo);
 
   return (
