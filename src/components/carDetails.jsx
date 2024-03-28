@@ -12,7 +12,7 @@ export default function CarDetails(carDetails) {
   const equipmentItems = car.Equipment.split(/,(?![^()]*\))/)
     .filter((item) => item.trim()) // Filter out empty items
     .map((item, index) => (
-      <p className="p-1">
+      <p className="py-1">
         <span key={index}>
           {item.trim()}
           <br />
@@ -28,7 +28,7 @@ export default function CarDetails(carDetails) {
       const formattedPart = part.replace(/<\/?b>/g, '').trim(); // Remove <b> and </b> tags
       const capitalizedPart = formattedPart.charAt(0).toUpperCase() + formattedPart.slice(1); // Capitalize the first character
       return (
-        <p key={index} className="p-1">
+        <p key={index} className="py-1">
           <span>
             {isFirst ? '' : '- '}{capitalizedPart}
             <br />
@@ -103,7 +103,7 @@ export default function CarDetails(carDetails) {
           <div className="mt-2"></div>
           <div>
             <h4 className="font-bold">Additional information</h4>
-            <div className="text-sm lg:text-md">
+            <div className="text-sm lg:text-md mb-2">
               {carInfo}
             </div>
           </div>
