@@ -100,16 +100,14 @@ export default function CarDetails(carDetails) {
       </div>
       <div className="w-full">
         <div className="flex flex-col pt-6">
-          <h3 className="font-bold text-lg">
-            Additional information and equipment
-          </h3>
           <div className="mt-2"></div>
           <div>
-            <h4>Additional information</h4>
+            <h4 className="font-bold">Additional information</h4>
             <div className="text-sm lg:text-md">
               {carInfo}
             </div>
           </div>
+          <h4 className="font-bold">Equipment</h4>
           <div className="lg:columns-2 text-sm lg:text-md mb-2">
             {equipmentItems}
           </div>

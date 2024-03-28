@@ -24,7 +24,7 @@ const ImageSlider = ({ imageLinks }) => {
         </div>
         <button
           onClick={goToPrevious}
-          className="absolute inset-y-0 left-0 flex items-center"
+          className="absolute inset-y-0 left-1 flex items-center"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -32,7 +32,7 @@ const ImageSlider = ({ imageLinks }) => {
             viewBox="0 0 24 24"
             strokeWidth="2"
             stroke="currentColor"
-            className="w-6 h-6"
+            className="w-10 h-10 bg-white bg-opacity-50 p-2 rounded-full shadow-lg"
           >
             <path
               strokeLinecap="round"
@@ -43,7 +43,7 @@ const ImageSlider = ({ imageLinks }) => {
         </button>
         <button
           onClick={goToNext}
-          className="absolute inset-y-0 right-0 flex items-center"
+          className="absolute inset-y-0 right-1 flex items-center"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -51,7 +51,7 @@ const ImageSlider = ({ imageLinks }) => {
             viewBox="0 0 24 24"
             strokeWidth="2"
             stroke="currentColor"
-            className="w-6 h-6"
+            className="w-10 h-10 bg-white bg-opacity-50 p-2 rounded-full shadow-lg"
           >
             <path
               strokeLinecap="round"
