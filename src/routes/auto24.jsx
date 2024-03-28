@@ -45,8 +45,11 @@ function parseVehicleDetails(htmlTable) {
 				if (!data.hasOwnProperty(key)) {
 					data[key] = cells[1].innerHTML;
 				}
-			}
-			else {
+			} else if (key === "Export price") {
+				if (!data.hasOwnProperty("Export price")) {
+					data["Export price"] = new Intl.NumberFormat('en-US', { style: 'decimal' }).format(value);
+				}
+			} else {
 				if (!data.hasOwnProperty(key)) {
 					data[key] = value;
 				}
