@@ -1,6 +1,7 @@
 import "./App.css";
 import Footer from "./components/footer";
 import Navbar from "./components/navbar";
+import AllEvents from "./routes/allEvents";
 import Template from "./routes/auto24";
 import Cars from "./routes/cars";
 import Pagenotfound from "./routes/pagenotfound";
@@ -17,6 +18,7 @@ function App() {
           <Route exact path="cars" element={<Cars />} />
           <Route exact path="car" element={<Template />} />
           <Route exact path="*" element={<Pagenotfound />} />
+          <Route exact path='events' element={<AllEvents />} />
         </Route>
       </Routes>
     </>

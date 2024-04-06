@@ -8,7 +8,7 @@ const PreLoader = () => {
 
 	useEffect(() => {
 		window.scrollTo(0, 0);
-		preLoaderAnim()
+		preLoaderAnim();
 	}, []);
 
 	orbit.register()

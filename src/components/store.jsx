@@ -4,17 +4,17 @@ function store() {
 	return (
 		<div
 			id="showroom"
-			className="flex lg:flex-row flex-col w-full justify-between items-center gap-10 bg-slate-50"
+			className="flex lg:flex-row flex-col w-full justify-between items-center gap-10 bg-neutral-50"
 		>
 			<div className="lg:w-1/2">
 				<Image
 					src="./assets/Store-2.jpg"
 					alt="placeholder"
-					customClass="w-full max-h-130 object-cover object-center"
+					customClass="w-full max-h-130 object-cover object-center "
 					loading="lazy"
 				></Image>
 			</div>
-			<div className="flex flex-col justify-center items-center w-1/2">
+			<div className="flex flex-col justify-center items-center w-1/2 2xl:w-2/3">
 				<h1 className="font-bold text-2xl uppercase text-center">
 					Visit our showroom
 				</h1>

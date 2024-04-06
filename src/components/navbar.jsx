@@ -9,7 +9,10 @@ export default function Navbar() {
 
   React.useEffect(() => {
     const closeNavOnOutsideClick = (event) => {
-      if (navRef.current && !navRef.current.contains(event.target)) {
+      if (navRef.current && !navRef.current.contains(event.target) || (
+        navRef.current &&
+        event.target.closest('ul') // Check if the click occurred inside ul
+      )) {
         setOpenNav(false);
       }
     };
@@ -17,8 +20,10 @@ export default function Navbar() {
     const body = document.querySelector("body");
     if (openNav) {
       body.style.overflow = "hidden"; // Prevent scrolling
+      document.addEventListener("click", closeNavOnOutsideClick);
     } else {
       body.style.overflow = "auto"; // Allow scrolling
+      document.addEventListener("click", closeNavOnOutsideClick);
     }
 
     document.addEventListener("click", closeNavOnOutsideClick);
@@ -38,7 +43,7 @@ export default function Navbar() {
             className="h-8"
             alt="Scuderia Logo"
           />
-          <span className="self-center text-xl sm:text-2xl font-semibold whitespace-nowrap dark:text-black font-['Arial'] uppercase">
+          <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-black font-['Arial'] uppercase">
             Scuderia Tallinn
           </span>
         </a>
@@ -79,7 +84,7 @@ export default function Navbar() {
           }
           id="navbar-default"
         >
-          <ul className="font-medium w-full sm:w-auto h-svh justify-center items-center sm:h-auto pb-28 flex flex-col p-4 sm:relative sm:p-0 mt-4 sm:flex-row sm:space-x-6 rtl:space-x-reverse sm:mt-0">
+          <ul className="font-medium w-full sm:w-auto h-svh justify-center items-center sm:h-auto pb-28 flex flex-col p-4 sm:relative sm:p-0 mt-4 sm:flex-row sm:space-x-4 md:space-x-6 lg:space-x-10 rtl:space-x-reverse sm:mt-0">
             <li>
               <HashLink
                 to="/#"
@@ -116,15 +121,15 @@ export default function Navbar() {
                 Cars
               </NavLink>
             </li>
-            <li>
-              <HashLink
-                to="/#events"
+            {/* <li>
+              <NavLink
+                to="/events"
                 className="uppercase font-bold text-xl sm:text-base block py-4 sm:py-2 px-3 text-gray-900 rounded sm:hover:bg-gray-100 sm:hover:bg-transparent sm:border-0 sm:hover:text-red-500 sm:p-0 dark:text-black "
                 onClick={() => setOpenNav(false)}
               >
                 Events
-              </HashLink>
-            </li>
+              </NavLink>
+            </li> */}
             <li>
               <HashLink
                 to="/#showroom"

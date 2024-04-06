@@ -3,7 +3,7 @@ function Events() {
     <>
       <div
         id="events"
-        className="flex flex-col items-center lg:my-24 my-16 gap-12"
+        className="flex flex-col items-center lg:my-20 my-12 gap-12"
       >
         <h1 className="text-2xl font-bold uppercase">Upcoming Events</h1>
 
@@ -11,35 +11,79 @@ function Events() {
           image="./assets/Events.jpg"
           title="Ferrari Event"
           date="1.2.2023"
-          location="Lintulahdenkatu 6 As, 29"
-          description="This event will be held in tallinn, it is very nice "
+          location="Italy"
+          description="
+          This event will be held in tallinn, it is very nice
+          This event will be held in tallinn, it is very nice
+          This event will be held in tallinn, it is very nice
+          This event will be held in tallinn, it is very nice
+          "
+          descriptionTwo="
+          This event will be heltallinn, it is very nice
+          This event will be held in tallinn, it is very nice
+          This event will be held in tallinn, it is very nice
+          This event will be held in tallinn, it is very nice
+          This event will be held in tallinn, it is very nice
+          This event will be held in tallinn, it is very nice
+          This event will be held in tallinn, it is very nice
+          "
         ></Event>
       </div>
     </>
   );
 }
 
-function Event({ image, title, date, location, description }) {
+import { useEffect, useRef } from 'react';
+
+function Event({ image, title, date, location, description, descriptionTwo }) {
+  const imageContainerRef = useRef(null);
+
+  useEffect(() => {
+    const adjustImageHeight = () => {
+      const eventDetailsHeight = document.getElementById('eventDetails').offsetHeight;
+      if (imageContainerRef.current) {
+        imageContainerRef.current.style.height = eventDetailsHeight + 8 + 'px';
+      }
+    };
+
+    adjustImageHeight();
+
+    // Adjust image height on window resize
+    window.addEventListener('resize', adjustImageHeight);
+
+    return () => {
+      window.removeEventListener('resize', adjustImageHeight);
+    };
+  }, []);
+
   return (
     <>
-      <div className="flex flex-col lg:flex-row gap-4 bg-slate-50 rounded-2xl w-2/3 max-w-3xl lg:max-h-96 shadow-lg shadow-slate-200/60">
-        <div className="h-1/2 lg:w-1/2">
+      <div className="flex flex-col lg:flex-row gap-4 bg-neutral-50 rounded-2xl w-2/3 max-w-6xl min-h-20 shadow-lg shadow-neutral-200/60">
+        <div ref={imageContainerRef} className="flex-shrink-0 h-60 lg:h-auto lg:w-1/3 overflow-hidden rounded-t-2xl lg:rounded-r-none lg:rounded-l-2xl">
           <img
-            className="w-full h-72 max-h-96 lg:w-96 object-cover rounded-t-2xl lg:rounded-r-none lg:rounded-l-2xl "
+            className="h-full w-full object-cover object-center"
             src={image}
             alt=""
-            loading="lazy"
+            loading="eager"
           />
         </div>
-        <div className="flex flex-col gap-4 p-4 text-md h-1/2 lg:w-1/2">
-          <div className="font-bold text-2xl">{title}</div>
-          <div className="font-bold ">{date}</div>
-          <div className="">{location}</div>
-          <div className="text-pretty break-all">{description}</div>
+        <div id="eventDetails" className="flex flex-col gap-1 p-4 text-sm lg:w-2/3 lg:mt-2">
+          <div className="font-bold text-base md:text-xl lg:text-2xl">{title}</div>
+          <div className="flex gap-1">
+            <div className="font-bold">{date}</div>
+            <div> — </div>
+            <div className="">{location}</div>
+          </div>
+          <div className='flex flex-col gap-2'>
+            <div className="text-pretty">{description}</div>
+            <div className="text-pretty">{descriptionTwo}</div>
+          </div>
         </div>
       </div>
     </>
   );
 }
+
+
 
 export default Events;

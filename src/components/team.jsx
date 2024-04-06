@@ -2,7 +2,7 @@ import Image from "./image";
 
 function Team() {
 	return (
-		<div className="flex flex-col justify-center items-center my-16 px-0">
+		<div className="flex flex-col justify-center items-center my-16 px-10">
 			<div className="flex flex-col justify-center items-center text-center mb-4">
 				<h1 className="text-2xl font-bold uppercase">About our team</h1>
 				<h2 className="font-bold mt-4">Committed to Service</h2>
@@ -14,7 +14,7 @@ function Team() {
 					</p>
 				</div>
 			</div>
-			<div className="flex flex-col md:flex-col lg:flex-row gap-10 text-center mt-6 p-2 text-sm">
+			<div className="flex flex-col sm:flex-row gap-10 text-center mt-6 p-2 text-sm">
 				<div className="flex md:flex-row flex-col gap-10">
 					<div className="w-52 flex flex-col items-center gap-4">
 						<Image
@@ -68,7 +68,7 @@ function Team() {
 							</a>
 						</div>
 					</div>
-					<div className="w-52 flex flex-col items-center gap-4">
+					{/* <div className="w-52 flex flex-col items-center gap-4">
 						<Image
 							src="./assets/Events_2.jpg"
 							alt="Samuli Hepola"
@@ -83,7 +83,7 @@ function Team() {
 								samuli.hepola@scuderiatallinn.ee
 							</a>
 						</div>
-					</div>
+					</div> */}
 				</div>
 			</div>
 		</div>

@@ -1,7 +1,7 @@
 function Footer() {
 	return (
 		<footer>
-			<div id="footer" className="flex flex-col gap-4 bg-slate-800 text-white text-xs text-center py-6">
+			<div id="footer" className="flex flex-col gap-4 bg-neutral-800 text-white text-xs text-center py-6">
 				<div>
 					<p>torsten.kihlman@scuderiatallinn.ee</p>
 					<p>+372 566 30 469</p>
