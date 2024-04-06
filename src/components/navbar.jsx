@@ -9,10 +9,10 @@ export default function Navbar() {
 
   React.useEffect(() => {
     const closeNavOnOutsideClick = (event) => {
-      if (navRef.current && !navRef.current.contains(event.target) || (
-        navRef.current &&
-        event.target.closest('ul') // Check if the click occurred inside ul
-      )) {
+      if (
+        (navRef.current && !navRef.current.contains(event.target)) ||
+        (navRef.current && event.target.closest("ul")) // Check if the click occurred inside ul
+      ) {
         setOpenNav(false);
       }
     };
@@ -37,9 +37,12 @@ export default function Navbar() {
   return (
     <nav id="navbar" className="bg-white sticky top-0 z-50">
       <div className="flex flex-wrap items-center justify-between mx-auto py-4 px-6">
-        <a href="./" className="flex items-center space-x-3 rtl:space-x-reverse">
+        <a
+          href="./"
+          className="flex items-center space-x-3 rtl:space-x-reverse"
+        >
           <img
-            src="/scuderiatallinn/assets/Scuderia_Tallinn_Logo_White.jpg"
+            src="./assets/Scuderia_Tallinn_Logo_White.jpg"
             className="h-8"
             alt="Scuderia Logo"
           />
@@ -88,9 +91,7 @@ export default function Navbar() {
             <li>
               <HashLink
                 to="/#"
-                scroll={(el) =>
-                  window.scrollTo({ top: 0, behavior: "smooth" })
-                }
+                scroll={(el) => window.scrollTo({ top: 0, behavior: "smooth" })}
                 className={
                   "uppercase font-bold text-xl sm:text-base block py-4 sm:py-2 px-3 text-black rounded sm:bg-transparent sm:p-0 sm:hover:text-red-500" +
                   (pathname === "/" ? " sm:text-red-500" : "")
@@ -142,6 +143,6 @@ export default function Navbar() {
           </ul>
         </div>
       </div>
-    </nav >
+    </nav>
   );
 }
