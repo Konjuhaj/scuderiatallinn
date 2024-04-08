@@ -8,8 +8,7 @@ function Team() {
 				<h2 className="font-bold mt-4">Committed to Service</h2>
 				<div className="w-full sm:w-4/5 lg:w-1/2 mt-6">
 					<p>
-						Our team has a long experience working with Ferrari. Torsten Kihlman has years of experience selling Ferrari's for an Official Ferrari Partner,
-						Samuli Hepola has been running the Official Ferrari Service in Finland,
+						Our team has a long experience working with Ferrari. Torsten Kihlman has years of experience selling Ferrari's for an Official Ferrari Partner
 						and Toni Vilander has been racing professionally with Ferrari for more than 15 years and has won 24 Hours of Le Mans twice in the GTE Pro class.
 					</p>
 				</div>
