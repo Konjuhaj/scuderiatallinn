@@ -4,6 +4,10 @@ import CarDetails from "../components/carDetails";
 import ImageSlider from "../components/imageSlider";
 import PreLoader from "../components/preLoader";
 
+/* Function to parse the vehicle details from the HTML table, and return an object with the details
+ * @param {string} htmlTable - The HTML table containing the vehicle details
+ * @returns {object} - The vehicle details
+*/
 function parseVehicleDetails(htmlTable) {
 	const table = document.createElement("table");
 	table.innerHTML = htmlTable;
@@ -19,7 +23,6 @@ function parseVehicleDetails(htmlTable) {
 			let value = cells[1].textContent.trim();
 
 			if (value.includes("EUR") && value.includes("VAT")) {
-				console.log(value);
 				const priceAndVAT = value.split("EUR")[1].trim();
 				const price = priceAndVAT.split("VAT")[0].trim();
 				const vat = priceAndVAT.split("VAT")[1].trim();
