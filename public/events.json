@@ -1,0 +1,20 @@
+{
+	"events": [
+		{
+			"image": "/assets/Events.jpg",
+			"title": "Ferrari Event",
+			"date": "1.2.2023",
+			"location": "Italy",
+			"description": "This event will be held in Tallinn, it is very nice\nThis event will be held in Tallinn, it is very nice\nThis event will be held in Tallinn, it is very nice\nThis event will be held in Tallinn, it is very nice",
+			"descriptionTwo": "This event will be held in Tallinn, it is very nice\nThis event will be held in Tallinn, it is very nice\nThis event will be held in Tallinn, it is very nice\nThis event will be held in Tallinn, it is very nice\nThis event will be held in Tallinn, it is very nice\nThis event will be held in Tallinn, it is very nice\nThis event will be held in Tallinn, it is very nice"
+		},
+		{
+			"image": "/assets/Events_2.jpg",
+			"title": "Ferrari Event",
+			"date": "5.3.2023",
+			"location": "Spain",
+			"description": "This event will be held in Madrid, it will be amazing\nThis event will be held in Madrid, it will be amazing\nThis event will be held in Madrid, it will be amazing\nThis event will be held in Madrid, it will be amazing",
+			"descriptionTwo": "This event will be held in Madrid, it will be amazing\nThis event will be held in Madrid, it will be amazing\nThis event will be held in Madrid, it will be amazing\nThis event will be held in Madrid, it will be amazing\nThis event will be held in Madrid, it will be amazing\nThis event will be held in Madrid, it will be amazing\nThis event will be held in Madrid, it will be amazing"
+		}
+	]
+}

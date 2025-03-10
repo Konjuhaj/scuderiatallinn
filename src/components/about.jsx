@@ -5,9 +5,8 @@ function about() {
       <h2 className="font-bold mt-4">We know Ferrari</h2>
       <div className="w-full sm:w-4/5 lg:w-1/2 mt-6">
         <p>
-          Working full time with Ferrari sales and service since 2019 we have gathered a deep level of knowledge and
-          understanding about the brand and all things around it.
-          We are highly passionate about everything Ferrari and wish to provide our clients with the highest level of service quality.
+          With the longest experience of working with Ferrari in Estonia we are able to provide our clients the most passionate and knowledgeable service, whether you are buying or selling a Ferrari. We are highly passionate about everything Ferrari and wish to provide our clients in Estonia with the highest level of service quality.
+
         </p>
       </div>
       <div className="mt-6 flex flex-row gap-2 items-center justify-center">

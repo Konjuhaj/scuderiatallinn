@@ -1,7 +1,38 @@
+import { motion } from "framer-motion";
 import { useEffect } from "react";
 import PreLoader from "../components/preLoader";
 
 window.auto24CarsCallback = () => {
+
+  const financeElements = document.querySelectorAll(".dataCell__finance, .vehicles_list_price_cell");
+  financeElements.forEach(element => {
+    element.innerHTML = element.innerHTML.replace(/\bincludes\b/g, '');
+
+    // add space between the number and the currency
+    if (element.innerHTML.includes("EUR")) {
+      const regex = /(EUR)(\d{1,3}(?:,\d{3})*(?:\.\d+)?)/;
+      element.innerHTML = element.innerHTML.replace(regex, (match, p1, p2) => {
+        return `${p2}€`;
+      });
+    }
+    if (element.innerHTML.includes("VAT 0%")) {
+      element.innerHTML = 'Margin scheme';
+    }
+  });
+
+  const vehicleYear = document.querySelectorAll(".dataCell__firstreg")
+  vehicleYear.forEach(element => {
+    // remove "yr." from the string
+    element.innerHTML = element.innerHTML.replace(/yr\./g, '·');
+  }
+  );
+
+  const mileageElements = document.querySelectorAll("span.-mileage");
+  mileageElements.forEach(element => {
+    // Remove "mileage:" from the string
+    element.innerHTML = element.innerHTML.replace(/mileage:/g, '');
+  });
+
 
   const cars = Array.from(document.querySelectorAll(".vehicles_list > div"));
   const { ferraries, otherCars } = cars.reduce(
@@ -48,7 +79,10 @@ export default function Template() {
     <>
       {/* <script>{auto24API.load("80023381ff22186911bc932eff366eab")}</script> */}
       <PreLoader></PreLoader>
-      <div id="auto24Content"></div>
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, delay: 0.7 }} id="auto24Content"></motion.div>
     </>
   );
 }

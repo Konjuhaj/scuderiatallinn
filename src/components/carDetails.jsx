@@ -1,3 +1,5 @@
+import React from "react";
+
 export default function CarDetails(carDetails) {
 
   const car = carDetails.carDetails;
@@ -60,23 +62,65 @@ export default function CarDetails(carDetails) {
     );
   };
 
-  const carInfo = car.Other.split('<br>')
-    .flatMap(item => item.split('-').map((part, index) => ({ part: part.trim(), isFirst: index === 0 })))
-    .filter(({ part }) => part.trim() && part !== "Demo vehicle")
-    .map(({ part, isFirst }, index) => {
+  const formatOtherInfoToHtml = (text) => {
+    const lines = text.split('\n');
 
-      const formattedPart = part.replace(/<\/?b>/g, '').trim(); // Remove <b> and </b> tags
-      const capitalizedPart = formattedPart.charAt(0).toUpperCase() + formattedPart.slice(1); // Capitalize the first character
+    let html = [];
 
-      return (
-        <p key={index} className="">
-          <span>
-            {isFirst ? '' : '- '}{capitalizedPart}
-            <br />
-          </span>
-        </p>
-      );
+    lines.forEach((line, index) => {
+      // Check if the line contains <br> tags
+      if (line.includes('<br>')) {
+        // Split the line by <br> tags
+        const lineItems = line.split('<br>');
+        // Push each part as a separate line
+        lineItems.forEach((item, idx) => {
+          if (item.includes('- ')) {
+            // add line break and then the item
+            html.push(<p key={`line-${index}-${idx}`} dangerouslySetInnerHTML={{ __html: `<br class="flex" />${item}` }} />);
+          } else {
+            html.push(<p key={`line-${index}-${idx}`} dangerouslySetInnerHTML={{ __html: item }} />);
+          }
+        });
+      } else if (line === '') {
+        html.push(<br className="flex" key={`line-${index}`} />);
+      } else {
+        html.push(<p key={`line-${index}`} dangerouslySetInnerHTML={{ __html: line }} />);
+      }
     });
+
+    return html;
+  };
+
+
+  const carInfo = () => {
+    const formattedDescription = formatOtherInfoToHtml(car.Other);
+
+    return (
+      <div className="text-left">
+        {formattedDescription.map((element, index) => (
+          <React.Fragment key={index}>{element}</React.Fragment>
+        ))}
+      </div>
+    );
+  };
+
+  // const carInfo = car.Other.split('<br>')
+  //   .flatMap(item => item.split('-').map((part, index) => ({ part: part.trim(), isFirst: index === 0 })))
+  //   .filter(({ part }) => part.trim() && part !== "Demo vehicle")
+  //   .map(({ part, isFirst }, index) => {
+
+  //     const formattedPart = part.replace(/<\/?b>/g, '').trim(); // Remove <b> and </b> tags
+  //     const capitalizedPart = formattedPart.charAt(0).toUpperCase() + formattedPart.slice(1); // Capitalize the first character
+
+  //     return (
+  //       <p key={index} className="">
+  //         <span>
+  //           {isFirst ? '' : '- '}{capitalizedPart}
+  //           <br />
+  //         </span>
+  //       </p>
+  //     );
+  //   });
 
   return (
     <div className="lg:w-3/5 mx-auto p-4 lg:p-0" data-uk-grid="">
@@ -143,7 +187,9 @@ export default function CarDetails(carDetails) {
         <div className="flex flex-col pt-6">
           <h4 className="font-bold text-lg border-b border-gray-200 py-2">Additional information</h4>
           <div className="py-2">
-            {carInfo}
+            <div className="">
+              {carInfo()}
+            </div>
           </div>
           <h4 className="font-bold text-lg  border-b border-gray-200 py-2">Equipment</h4>
           <div className="lg:columns-2 gap-12 py-2">

@@ -8,8 +8,7 @@ function Team() {
 				<h2 className="font-bold mt-4">Committed to Service</h2>
 				<div className="w-full sm:w-4/5 lg:w-1/2 mt-6">
 					<p>
-						Our team has a long experience working with Ferrari. Torsten Kihlman has years of experience selling Ferrari's for an Official Ferrari Partner
-						and Toni Vilander has been racing professionally with Ferrari for more than 15 years and has won 24 Hours of Le Mans twice in the GTE Pro class.
+						Our team has a long experience working with Ferrari. Torsten Kihlman has years of experience selling Ferrari's for an Official Ferrari Dealer. Toni Vilander is an Official Ferrari Brand Ambassador and has been racing professionally with Ferrari for over 15 years, winning 24 Hours of Le Mans twice in the GTE Pro class.
 					</p>
 				</div>
 			</div>
@@ -24,7 +23,7 @@ function Team() {
 						></Image>
 						<div>
 							<h2 className="font-bold mb-1">TORSTEN KIHLMAN</h2>
-							<p>General Manager</p>
+							<p>Sales Manager/Owner</p>
 							<p>+372 566 30 469</p>
 							<a href="mailto:torsten.kihlman@scuderiatallinn.ee2" className="">
 								torsten.kihlman@scuderiatallinn.ee
@@ -60,7 +59,7 @@ function Team() {
 						></Image>
 						<div>
 							<h2 className="font-bold mb-1">TONI VILANDER</h2>
-							<p>Owner</p>
+							<p>General Manager/Owner</p>
 							<p>+358 50 589 6284</p>
 							<a href="mailto:toni.vilander@scuderiatallinn.ee" className="">
 								toni.vilander@scuderiatallinn.ee

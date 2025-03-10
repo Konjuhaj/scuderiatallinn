@@ -8,18 +8,18 @@ function service() {
 				<div className="flex lg:flex-row flex-col w-full justify-center items-center lg:items-start lg:gap-24 gap-10 lg:mt-10 p-10">
 					<div className="lg:w-1/5 w-full sm:w-4/5">
 						<h2 className="font-bold">PRE-OWNED FERRARI'S</h2>
-						<p className="mt-2">With the longest experience of working with Ferrari in Estonia we are able to provide our clients the most customized
-							and knowledgeable service, whether you are buying or selling a Ferrari.</p>
+						<p className="mt-2">We always have a great selection of pre-owned Ferrari’s available in our showroom in Tallinn. If you can not find what you are looking for in Estonia, we are also able to source you any Ferrari of your liking through our extensive Ferrari network.
+						</p>
 					</div>
 					<div className="lg:w-1/5 w-full sm:w-4/5">
 						<h2 className="font-bold">NEW FERRARI'S</h2>
-						<p className="mt-2">We offer you the possibility to order any new Ferrari model currently on sale through our Official Ferrari Dealer partnership.
-							Our fully equipped Atelier allows for an easy and comfortable configuration experience of your new car in our showroom.</p>
+						<p className="mt-2">We are able to arrange our clients in Estonia the possibility to order any new Ferrari model through our Official Ferrari Dealer partnership. Our fully equipped showroom in Tallinn allows for an easy and comfortable configuration experience of your new car.
+						</p>
 					</div>
 					<div className="lg:w-1/5 w-full sm:w-4/5">
 						<h2 className="font-bold">FERRARI SERVICE</h2>
-						<p className="mt-2">You can turn to us with any of your Service and Repair related questions about your Ferrari.
-							It is now also possible to perform scheduled maintenance for your vehicle at our workshop in Tallinn in partnership with our Official Dealer Partner.</p>
+						<p className="mt-2">You can turn to us with any Service and Repair related questions regarding your Ferrari. It is possible to perform scheduled maintenance for your Ferrari at our workshop in Tallinn in partnership with our Official Dealer Partner.
+						</p>
 					</div>
 				</div>
 			</div>

@@ -34,12 +34,12 @@ html {
   height: 240px !important;
   transform: scale(1.2);
   transform-origin: 15% 20%;
-  transition: transform .5s;
+  transition: transform 1s;
 }
 
 .vehicles_list img:hover {
-  transform: scale(1.3);
-  transition: transform .5s;
+  transform: scale(1.25);
+  transition: transform 1s;
   transform-origin: 15% 20%;
 }
 
@@ -80,6 +80,10 @@ html {
   order: 1;
 }
 
+.dataCell__firstreg {
+  margin-right: 0.2rem;
+}
+
 .vehicles_list_data_cell.dataCell {
   font-size: 0.9rem;
   order: 2;
@@ -94,7 +98,7 @@ html {
 
 .dataCell__finance {
   position: absolute;
-  bottom: -46px;
+  bottom: -42px;
 }
 
 /* Hidden information */

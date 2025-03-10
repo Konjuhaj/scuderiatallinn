@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import CarDetails from "../components/carDetails";
 import ImageSlider from "../components/imageSlider";
@@ -17,17 +18,31 @@ function parseVehicleDetails(htmlTable) {
 			const key = cells[0].textContent.trim().replace(":", "");
 			let value = cells[1].textContent.trim();
 
-			if (value.includes("EUR")) {
+			if (value.includes("EUR") && value.includes("VAT")) {
+				console.log(value);
 				const priceAndVAT = value.split("EUR")[1].trim();
 				const price = priceAndVAT.split("VAT")[0].trim();
 				const vat = priceAndVAT.split("VAT")[1].trim();
+				// includes removed
 				if (!data.hasOwnProperty("Price")) {
-					console.log("Price:", price);
-					if (price.includes("Price includes")) {
-						data["Price"] = price.split("Price includes")[0].trim();
-					} else {
-						data["Price"] = price;
+					let finalPrice = price;
+					const lowerCasePrice = price.toLowerCase();
+
+					if (lowerCasePrice.includes("price includes") || lowerCasePrice.includes("includes")) {
+						if (lowerCasePrice.includes("price includes")) {
+							finalPrice = price.split(/price includes/i)[0].trim();
+						} else {
+							finalPrice = price.split(/includes/i)[0].trim();
+						}
 					}
+					// console.log("Price:", finalPrice);
+					data["Price"] = finalPrice;
+					// console.log("Price:", price);
+					// if (price.includes("Price includes")) {
+					// 	data["Price"] = price.split("Price includes")[0].trim();
+					// } else {
+					// 	data["Price"] = price;
+					// }
 				}
 				if (!data.hasOwnProperty("VAT")) {
 					data["VAT"] = vat;
@@ -57,8 +72,11 @@ function parseVehicleDetails(htmlTable) {
 		}
 	});
 
+
+
 	return data;
 }
+
 
 
 
@@ -199,13 +217,14 @@ const DummyComponen = () => {
 		</tr>
 <tr>
 			<td class="name" valign="top">Other:</td>
-			<td class="value">Registered in Estonia, inspection valid until <b>08.2023</b><br>Brought from: <b>Germany</b><br>Location of a vehicle: <b>Tallinn</b>, Estonia<br>- Väga pika Eesti ajalooga sõiduk, kuid talvel pole sõitnud
-- Sama omanik Eestis aastast 2007
-- Äsja tehtud suur hooldus Soome Ferrari Esinduses
-- Uus sidur
-- Uus esiklaas
-- Uued rehvid
-- Seisukord nagu uus auto</td>
+			<td class="value">Registered in Estonia, inspection valid until <b>08.2023</b><br>Brought from: <b>Germany</b><br>Location of a vehicle: <b>Tallinn</b>, Estonia<br>
+			- Väga pika Eesti ajalooga sõiduk, kuid talvel pole sõitnud
+			- Sama omanik Eestis aastast 2007
+			- Äsja tehtud suur hooldus Soome Ferrari Esinduses
+			- Uus sidur
+			- Uus esiklaas
+			- Uued rehvid
+			- Seisukord nagu uus auto</td>
 		</tr>
 <tr>
 			<td class="name" valign="top">E-mail:</td>
@@ -230,10 +249,25 @@ export default function Template() {
 	const [carDetails, setCarDetails] = useState({});
 	const auto24Callback = () => {
 		console.log("auto24Callback");
+
+		// console log the content of the auto24Content div
+		// console.log(document.querySelector("#auto24Content"));
+
 		const aTags = document.querySelectorAll("#vehicleImagesContentDiv a");
 		const imageLinks = Array.from(aTags)
-			.map((aTag) => aTag.href)
-			.filter((link) => link.toLowerCase().endsWith(".jpg"));
+			.filter(aTag => {
+				// Exclude the copyright link
+				return !aTag.textContent.includes('©');
+			})
+			.map(aTag => {
+				// Get the href attribute
+				const href = aTag.getAttribute('href');
+				// Only include links that contain 'pic.php' and have a hash parameter
+				return href && href.includes('pic.php') ? href : null;
+			})
+			.filter(Boolean); // Remove any null values
+		// .map((aTag) => aTag.href)
+		// .filter((link) => link.toLowerCase().endsWith(".jpg"));
 		setImageLinks(imageLinks);
 
 		setCarDetails(
@@ -258,20 +292,27 @@ export default function Template() {
 		const auto24Content = document.querySelector("#auto24");
 		root.insertBefore(script, auto24Content);
 	}, []);
+
 	const divContent = "{AUTO24CONTENT}";
+
 	return (
 		<>
 			<PreLoader></PreLoader>
-			<a className="w-full lg:w-3/5 mx-auto p-2 flex flex-row" href="./cars">
-				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 my-auto">
-					<path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
-				</svg> All cars</a>
-			<ImageSlider imageLinks={imageLinks} />
-			{/* <DummyComponen /> */}
-			<CarDetails carDetails={carDetails} />
-			<div className="auto24" id="auto24Content">
-				{divContent}{" "}
-			</div>
+			<motion.div
+				initial={{ opacity: 0, y: 50 }}
+				animate={{ opacity: 1, y: 0 }}
+				transition={{ duration: 1, delay: 0.7 }}>
+				<a className="w-full lg:w-3/5 mx-auto p-2 flex flex-row" href="./cars">
+					<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 my-auto">
+						<path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+					</svg> All cars</a>
+				<ImageSlider imageLinks={imageLinks} />
+				{/* <DummyComponen /> */}
+				<CarDetails carDetails={carDetails} />
+				<div className="auto24" id="auto24Content">
+					{divContent}{" "}
+				</div>
+			</motion.div>
 		</>
 	);
 }
